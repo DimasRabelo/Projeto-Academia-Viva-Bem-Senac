@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+/* 
+    font-family: 'Caprasimo', cursive;
+    font-family: 'Josefin Sans', sans-serif;
+*/
+
+*,
+a, h1, h2, h3, h4 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+}
+
+.topo{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1%;
+    align-items: center;
+}
+
+.topo h1{
+    text-align: center;
+    width: 15%;
+}
+.topo h1 img{
+    width: 70%;
+}
+
+.topo h2{
+    font-size: 1.8em;
+    text-transform: uppercase;
+    color: #23475f;
+    font-weight: bold;
+}
+
+.topo div{
+    display: flex;
+    align-items: center;
+    width: 15%;
+}
+
+.topo div img{
+    width: 20%;
+}
+
+.topo div h2{
+    margin-left: 5%;
+    font-size: 1.2em;
+}
+
+main{
+    flex: 1;
+    display: flex;
+
+}
+
+
+.menu{
+    background-color: #23475f;
+    max-width: 300px;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    
+}
+
+
+.menu nav{
+    margin-top: 15%;
+}
+
+
+
+.menu nav ul li{
+    padding: 4% 0;
+}
+
+.menu nav ul li a{
+    text-decoration: none;
+    color: #00cab0;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    padding: 4% 0;
+}
+
+.menu nav ul li a:hover{
+    color: #ffc500;
+    border-top: solid 1px #ffc500 ;
+}
+
+.menuAtivo{
+    color: #ffc500!important;
+    border-top: solid 1px #ffc500 ;
+}
+.box {
+    margin: 0 auto;
+}
+
+
+.rodape{
+    text-align: center;
+    
+   
+}
+.rodape h2{
+    font-size: .8em;
+    
+}
+.rodape h2:nth-child(1){
+    background: #00cab0;
+    padding: .5% 0;
+    color: #23475f;
+    margin-bottom: 0;
+    
+}
+
+.rodape h2:nth-child(2){
+    background: #23475f;
+    padding: .5% 0;
+    color: #fff;
+    margin-bottom: 0;
+}
+.table-primary{
+   font-size: 50px;
+}
+
+/* ##### Formulario Exercicio ###### */
+
+h3 {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 15px; 
+}
+
+
+.col-md-12 {
+    width: 100%;
+    padding: 80px 80px;
+}
+
+.card-header {
+    background-color: yellow;
+    width: 100%;
+}
+
+.card-body {
+    /* background-color: aqua; */
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.form-control {
+    padding: 0;
+    width: 100%;
+}
+
+.form-select {
+    margin: 15px 0;
+}
+
+.form-check {
+    padding: 30px;
+}
+
+label {
+    font-weight: bold;
+}
+
+textarea {
+    resize: none;
+}
+
+.img-thumbnail {
+    max-width: 220px; 
+    max-height: 220px; 
+   
+    overflow: hidden;
+    text-align: center;
+}
+.col-form-label{
+    padding: 10px 10px;
+}
+    
+/*##### Formulario Aluno Cadastro #######*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background: #23475f;
+    width: 1000px;
+
+    padding: 15px 50px;
+    color: #ffc500;
+}
+
+.inputaluno {
+    padding: 0px;
+    width: 100%;
+    border-radius: 5px 5px;
+}
+
+.inputdata {
+    width: 20%;
+    border-radius: 5px 5px;
+
+}
+
+.upload {
+    display: flex;
+    justify-content: center;
+    padding: 30px 30px;
+}
+
+.labelaluno {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    font-size: 1.2em;
+
+}
+
+.img-aluno {
+    max-width: 300px;
+    max-height: 320px;
+
+}
+
+.img-upload {
+    width: 100%;
+}
+
+.inputsenha {
+    width: 24%;
+    border-radius: 5px 5px;
+}
+
+.selecaoaluno {
+    padding: 0 auto;
+    margin-top: -30px;
+
+
+}
+
+.h1aluno {
+    text-align: center;
+    color: #23475f;
+    font-size: 1.5em;
+    background: #00cab0;
+    margin: 0;
+    padding: 15px;
+
+}
+
