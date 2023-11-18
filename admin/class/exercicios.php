@@ -50,7 +50,7 @@ class ExerciciosClass {
 
     // Carregar 
     public function Carregar() {
-        $query = "SELECT * FROM  tblexercicios WHERE idexercicio = " . $this->idExercicio;
+        $query = "SELECT * FROM  tblexercicios WHERE idExercicio = " . $this->idExercicio;
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($query);
         $lista = $resultado->fetchAll();
