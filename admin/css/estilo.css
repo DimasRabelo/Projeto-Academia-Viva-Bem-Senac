@@ -6,137 +6,155 @@
 */
 
 *,
-a, h1, h2, h3, h4 {
+a,
+h1,
+h2,
+h3,
+h4 {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 16px;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    
+
 }
 
-.topo{
+.topo {
     display: flex;
     justify-content: space-between;
     margin-top: 1%;
     align-items: center;
 }
 
-.topo h1{
+.topo h1 {
     text-align: center;
     width: 15%;
 }
-.topo h1 img{
+
+.topo h1 img {
     width: 70%;
 }
 
-.topo h2{
+.topo h2 {
     font-size: 1.8em;
     text-transform: uppercase;
     color: #23475f;
     font-weight: bold;
 }
 
-.topo div{
+.topo div {
     display: flex;
     align-items: center;
     width: 15%;
 }
 
-.topo div img{
+.topo div img {
     width: 20%;
 }
 
-.topo div h2{
+.topo div h2 {
     margin-left: 5%;
     font-size: 1.2em;
 }
 
-main{
+main {
     flex: 1;
     display: flex;
 
 }
 
 
-.menu{
+.menu {
     background-color: #23475f;
-    max-width: 300px;
-    width: 50%;
+    
+   
     text-align: center;
     display: flex;
-    
+
 }
 
 
-.menu nav{
+.menu nav {
     margin-top: 15%;
 }
 
 
 
-.menu nav ul li{
+.menu nav ul li {
     padding: 4% 0;
 }
 
-.menu nav ul li a{
+.menu nav ul li a {
     text-decoration: none;
     color: #00cab0;
     font-size: 1.8em;
     text-transform: uppercase;
-    padding: 4% 0;
+    padding: 4% 10px;
 }
 
-.menu nav ul li a:hover{
+.menu nav ul li a:hover {
     color: #ffc500;
-    border-top: solid 1px #ffc500 ;
+    border-top: solid 1px #ffc500;
 }
 
-.menuAtivo{
-    color: #ffc500!important;
-    border-top: solid 1px #ffc500 ;
+.menuAtivo {
+    color: #ffc500 !important;
+    border-top: solid 1px #ffc500;
 }
+
 .box {
-    margin: 0 auto;
+    margin: 0 100px;
 }
 
 
-.rodape{
+.rodape {
     text-align: center;
-    
-   
+    width: 1920px;
+
+
+
 }
-.rodape h2{
+
+.rodape h2 {
     font-size: .8em;
-    
+
 }
-.rodape h2:nth-child(1){
+
+.rodape h2:nth-child(1) {
     background: #00cab0;
     padding: .5% 0;
     color: #23475f;
     margin-bottom: 0;
-    
+
 }
 
-.rodape h2:nth-child(2){
+.rodape h2:nth-child(2) {
     background: #23475f;
     padding: .5% 0;
     color: #fff;
     margin-bottom: 0;
 }
-.table-primary{
-   font-size: 50px;
-}
+
+
 
 /* ##### Formulario Exercicio ###### */
+.table-primary {
+    font-size: 50px;
+}
+
+
+.tituloexercicio{
+
+    text-align: center;
+}
 
 h3 {
     text-align: center;
     font-weight: bold;
-    padding-top: 15px; 
+    padding-top: 15px;
 }
 
 
@@ -178,16 +196,17 @@ textarea {
 }
 
 .img-thumbnail {
-    max-width: 220px; 
-    max-height: 220px; 
-   
+    max-width: 220px;
+    max-height: 220px;
+
     overflow: hidden;
     text-align: center;
 }
-.col-form-label{
+
+.col-form-label {
     padding: 10px 10px;
 }
-    
+
 /*##### Formulario Aluno Cadastro #######*/
 
 form {
@@ -258,4 +277,3 @@ form {
     padding: 15px;
 
 }
-
