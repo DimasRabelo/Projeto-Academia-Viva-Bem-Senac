@@ -71,6 +71,14 @@ class ExerciciosClass
         }
     }
 
+
+
+
+
+
+
+
+
     // Atualizar 
     public function Atualizar()
     {
@@ -89,5 +97,8 @@ class ExerciciosClass
         $conn->exec($query);
         echo "<script>document.location='index.php?p=exercicios'</script>";
     }
+    public function Desativar()
+    {
+        $query = "UPDATE tblexercicios SET statusExercicio ='DESATIVADO' WHERE idExercicio = " . $this->idExercicio;
+    }
 }
-?>
