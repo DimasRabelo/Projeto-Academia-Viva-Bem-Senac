@@ -2,7 +2,7 @@
 
 
 $id = $_GET["id"];
-//  echo $id;
+//echo $id;
 require_once("class/exercicios.php");
 $exercicio = new ExerciciosClass($id);
 
