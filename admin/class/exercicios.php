@@ -71,31 +71,23 @@ class ExerciciosClass
         }
     }
 
-    //Atualizar 
-
+    // Atualizar 
     public function Atualizar()
-{
-    // SQL UPDATE query to update the record in the 'tblexercicios' table
-    $query = "UPDATE tblexercicios  
-          SET nomeExercicio =  '" . $this->nomeExercicio . "',
-              altExercicio =    '" . $this->altExercicio . "',
-              grupoMuscularExercicio =  '" . $this->grupoMuscularExercicio . "', 
-              descricaoExercicio = '" . $this->descricaoExercicio . "', 
-              statusExercicio =  '" . $this->statusExercicio . "',
-              fotoExercicio =  '" . $this->fotoExercicio . "',  
-              linkExercicio = '" . $this->linkExercicio . "'
-          WHERE tblexercicios.idExercicio = '" . $this->idExercicio . "'";
+    {
+        // SQL UPDATE query to update the record in the 'tblexercicios' table
+        $query = "UPDATE tblexercicios  
+              SET nomeExercicio =  '" . $this->nomeExercicio . "',
+                  altExercicio =    '" . $this->altExercicio . "',
+                  grupoMuscularExercicio =  '" . $this->grupoMuscularExercicio . "', 
+                  descricaoExercicio = '" . $this->descricaoExercicio . "', 
+                  statusExercicio =  '" . $this->statusExercicio . "',
+                  fotoExercicio =  '" . $this->fotoExercicio . "',  
+                  linkExercicio = '" . $this->linkExercicio . "'
+              WHERE tblexercicios.idExercicio = '" . $this->idExercicio . "'";
 
-
-    // Establish a database connection using the Conexao::LigarConexao() method
-    $conn = Conexao::LigarConexao();
-
-    // Execute the SQL query using the database connection
-    $conn->exec($query);
-
-    // Redirect to 'index.php?p=exercicios' after the update
-    echo "<script>document.location='index.php?p=exercicios'</script>";
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+        echo "<script>document.location='index.php?p=exercicios'</script>";
+    }
 }
-
-
-}
+?>

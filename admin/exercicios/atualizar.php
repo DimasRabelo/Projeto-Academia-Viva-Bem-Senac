@@ -21,6 +21,7 @@ if (isset($_POST['nomeExercicio'])) {
     $grupoMuscularExercicio = $_POST['grupoMuscularExercicio'];
     $statusExercicio       = $_POST['statusExercicio'];
     $linkExercicio         = $_POST['linkExercicio'];
+    
 
    
 
@@ -40,10 +41,12 @@ if (isset($_POST['nomeExercicio'])) {
         }
     } else {
         $fotoExercicio = $exercicio->fotoExercicio;
+       
     }
+
     // Fim da Empty
 
-    $exercicio = new ExerciciosClass();
+    
 
     $exercicio->nomeExercicio = $nomeExercicio;
     $exercicio->altExercicio = $nomeExercicio;
@@ -102,14 +105,14 @@ if (isset($_POST['nomeExercicio'])) {
                         <div class="form-group row">
                             <label for="descricaoExercicio" class="col-sm-2 col-form-label">Descrição:</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="descricaoExercicio" id="descricaoExercicio" cols="30" rows="10" required="" placeholder="Informe a descrição do exercício:"><?php echo $exercicio->descricaoExercicio; ?></textarea>
+                                <textarea class="form-control" name="descricaoExercicio" id="descricaoExercicio" cols="30" rows="10" placeholder="Informe a descrição do exercício:"><?php echo $exercicio->descricaoExercicio; ?></textarea>
                             </div>
                         </div>
 
                         <div class="row">
 
                             <div class="form-group col-sm-6 offset-md-2">
-                                <select class="form-select col-sm-2" aria-label="Default select example" id="grupoMuscularExercicio" name="grupoMuscularExercicio" required>
+                                <select class="form-select col-sm-2" aria-label="Default select example" id="grupoMuscularExercicio" name="grupoMuscularExercicio" >
                                     <option value="<?php echo $exercicio->nomeExercicio; ?>"><?php echo $exercicio->grupoMuscularExercicio; ?></option>
                                     <option value="Peito">Peito</option>
                                     <option value="Pernas">Pernas</option>
@@ -137,7 +140,7 @@ if (isset($_POST['nomeExercicio'])) {
                         <div class="form-group row">
                             <label for="linkExercicio" class="col-sm-2 col-form-label">Exercício:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="linkExercicio" name="linkExercicio" required="" placeholder="Informe o Link Exercício:" value="<?php echo $exercicio->linkExercicio; ?>">
+                                <input type="text" class="form-control" id="linkExercicio" name="linkExercicio" placeholder="Informe o Link Exercício:" value="<?php echo $exercicio->linkExercicio; ?>">
                             </div>
                         </div>
 
