@@ -1,12 +1,12 @@
 <?php
 
 
-   $id = $_GET ["id"];
-   //  echo $id;
-   require_once("class/exercicios.php");
-   $exercicio = new ExerciciosClass($id);
+$id = $_GET["id"];
+//  echo $id;
+require_once("class/exercicios.php");
+$exercicio = new ExerciciosClass($id);
 
-   echo $exercicio->nomeExercicio;
+echo $exercicio->nomeExercicio;
 
 
 
@@ -16,36 +16,48 @@ if (isset($_POST['nomeExercicio'])) {
 
 
     $nomeExercicio      = $_POST['nomeExercicio'];
-    $altExercicio        =   $_POST['altExercicio']; 
+    $altExercicio        =   $_POST['nomeExercicio'];
     $descricaoExercicio = $_POST['descricaoExercicio'];
     $grupoMuscularExercicio = $_POST['grupoMuscularExercicio'];
     $statusExercicio       = $_POST['statusExercicio'];
     $linkExercicio         = $_POST['linkExercicio'];
 
+   
 
-    // Foto
-    $arquivo    = $_FILES['fotoExercicio'];
+    if (!empty($_FILES['fotoExercicio']['name'])) {
 
-    if ($arquivo['error']) {
-        throw new Exception('Error' . $arquivo['error']);
+
+        // Foto
+        $arquivo    = $_FILES['fotoExercicio'];
+
+        if ($arquivo['error']) {
+            throw new Exception('Error' . $arquivo['error']);
+        }
+        if (move_uploaded_file($arquivo['tmp_name'], '../img/exercicio/' . $arquivo['name'])) {
+            $fotoExercicio = 'exercicio/' . $arquivo['name']; //exercicio/corrida.png
+        } else {
+            throw new Exception('Erro: Não foi possível realizar o upload da imagem.');
+        }
+    } else {
+        $fotoExercicio = $exercicio->fotoExercicio;
     }
-    if(move_uploaded_file($arquivo['tmp_name'], '../img/exercicio/' . $arquivo['name'])){
-        $fotoExercicio = 'exercicio/' .$arquivo['name']; //exercicio/corrida.png
-    }else{
-        throw new Exception('Erro: Não foi possível realizar o upload da imagem.');
-    }
+    // Fim da Empty
 
-    require_once('class/exercicios.php');
+    $exercicio = new ExerciciosClass();
 
+    $exercicio->nomeExercicio = $nomeExercicio;
+    $exercicio->altExercicio = $nomeExercicio;
+    $exercicio->descricaoExercicio = $descricaoExercicio;
+    $exercicio->grupoMuscularExercicio = $grupoMuscularExercicio;
+    $exercicio->statusExercicio = $statusExercicio;
+    $exercicio->fotoExercicio = $fotoExercicio;
+    $exercicio->linkExercicio = $linkExercicio;
 
+    
 
+    $exercicio->Atualizar();
+    
 }
-
-
-
-
-
-
 
 
 
@@ -59,7 +71,7 @@ if (isset($_POST['nomeExercicio'])) {
             <h3 class="card-title"> Atualizar Exercícios</h3>
         </div>
 
-        <form class="form-horizontal" action="index.php?p=exercicios&e=atualizar" method="POST" enctype="multipart/form-data">
+        <form class="form-horizontal" action="index.php?p=exercicios&e=atualizar&id=<?php echo $exercicio->idExercicio ?> " method="POST" enctype="multipart/form-data">
             <div class="card-body">
 
                 <div class="row">
@@ -68,7 +80,7 @@ if (isset($_POST['nomeExercicio'])) {
                             <div class="img-dashboard">
                                 <img src="img/sem-foto.jpg" class="img-thumbnail" alt="..." id="imgfoto">
                             </div>
-                            <input type="file" class="form-control" id="fotoExercicio" name="fotoExercicio" required style="display: none;">
+                            <input type="file" class="form-control" id="fotoExercicio" name="fotoExercicio" style="display: none;">
                         </div>
 
 
@@ -82,14 +94,15 @@ if (isset($_POST['nomeExercicio'])) {
                         <div class="form-group row">
                             <label for="nomeExercicio" class="col-sm-2 col-form-label">Nome:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nomeExercicio" name="nomeExercicio" required="" placeholder="Informe o nome do exercício:"value=" <?php echo $exercicio->nomeExercicio;?>">
+                                <input type="text" class="form-control" id="nomeExercicio" name="nomeExercicio" placeholder="Informe o nome do exercício:" value="<?php echo $exercicio->nomeExercicio; ?>">
+
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="descricaoExercicio" class="col-sm-2 col-form-label">Descrição:</label>
                             <div class="col-sm-10">
-                                <textarea class="form-control" name="descricaoExercicio" id="descricaoExercicio" cols="30" rows="10" required="" placeholder="Informe a descrição do exercício:"><?php echo $exercicio->descricaoExercicio;?></textarea>
+                                <textarea class="form-control" name="descricaoExercicio" id="descricaoExercicio" cols="30" rows="10" required="" placeholder="Informe a descrição do exercício:"><?php echo $exercicio->descricaoExercicio; ?></textarea>
                             </div>
                         </div>
 
@@ -97,7 +110,7 @@ if (isset($_POST['nomeExercicio'])) {
 
                             <div class="form-group col-sm-6 offset-md-2">
                                 <select class="form-select col-sm-2" aria-label="Default select example" id="grupoMuscularExercicio" name="grupoMuscularExercicio" required>
-                                    <option value="<?php echo $exercicio->nomeExercicio;?>"><?php echo $exercicio->grupoMuscularExercicio;?></option>
+                                    <option value="<?php echo $exercicio->nomeExercicio; ?>"><?php echo $exercicio->grupoMuscularExercicio; ?></option>
                                     <option value="Peito">Peito</option>
                                     <option value="Pernas">Pernas</option>
                                     <option value="Bracos">Braços</option>
@@ -124,7 +137,7 @@ if (isset($_POST['nomeExercicio'])) {
                         <div class="form-group row">
                             <label for="linkExercicio" class="col-sm-2 col-form-label">Exercício:</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="linkExercicio" name="linkExercicio" required="" placeholder="Informe o Link Exercício:"value="<?php echo $exercicio->linkExercicio;?>">
+                                <input type="text" class="form-control" id="linkExercicio" name="linkExercicio" required="" placeholder="Informe o Link Exercício:" value="<?php echo $exercicio->linkExercicio; ?>">
                             </div>
                         </div>
 
@@ -159,40 +172,10 @@ if (isset($_POST['nomeExercicio'])) {
 
             carregar.onload = function(e) {
                 imgfoto.src = e.target.result;
-                //console.log(imgFoto.src);
+                console.log(imgFoto.src);
             }
 
             carregar.readAsDataURL(arquivo);
         }
     });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

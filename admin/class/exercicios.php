@@ -1,7 +1,8 @@
 <?php
 require_once('conexao.php');
 
-class ExerciciosClass {
+class ExerciciosClass
+{
     public $idExercicio;
     public $nomeExercicio;
     public $altExercicio;
@@ -12,7 +13,8 @@ class ExerciciosClass {
     public $linkExercicio;
 
     // Listar
-    public function listar() {
+    public function listar()
+    {
         $sql = "SELECT * FROM tblexercicios WHERE statusExercicio = 'Ativo' ORDER by idExercicio  ASC ";
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($sql);
@@ -21,17 +23,18 @@ class ExerciciosClass {
     }
 
     // Cadastrar
-    public function Cadastrar() {
+    public function Cadastrar()
+    {
         // Define the query inside the method
         $query = "INSERT INTO tblexercicios (nomeExercicio, altExercicio, descricaoExercicio, grupoMuscularExercicio, statusExercicio, fotoExercicio, linkExercicio)  
         VALUES (
-            '".$this->nomeExercicio."', 
-            '".$this->altExercicio."', 
-            '".$this->descricaoExercicio."', 
-            '".$this->grupoMuscularExercicio."', 
-            '".$this->statusExercicio."', 
-            '".$this->fotoExercicio."', 
-            '".$this->linkExercicio."'
+            '" . $this->nomeExercicio . "', 
+            '" . $this->altExercicio . "', 
+            '" . $this->descricaoExercicio . "', 
+            '" . $this->grupoMuscularExercicio . "', 
+            '" . $this->statusExercicio . "', 
+            '" . $this->fotoExercicio . "', 
+            '" . $this->linkExercicio . "'
         )";
 
         $conn = Conexao::LigarConexao();
@@ -40,16 +43,18 @@ class ExerciciosClass {
         echo "<script>document.location='index.php?p=exercicios'</script>";
     }
 
-    public function __construct($id = false) {
+    public function __construct($id = false)
+    {
         // Define the query inside the method
         if ($id) {
             $this->idExercicio = $id;
             $this->Carregar();
         }
-    }  
+    }
 
     // Carregar 
-    public function Carregar() {
+    public function Carregar()
+    {
         $query = "SELECT * FROM  tblexercicios WHERE idExercicio = " . $this->idExercicio;
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($query);
@@ -65,5 +70,32 @@ class ExerciciosClass {
             $this->linkExercicio = $linha['linkExercicio'];
         }
     }
+
+    //Atualizar 
+
+    public function Atualizar()
+{
+    // SQL UPDATE query to update the record in the 'tblexercicios' table
+    $query = "UPDATE tblexercicios  
+          SET nomeExercicio =  '" . $this->nomeExercicio . "',
+              altExercicio =    '" . $this->altExercicio . "',
+              grupoMuscularExercicio =  '" . $this->grupoMuscularExercicio . "', 
+              descricaoExercicio = '" . $this->descricaoExercicio . "', 
+              statusExercicio =  '" . $this->statusExercicio . "',
+              fotoExercicio =  '" . $this->fotoExercicio . "',  
+              linkExercicio = '" . $this->linkExercicio . "'
+          WHERE tblexercicios.idExercicio = '" . $this->idExercicio . "'";
+
+
+    // Establish a database connection using the Conexao::LigarConexao() method
+    $conn = Conexao::LigarConexao();
+
+    // Execute the SQL query using the database connection
+    $conn->exec($query);
+
+    // Redirect to 'index.php?p=exercicios' after the update
+    echo "<script>document.location='index.php?p=exercicios'</script>";
 }
-?>
+
+
+}

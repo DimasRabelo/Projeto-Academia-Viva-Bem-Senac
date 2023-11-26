@@ -195,13 +195,22 @@ textarea {
     resize: none;
 }
 
-.img-thumbnail {
-    max-width: 220px;
-    max-height: 220px;
-
-    overflow: hidden;
-    text-align: center;
+.img-dashboard{
+    width: 100%;
 }
+
+
+.img-dashboard img{
+    display: block;
+    clear: both;
+    width: 300px;
+    height: 320px;
+    object-fit: cover;
+
+}
+
+
+
 
 .col-form-label {
     padding: 10px 10px;
