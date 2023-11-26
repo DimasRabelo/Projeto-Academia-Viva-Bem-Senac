@@ -6,7 +6,7 @@ if (isset($_POST['nomeExercicio'])) {
 
 
     $nomeExercicio      = $_POST['nomeExercicio'];
-    $altExercicio        =   $_POST['altExercicio']; 
+    $altExercicio        = $_POST['altExercicio']; 
     $descricaoExercicio = $_POST['descricaoExercicio'];
     $grupoMuscularExercicio = $_POST['grupoMuscularExercicio'];
     $statusExercicio       = $_POST['statusExercicio'];
@@ -30,7 +30,7 @@ if (isset($_POST['nomeExercicio'])) {
     $exercicio = new ExerciciosClass();
 
     $exercicio->nomeExercicio = $nomeExercicio;
-    $exercicio->altExercicio = $nomeExercicio;
+    $exercicio->altExercicio = $altExercicio;
     $exercicio->descricaoExercicio = $descricaoExercicio;
     $exercicio->grupoMuscularExercicio = $grupoMuscularExercicio;
     $exercicio->statusExercicio = $statusExercicio;

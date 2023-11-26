@@ -286,3 +286,50 @@ form {
     padding: 15px;
 
 }
+/* Formulario de Cadastro de Funcionários */
+.h1func{
+    text-align: center;
+    background: #ffc500;
+    margin-bottom: 0;
+    
+}
+
+.img-func {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.img-func img {
+    max-width: 300px;
+    max-height: 320px;
+}
+
+.formfunc {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.inputfunc {
+    width: 100%;
+}
+
+.inputdatafunc {
+    width: 18%;
+}
+.inputdatafuncAdmis{
+    width: 50%;
+}
+
+.direita {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

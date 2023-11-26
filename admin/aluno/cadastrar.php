@@ -65,7 +65,7 @@ if (isset($_POST['nomeAluno'])) {
     </div>
     <div class="mb-3">
         <label class="labelaluno" for="emailAluno" class="form-label">Endereço de Email </label>
-        <input class="inputaluno" type="emailAluno" class="form-control" name="emailAluno" id="emailAluno" required placeholder="name@example.com">
+        <input class="inputaluno" type="email" class="form-control" name="emailAluno" id="emailAluno" required placeholder="name@example.com">
     </div>
 
 
