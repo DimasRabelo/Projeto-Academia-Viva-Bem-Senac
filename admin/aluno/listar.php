@@ -33,7 +33,11 @@ $lista = $aluno->listar();
         font: 1.3em Helvetica;
         font-weight: bold;
     }
-    .fotodados {
+    .fotodados{
+        width: 100%;
+        height: 100%;
+    }
+    .fotodados img {
         max-width: 300px;
         max-height: 320px;
     }
@@ -81,8 +85,12 @@ $lista = $aluno->listar();
                     <td class="table-info"><?php echo $linha['emailAluno'] ?></td>
                     <td class="table-info"><?php echo $linha['dataCadAluno'] ?></td>
                     <td class="table-info"><?php echo $linha['statusAluno'] ?></td>
-                    <td >
-                        <img class="fotodados" src="../img/<?php echo $linha['fotoAluno'] ?>" alt="<?php echo $linha['nomeAluno'] ?>">
+                    <td class="fotodados">
+                       <a href="../img/<?php echo $linha['fotoAluno'] ?>" 
+                        data-lightbox="<?php echo $linha['nomeAluno'] ?>" 
+                        data-title="<?php echo $linha['nomeAluno'] ?>">
+                            <img src="../img/<?php echo $linha['fotoAluno'] ?>" data-alt="<?php echo $linha['nomeAluno'] ?>">
+                        </a>
                     </td>
 
                     <td class="table-info"> <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" href="index.php?p=aluno&aluno=atualizar">

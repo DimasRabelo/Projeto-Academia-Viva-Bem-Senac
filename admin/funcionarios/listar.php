@@ -33,28 +33,38 @@ $lista = $funcionarios->listarFuncionario();
 
         <thead>
             <style>
-                th{
+                th {
                     font: 1.6em Arial;
                     font-weight: bold;
-                    
+
                 }
 
                 td {
                     font: 1.3em Helvetica;
                     font-weight: bold;
-                    
+
+                }
+
+                .fotofunc {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .fotofunc img {
+                    width: 300px;
+                    height: 320px;
                 }
             </style>
 
 
-            <tr >
+            <tr>
                 <th class="p-3 mb-2 bg-warning text-dark">Id</th>
                 <th class="p-3 mb-2 bg-warning text-dark">Nome</th>
-                <th class="p-3 mb-2 bg-warning text-dark" >Data de Nascimento</th>
+                <th class="p-3 mb-2 bg-warning text-dark">Data de Nascimento</th>
                 <th class="p-3 mb-2 bg-warning text-dark">Cargo</th>
-                <th class="p-3 mb-2 bg-warning text-dark" >Especialidade</th>
-                <th class="p-3 mb-2 bg-warning text-dark" >E-mail</th>
-                <th class="p-3 mb-2 bg-warning text-dark" >Nível</th>
+                <th class="p-3 mb-2 bg-warning text-dark">Especialidade</th>
+                <th class="p-3 mb-2 bg-warning text-dark">E-mail</th>
+                <th class="p-3 mb-2 bg-warning text-dark">Nível</th>
                 <th class="p-3 mb-2 bg-warning text-dark">Telefone</th>
 
                 <th class="p-3 mb-2 bg-warning text-dark">Foto</th>
@@ -75,11 +85,20 @@ $lista = $funcionarios->listarFuncionario();
                     <td class="table-info"><?php echo $linha['emailFuncionario'] ?></td>
                     <td class="table-info"><?php echo $linha['nivelFuncionario'] ?></td>
                     <td class="table-info"><?php echo $linha['telefoneFuncionario'] ?></td>
-                    <td class="table-info">
-                        <img src="../img/<?php echo $linha['fotoFuncionario'] ?>" alt="<?php echo $linha['nomeFuncionario'] ?>">
+                    <td class="fotofunc table-info">
+                        <a href="../img/<?php echo $linha['fotoFuncionario'] ?>" 
+                        data-lightbox="<?php echo $linha['nomeFuncionario'] ?>" 
+                        data-title="<?php echo $linha['nomeFuncionario'] ?>">
+                            <img src="../img/<?php echo $linha['fotoFuncionario'] ?>" data-alt="<?php echo $linha['nomeFuncionario'] ?>">
+                        </a>
                     </td>
+
                     <td class="table-info"><?php echo $linha['statusFuncionario'] ?></td>
                     <td class="table-info"><?php echo $linha['dataAdmissaoFuncionario'] ?></td>
+
+
+
+
 
 
                     <td class="table-info">
