@@ -16,7 +16,6 @@ if (isset($_POST['nomeExercicio'])) {
 
 
     $nomeExercicio      = $_POST['nomeExercicio'];
-    $altExercicio        =   $_POST['nomeExercicio'];
     $descricaoExercicio = $_POST['descricaoExercicio'];
     $grupoMuscularExercicio = $_POST['grupoMuscularExercicio'];
     $statusExercicio       = $_POST['statusExercicio'];
@@ -49,7 +48,6 @@ if (isset($_POST['nomeExercicio'])) {
     
 
     $exercicio->nomeExercicio = $nomeExercicio;
-    $exercicio->altExercicio = $nomeExercicio;
     $exercicio->descricaoExercicio = $descricaoExercicio;
     $exercicio->grupoMuscularExercicio = $grupoMuscularExercicio;
     $exercicio->statusExercicio = $statusExercicio;
