@@ -117,7 +117,7 @@ class FuncionarioClass
 
         $conn = Conexao::LigarConexao();
         $conn->exec($query);
-        echo "<script>document.location='index.php?p=funcionarios</script>";
+        echo "<script>document.location='index.php?p=funcionarios'</script>";
     }
     public function Desativar()
     {
