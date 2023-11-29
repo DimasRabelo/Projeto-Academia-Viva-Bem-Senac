@@ -14,6 +14,7 @@ $funcionario = new FuncionarioClass($id);
 if (isset($_POST['nomeFuncionario'])) {
     
     $nomeFuncionario  = $_POST['nomeFuncionario'];
+    $altFuncionario = $_POST['altFuncionario'];
     $dataNascFuncionario = $_POST['dataNascFuncionario'];
     $cargoFuncionario = $_POST['cargoFuncionario'];
     $especialidadeFuncionario = $_POST['especialidadeFuncionario'];
@@ -25,7 +26,7 @@ if (isset($_POST['nomeFuncionario'])) {
     $statusFuncionario = $_POST['statusFuncionario'];
     $fotoFuncionario = $_POST['fotoFuncionario'];
 
-   
+
 
     if (!empty($_FILES['fotoFuncionario']['name'])) {
 
@@ -51,7 +52,8 @@ if (isset($_POST['nomeFuncionario'])) {
     
 
     $funcionario->nomeFuncionario = $nomeFuncionario;
-   $funcionario->dataNascFuncionario = $dataNascFuncionario;
+    $funcionario->altFuncionario = $altFuncionario;
+    $funcionario->dataNascFuncionario = $dataNascFuncionario;
     $funcionario->cargoFuncionario = $cargoFuncionario;
     $funcionario->especialidadeFuncionario = $especialidadeFuncionario;
     $funcionario->emailFuncionario = $emailFuncionario;

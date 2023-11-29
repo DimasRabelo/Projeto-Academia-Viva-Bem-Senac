@@ -3,11 +3,12 @@
 
 require_once('conexao.php');
 
-class FuncionarioClass {
+class FuncionarioClass
+{
 
-    
-    public $idFuncionarios ;
-    public $nomeFuncionario ;
+
+    public $idFuncionarios;
+    public $nomeFuncionario;
 
     public $altFuncionario;
     public $dataNascFuncionario;
@@ -23,16 +24,17 @@ class FuncionarioClass {
     public $statusFuncionario;
     public $fotoFuncionario;
 
-    
 
-    public function listarFuncionario(){
+
+    public function listarFuncionario()
+    {
         $sql =  "SELECT * FROM tblfuncionarios ORDER BY idFuncionarios ASC";
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($sql);
         $lista = $resultado->fetchAll();
         return $lista;
-}
-public function Cadastrar()
+    }
+    public function Cadastrar()
     {
         // Define the query inside the method
         $query = "INSERT INTO tblfuncionarios (nomeFuncionario, altFuncionario, dataNascFuncionario, cargoFuncionario, especialidadeFuncionario, emailFuncionario, senhaFuncionario, nivelFuncionario, telefoneFuncionario, dataAdmissaoFuncionario, statusFuncionario, fotoFuncionario)  
@@ -90,7 +92,6 @@ public function Cadastrar()
             $this->dataAdmissaoFuncionario = $linha['dataAdmissaoFuncionario'];
             $this->statusFuncionario = $linha['statusFuncionario'];
             $this->fotoFuncionario = $linha['fotoFuncionario'];
-           
         }
     }
 
@@ -101,33 +102,25 @@ public function Cadastrar()
         // SQL UPDATE query to update the record in the 'tblexercicios' table
         $query = "UPDATE tblfuncionarios  
               SET nomeFuncionario =  '" . $this->nomeFuncionario . "',
-                 altFuncionario =  '" . $this->altFuncionario . "', 
+                     altFuncionario =  '" . $this->altFuncionario . "', 
                   dataNascFuncionario = '" . $this->dataNascFuncionario . "', 
                   cargoFuncionario =  '" . $this->cargoFuncionario . "',
                   especialidadeFuncionario =  '" . $this->especialidadeFuncionario . "',  
                   emailFuncionario = '" . $this->emailFuncionario . "',
-                  senhaFuncionario =   '".$this->senhaFuncionario."',
-                  nivelFuncionario = '".$this->nivelFuncionario."',
-                  telefoneFuncionario = '".$this->telefoneFuncionario."',
-                  dataAdmissaoFuncionario = '".$this->dataAdmissaoFuncionario."',
-                  statusFuncionario = '".$this->statusFuncionario."',
-                  fotoFuncionario = '".$this->fotoFuncionario."'
-              WHERE tblfuncionarios.idFuncionario = '" . $this->idFuncionarios . "'";
+                  senhaFuncionario =   '" . $this->senhaFuncionario . "',
+                  nivelFuncionario = '" . $this->nivelFuncionario . "',
+                  telefoneFuncionario = '" . $this->telefoneFuncionario . "',
+                  dataAdmissaoFuncionario = '" . $this->dataAdmissaoFuncionario . "',
+                  statusFuncionario = '" . $this->statusFuncionario . "',
+                  fotoFuncionario = '" . $this->fotoFuncionario . "'
+              WHERE tblfuncionarios.idFuncionarios = '" . $this->idFuncionarios . "'";
 
         $conn = Conexao::LigarConexao();
         $conn->exec($query);
-        echo "<script>document.location='index.php?p=funcionarios'</script>";
+        echo "<script>document.location='index.php?p=funcionarios</script>";
     }
     public function Desativar()
     {
         $query = "UPDATE tblfuncionarios SET statusFuncionario ='DESATIVADO' WHERE idFuncionarios = " . $this->idFuncionarios;
     }
 }
-
-
-
-
-
-
-
-
