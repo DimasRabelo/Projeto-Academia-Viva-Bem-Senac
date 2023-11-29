@@ -65,7 +65,7 @@ if (isset($_POST['nomeFuncionario'])) {
 
 <h1 class="h1func">Cadastrar Funcionário</h1>
 
-<form class="formfunc" action="index.php?p=aluno&aluno=cadastrar" method="POST" enctype="multipart/form-data">
+<form class="formfunc" action="index.php?p=funcionarios&i=cadastrar" method="POST" enctype="multipart/form-data">
 
     <div class="input-group mb-3">
         <div class="img-func">

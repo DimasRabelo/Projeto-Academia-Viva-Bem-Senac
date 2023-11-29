@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="css/lity.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="path/to/lightbox.css" rel="stylesheet" />
 
     <!-- Nosso estilo é sempre o último-->
     <link rel="stylesheet" href="css/estilo.css">
@@ -74,6 +75,20 @@
 
     <!-- RODAPÉ -->
     <?php require_once('conteudo/rodape.php'); ?>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/lity.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="path/to/lightbox.js"></script>
+    <script src="js/animacoes.js"></script>
+
+
+
+
+
+    
 
 </body>
 

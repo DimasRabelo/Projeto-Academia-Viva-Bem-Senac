@@ -58,9 +58,4 @@
         </section>
 
     </footer>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="js/slick.min.js"></script>
-    <script src="js/lity.min.js"></script>
-    <script src="js/wow.min.js"></script>
-
-    <script src="js/animacoes.js"></script>
+   
