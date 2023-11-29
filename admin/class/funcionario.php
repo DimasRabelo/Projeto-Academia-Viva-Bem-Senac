@@ -7,7 +7,7 @@ class FuncionarioClass
 {
 
 
-    public $idFuncionarios;
+    public $idFuncionario;
     public $nomeFuncionario;
 
     public $altFuncionario;
@@ -28,7 +28,7 @@ class FuncionarioClass
 
     public function listarFuncionario()
     {
-        $sql =  "SELECT * FROM tblfuncionarios ORDER BY idFuncionarios ASC";
+        $sql =  "SELECT * FROM tblfuncionarios ORDER BY idFuncionario ASC";
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($sql);
         $lista = $resultado->fetchAll();
@@ -66,7 +66,7 @@ class FuncionarioClass
     {
         // Define the query inside the method
         if ($id) {
-            $this->idFuncionarios = $id;
+            $this->idFuncionario = $id;
             $this->Carregar();
         }
     }
@@ -74,7 +74,7 @@ class FuncionarioClass
     // Carregar 
     public function Carregar()
     {
-        $query = "SELECT * FROM  tblfuncionarios WHERE idFuncionarios = " . $this->idFuncionarios;
+        $query = "SELECT * FROM  tblfuncionarios WHERE idFuncionario = " . $this->idFuncionario;
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($query);
         $lista = $resultado->fetchAll();
@@ -99,10 +99,10 @@ class FuncionarioClass
     // Atualizar 
     public function Atualizar()
     {
-        // SQL UPDATE query to update the record in the 'tblexercicios' table
+       
         $query = "UPDATE tblfuncionarios  
               SET nomeFuncionario =  '" . $this->nomeFuncionario . "',
-                     altFuncionario =  '" . $this->altFuncionario . "', 
+                  altFuncionario =  '" . $this->altFuncionario . "', 
                   dataNascFuncionario = '" . $this->dataNascFuncionario . "', 
                   cargoFuncionario =  '" . $this->cargoFuncionario . "',
                   especialidadeFuncionario =  '" . $this->especialidadeFuncionario . "',  
@@ -113,7 +113,7 @@ class FuncionarioClass
                   dataAdmissaoFuncionario = '" . $this->dataAdmissaoFuncionario . "',
                   statusFuncionario = '" . $this->statusFuncionario . "',
                   fotoFuncionario = '" . $this->fotoFuncionario . "'
-              WHERE tblfuncionarios.idFuncionarios = '" . $this->idFuncionarios . "'";
+              WHERE tblfuncionarios.idFuncionario = '" . $this->idFuncionario . "'";
 
         $conn = Conexao::LigarConexao();
         $conn->exec($query);
@@ -121,6 +121,6 @@ class FuncionarioClass
     }
     public function Desativar()
     {
-        $query = "UPDATE tblfuncionarios SET statusFuncionario ='DESATIVADO' WHERE idFuncionarios = " . $this->idFuncionarios;
+        $query = "UPDATE tblfuncionarios SET statusFuncionario ='DESATIVADO' WHERE idFuncionario = " . $this->idFuncionario;
     }
 }

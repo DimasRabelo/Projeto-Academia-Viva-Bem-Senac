@@ -13,6 +13,7 @@ $funcionario = new FuncionarioClass($id);
 
 if (isset($_POST['nomeFuncionario'])) {
     
+    $idFuncionario = $_POST['$idFuncionario'];
     $nomeFuncionario  = $_POST['nomeFuncionario'];
     $altFuncionario = $_POST['altFuncionario'];
     $dataNascFuncionario = $_POST['dataNascFuncionario'];
@@ -76,7 +77,7 @@ if (isset($_POST['nomeFuncionario'])) {
 
 <h1 class="h1func">Atualizar Funcionário</h1>
 
-<form class="formfunc" action="index.php?p=funcionarios&i=atualizar&id=<?php echo $funcionario->idFuncionarios ?>" method="POST" enctype="multipart/form-data">
+<form class="formfunc" action="index.php?p=funcionarios&i=atualizar&id=<?php echo $funcionario->idFuncionario ?>" method="POST" enctype="multipart/form-data">
 
     <div class="input-group mb-3">
         <div class="img-func">

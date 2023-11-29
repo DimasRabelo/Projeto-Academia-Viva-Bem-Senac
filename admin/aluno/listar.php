@@ -77,13 +77,14 @@ $lista = $aluno->listar();
         <?php foreach ($lista as $linha) : ?>
             <tbody>
                 <tr>
-
+                
+                
                    
                     <td class="bg-info"><?php echo $linha['idAluno'] ?></td>
                     <td class="table-info"><?php echo $linha['nomeAluno'] ?></td>
-                    <td class="table-info"><?php echo $linha['dataNascAluno'] ?></td>
+                    <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataNascAluno'])) ?></td>
                     <td class="table-info"><?php echo $linha['emailAluno'] ?></td>
-                    <td class="table-info"><?php echo $linha['dataCadAluno'] ?></td>
+                    <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataCadAluno'])) ?></td>
                     <td class="table-info"><?php echo $linha['statusAluno'] ?></td>
                     <td class="fotodados">
                        <a href="../img/<?php echo $linha['fotoAluno'] ?>" 

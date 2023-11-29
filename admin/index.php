@@ -55,7 +55,7 @@ $pagina = @$_GET['p'];
                     <li><a href="index.php?p=aulas" class="<?php echo ($pagina == 'aulas') ? 'menuAtivo' : ''; ?>"> Aulas </a></li>
                     <li><a href="index.php?p=treino" class="<?php echo ($pagina == 'treino') ? 'menuAtivo' : ''; ?>"> Treinos </a></li>
                     <li><a href="index.php?p=funcionarios" class="<?php echo ($pagina == 'funcionarios') ? 'menuAtivo' : ''; ?>"> Funcionários </a></li>
-                    <li><a href="index.php?p=instrutor" class="<?php echo ($pagina == 'instrutor') ? 'menuAtivo' : ''; ?>"> Instrutor </a></li>
+                    <li><a href="index.php?p=instrutores" class="<?php echo ($pagina == 'instrutores') ? 'menuAtivo' : ''; ?>"> Instrutores </a></li>
                     <li><a href="index.php?p=aluno" class="<?php echo ($pagina == 'aluno') ? 'menuAtivo' : ''; ?>"> Alunos </a></li>
                     <li><a href="index.php?p=pagamento" class="<?php echo ($pagina == 'pagamento') ? 'menuAtivo' : ''; ?>"> Pagamentos </a></li>
                     <li><a href="index.php?p=relatorio" class="<?php echo ($pagina == 'relatorio') ? 'menuAtivo' : ''; ?>"> Relatório </a></li>
@@ -91,7 +91,7 @@ $pagina = @$_GET['p'];
                 case 'funcionarios':
                     require_once('funcionarios/funcionarios.php');
                     break;
-                case 'instrutor':
+                case 'instrutores':
 
                     break;
 

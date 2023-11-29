@@ -51,7 +51,7 @@ $lista = $contato->ListarContato();
                 <td class="table-info"><?php echo $linha['emailContato']; ?></td>
                 <td class="table-info"><?php echo $linha['telefoneContato']; ?></td>
                 <td class="table-info"><?php echo $linha['mensagemContato'] ?></td>
-                <td class="table-info"><?php echo $linha['dataContato'] ?></td>
+                <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataContato'])) ?></td>
                 <td class="table-info"><?php echo $linha['statusContato'] ?></td>
                 <td class="table-info"><?php echo $linha['horaContato'] ?></td>
             </tr>

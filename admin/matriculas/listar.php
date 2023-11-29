@@ -54,8 +54,8 @@ $lista = $matriculas->listar();
                 <th class="p-3 mb-2 bg-warning text-dark">Início da Matricula</th>
                 <th class="p-3 mb-2 bg-warning text-dark">Fim da Matrícula</th>
                 <th class="p-3 mb-2 bg-warning text-dark">Status da Matrícula </th>
-                <th class="p-3 mb-2 bg-warning text-dark">Id Aluno</th>
-                <th class="p-3 mb-2 bg-warning text-dark">Id Plano</th>
+                <th class="p-3 mb-2 bg-warning text-dark">Nome do Aluno</th>
+                <th class="p-3 mb-2 bg-warning text-dark">Nome do Plano</th>
                 <th class="p-3 mb-2 bg-warning text-dark">Valor do Plano</th>
                 <th class="p-3 mb-2 bg-warning text-dark">Atualizar</th>
                 <th class="p-3 mb-2 bg-warning text-dark">Desativar</th>
@@ -67,14 +67,15 @@ $lista = $matriculas->listar();
         <?php foreach ($lista as $linha) : ?>
             <tbody>
                 <tr>
-
+                
+                
                    
                     <td class="bg-info"><?php echo $linha['idMatricula'] ?></td>
-                    <td class="table-info"><?php echo $linha['dataInicioMatricula'] ?></td>
-                    <td class="table-info"><?php echo $linha['dataFimMatricula'] ?></td>
+                    <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataInicioMatricula'])) ?></td>
+                    <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataFimMatricula'])) ?></td>
                     <td class="table-info"><?php echo $linha['statusMatricula'] ?></td>
-                    <td class="table-info"><?php echo $linha['idAluno'] ?></td>
-                    <td class="table-info"><?php echo $linha['idPlano'] ?></td>
+                    <td class="table-info"><?php echo $linha['nomeAluno'] ?></td>
+                    <td class="table-info"><?php echo $linha['nomePlano'] ?></td>
                     <td class="table-info"><?php echo $linha['valorPago'] ?></td>
 
 

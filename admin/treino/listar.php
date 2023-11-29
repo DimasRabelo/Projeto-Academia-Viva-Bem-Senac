@@ -50,12 +50,12 @@ $lista = $treino->listar();
 
 
             <tr>
-                <th class="p-3 mb-2 bg-warning text-dark">Id Teino</th>
+                <th class="p-3 mb-2 bg-warning text-dark">Id Treino</th>
                 <th class="p-3 mb-2 bg-warning text-dark">Início do Treino</th>
                 <th class="p-3 mb-2 bg-warning text-dark">Fim do Treino</th>
                 <th class="p-3 mb-2 bg-warning text-dark">Status do Treino </th>
-                <th class="p-3 mb-2 bg-warning text-dark">Id do Aluno</th>
-                <th class="p-3 mb-2 bg-warning text-dark">Id do Funcionário</th>
+                <th class="p-3 mb-2 bg-warning text-dark">Nome do Aluno</th>
+                <th class="p-3 mb-2 bg-warning text-dark">Nome do Funcionário</th>
                 <th class="p-3 mb-2 bg-warning text-dark">Atualizar</th>
                 <th class="p-3 mb-2 bg-warning text-dark">Desativar</th>
 
@@ -69,12 +69,12 @@ $lista = $treino->listar();
 
 
                     <td class="bg-info"><?php echo $linha['idTreino'] ?></td>
-                    <td class="table-info"><?php echo $linha['dataInicioTreino'] ?></td>
-                    <td class="table-info"><?php echo $linha['dataFimTreino'] ?></td>
+                    <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataInicioTreino'])) ?></td>
+                    <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataFimTreino'])) ?></td>
                     <td class="table-info"><?php echo $linha['statusTreino'] ?></td>
-                    <td class="table-info"><?php echo $linha['idAluno'] ?></td>
-                    <td class="table-info"><?php echo $linha['idFuncionario'] ?></td>
-                    
+                    <td class="table-info"><?php echo $linha['nomeAluno'] ?></td>
+                    <td class="table-info"><?php echo $linha['nomeFuncionario'] ?></td>
+
 
 
                     <td class="table-info"> <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" href="index.php?p=treino&t=atualizar">
