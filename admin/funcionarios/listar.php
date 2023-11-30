@@ -92,7 +92,9 @@ $lista = $funcionarios->listarFuncionario();
                     </td>
 
                     <td class="table-info"><?php echo $linha['statusFuncionario'] ?></td>
-                    <td class="table-info"><?php echo $linha['dataAdmissaoFuncionario'] ?></td>
+                    <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataAdmissaoFuncionario'])) ?></td>
+
+                   
 
 
 
