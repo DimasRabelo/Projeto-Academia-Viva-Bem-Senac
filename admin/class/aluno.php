@@ -47,7 +47,7 @@ public function Cadastrar() {
 }
 public function __construct($id = false)
 {
-    // Define the query inside the method
+    
     if ($id) {
         $this->idAluno = $id;
         $this->Carregar();
@@ -80,7 +80,7 @@ public function Carregar()
 // Atualizar 
  public function Atualizar()
  {
-     // SQL UPDATE query to update the record in the 'tblexercicios' table
+     
      $query = "UPDATE tblalunos  
            SET nomeAluno =  '" . $this->nomeAluno . "',
                dataNascAluno =    '" . $this->dataNascAluno . "',
