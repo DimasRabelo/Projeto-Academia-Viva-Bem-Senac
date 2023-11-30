@@ -122,5 +122,6 @@ class FuncionarioClass
     public function Desativar()
     {
         $query = "UPDATE tblfuncionarios SET statusFuncionario ='DESATIVADO' WHERE idFuncionario = " . $this->idFuncionario;
+        
     }
 }
