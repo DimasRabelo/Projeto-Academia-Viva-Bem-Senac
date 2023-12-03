@@ -1,33 +1,14 @@
 
+
 <?php
-
-
-    require_once('admin/class/exercicios.php');
+  require_once('admin/class/exercicios.php');
 
     $exercicios = new ExerciciosClass();
     $lista      = $exercicios->listar();
 
 
     //var_dump($lista);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -83,12 +64,6 @@
     <script src="js/wow.min.js"></script>
     <script src="path/to/lightbox.js"></script>
     <script src="js/animacoes.js"></script>
-
-
-
-
-
-    
 
 </body>
 
