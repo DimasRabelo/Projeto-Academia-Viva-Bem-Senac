@@ -6,7 +6,7 @@ $id = $_GET["id"];
 require_once("class/exercicios.php");
 $exercicio = new ExerciciosClass($id);
 
-echo $exercicio->nomeExercicio;
+//echo $exercicio->nomeExercicio;
 
 
 
