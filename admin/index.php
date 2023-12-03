@@ -3,9 +3,6 @@
 $pagina = @$_GET['p'];
 
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -24,7 +21,6 @@ $pagina = @$_GET['p'];
     <link rel="stylesheet" href="./css/estilo.css">
 
 </head>
-
 <body>
 
     <header class="topo">
@@ -68,7 +64,6 @@ $pagina = @$_GET['p'];
             <!-- CONTEÚDO DAS PÁGINAS -->
 
             <?php
-
 
             switch ($pagina) {
                 case 'dashboard':
@@ -116,17 +111,7 @@ $pagina = @$_GET['p'];
         </div>
     </main>
 
-
-
-
-
-
-
-
-
     </div>
-
-
 
     <!-- RODAPÉ -->
     <footer class="rodape">
