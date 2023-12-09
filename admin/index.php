@@ -21,6 +21,7 @@ $pagina = @$_GET['p'];
     <link rel="stylesheet" href="./css/estilo.css">
 
 </head>
+
 <body>
 
     <header class="topo">
