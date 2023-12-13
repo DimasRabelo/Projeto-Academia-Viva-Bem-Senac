@@ -112,7 +112,7 @@ $pagina = @$_GET['p'];
         </div>
     </main>
 
-    </div>
+    
 
     <!-- RODAPÉ -->
     <footer class="rodape">
