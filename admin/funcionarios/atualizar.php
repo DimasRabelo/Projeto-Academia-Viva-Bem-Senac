@@ -1,4 +1,3 @@
-
 <?php
 
 
@@ -12,7 +11,7 @@ $funcionario = new FuncionarioClass($id);
 
 
 if (isset($_POST['nomeFuncionario'])) {
-    
+
     $idFuncionario = $_POST['$idFuncionario'];
     $nomeFuncionario  = $_POST['nomeFuncionario'];
     $altFuncionario = $_POST['altFuncionario'];
@@ -33,24 +32,23 @@ if (isset($_POST['nomeFuncionario'])) {
 
 
         // Foto
-        $arquivo    = $_FILES['fotoFuncionario'];
+        $arquivo   = $_FILES['fotoFuncionario'];
 
         if ($arquivo['error']) {
             throw new Exception('Error' . $arquivo['error']);
         }
         if (move_uploaded_file($arquivo['tmp_name'], '../img/funcionario/' . $arquivo['name'])) {
-            $fotoFuncionario = 'funcionario/' . $arquivo['name']; 
+            $fotoFuncionario = 'funcionario/' . $arquivo['name'];
         } else {
             throw new Exception('Erro: Não foi possível realizar o upload da imagem.');
         }
     } else {
         $fotoFuncionario = $funcionario->fotoFuncionario;
-       
     }
 
     // Fim da Empty
 
-    
+
 
     $funcionario->nomeFuncionario = $nomeFuncionario;
     $funcionario->altFuncionario = $altFuncionario;
@@ -64,10 +62,9 @@ if (isset($_POST['nomeFuncionario'])) {
     $funcionario->dataAdmissaoFuncionario = $dataAdmissaoFuncionario;
     $funcionario->statusFuncionario = $statusFuncionario;
     $funcionario->fotoFuncionario = $fotoFuncionario;
-    
+
 
     $funcionario->Atualizar();
-    
 }
 
 
@@ -81,16 +78,16 @@ if (isset($_POST['nomeFuncionario'])) {
 
     <div class="input-group mb-3">
         <div class="img-func">
-            <img src="img/sem-foto.jpg" alt="..." id="imgfoto" >
+            <img src="img/sem-foto.jpg" alt="..." id="imgfoto">
         </div>
-        <input type="file" class="form-control" id="fotoFuncionario" name="fotoFuncionario"  style="display:none;">
+        <input type="file" class="form-control" id="fotoFuncionario" name="fotoFuncionario" style="display:none;">
     </div>
 
 
     <div class="setecamposesquerda">
         <div class="mb-3">
             <label class="labelfunc" for="nomeFuncionario" class="form-label">Nome do Funcionário</label>
-            <input class="inputfunc" type="text" class="form-control" name="nomeFuncionario" id="nomeFuncionario"  placeholder="Informe Nome do Funcionario" value="<?php echo $funcionario->nomeFuncionario; ?>">
+            <input class="inputfunc" type="text" class="form-control" name="nomeFuncionario" id="nomeFuncionario" placeholder="Informe Nome do Funcionario" value="<?php echo $funcionario->nomeFuncionario; ?>">
         </div>
         <div class="mb-3">
             <label class="labelfunc" for="dataNascFuncionario" class="form-label">Data de Nascimento</label>
@@ -102,7 +99,7 @@ if (isset($_POST['nomeFuncionario'])) {
         </div>
         <div class="mb-3">
             <label class="labelfunc" for="especialidadeFuncionario" class="form-label">Especialidade do Funcionário</label>
-            <input class="inputfunc" type="text" class="form-control" name="especialidadeFuncionario" id="especialidadeFuncionario" placeholder="Informe a especialidade do Funcionario" value="<?php echo $funcionario->especialidadeFuncionario;?>">
+            <input class="inputfunc" type="text" class="form-control" name="especialidadeFuncionario" id="especialidadeFuncionario" placeholder="Informe a especialidade do Funcionario" value="<?php echo $funcionario->especialidadeFuncionario; ?>">
         </div>
         <div class="mb-3">
             <label class="labelfunc" for="emailFuncionario" class="form-label">Endereço de Email </label>
@@ -111,13 +108,13 @@ if (isset($_POST['nomeFuncionario'])) {
         <div class="mb-3">
             <label class="labelfunc" for="inputPassword" class="form-label">Digite Sua Senha</label>
             <div class="col-sm-10">
-                <input class="inputsenha" type="password" class="form-control" id="inputPassword"  placeholder="digite sua senha">
+                <input class="inputsenha" type="password" class="form-control" id="inputPassword" placeholder="digite sua senha">
                 <p>Sua senha deve ter de 8 a 20 caracteres, conter letras e números e não deve conter espaços, caracteres especiais ou emoji.</p>
             </div>
         </div>
         <div class="mb-3">
             <label class="labelfunc" for="nivelFuncionario" class="form-label">Nivel do Funcionário</label>
-            <input class="inputfunc" type="text" class="form-control" name="nivelFuncionario" id="nivelFuncionario"  placeholder="Informe o Nivel do Funcionario" value="<?php echo $funcionario->nivelFuncionario; ?>">
+            <input class="inputfunc" type="text" class="form-control" name="nivelFuncionario" id="nivelFuncionario" placeholder="Informe o Nivel do Funcionario" value="<?php echo $funcionario->nivelFuncionario; ?>">
         </div>
 
     </div>
@@ -139,7 +136,7 @@ if (isset($_POST['nomeFuncionario'])) {
                 <option value="INATIVO">INATIVO</option>
             </select>
         </div>
-        
+
         <div class="mb-3">
             <button type="submit" class="btn btn-primary">Atualizar Funcionário</button>
         </div>
@@ -168,5 +165,3 @@ if (isset($_POST['nomeFuncionario'])) {
         }
     });
 </script>
-
-        
