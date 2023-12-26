@@ -151,13 +151,13 @@ if (isset($_POST['nomeFuncionario'])) {
     // Evento de Alteração Mudar
     document.getElementById('fotoFuncionario').addEventListener('change', function(e) {
         let imgfoto = document.getElementById('imgfoto');
-        let arquivo = e.target.files[0]; 
+        let arquivo = e.target.files[0];
         if (arquivo) {
             let carregar = new FileReader();
 
             carregar.onload = function(e) {
                 imgfoto.src = e.target.result;
-               // console.log(imgfoto.src);
+                // console.log(imgfoto.src);
             }
 
             carregar.readAsDataURL(arquivo);
