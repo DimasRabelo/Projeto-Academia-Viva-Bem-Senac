@@ -97,6 +97,8 @@ class ExerciciosClass
     public function desativar()
     {
         $query = "UPDATE tblexercicios SET statusExercicio ='DESATIVADO' WHERE idExercicio = " . $this->idExercicio;
-      
+        
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
     }
 }

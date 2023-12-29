@@ -95,7 +95,13 @@ public function Carregar()
      echo "<script>document.location='index.php?p=aluno'</script>";
  }
 
-
+ public function desativar()
+ {
+     $query = "UPDATE tblalunos SET statusAluno ='DESATIVADO' WHERE idAluno = " . $this->idAluno;
+     
+     $conn = Conexao::LigarConexao();
+     $conn->exec($query);
+ }
 
 
 
