@@ -157,6 +157,7 @@ main {
     font-size: 1.5em;
     text-align: center;
     font-weight: bold;
+    text-transform: uppercase;
     
 
 }
@@ -308,4 +309,80 @@ form {
 }
 .botaocad{
     margin-top: 10px;
+}
+
+/* Formulario Matricula Cadastro estilização também foi usada no formulario treino do cadastro */
+
+.formContainer {
+    width: 100%;
+    box-sizing: border-box;
+   
+}
+
+.formMatri {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px 50px;
+}
+
+.formMatri div {
+    display: flex;
+    flex-direction: column;
+}
+
+.labelMatri {
+    margin-bottom: 5px;
+}
+
+
+.selectMatri{
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    padding: 10px;
+
+}
+.selectMatriStatus{
+    margin: 0;
+    padding: 10px;
+}
+.labelMatri {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.botMatri {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.inputMatriDate {
+    width: 15%;
+   
+}
+
+.botMatri {
+    width: 20%;
+    margin-left: auto;
+    box-sizing: border-box;
+    background-color: #0a58ca;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 45px;
+    color: #ffffff;
+}
+
+.botMatri:hover {
+    background-color: #ffc500;
+    color: black;
+    
+}
+
+.selectTreinoStatus{
+    margin-bottom: 25px;
+    padding: 10px;
+    
 }

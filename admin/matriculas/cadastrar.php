@@ -1,55 +1,115 @@
+<?php
+if (isset($_POST['dataInicioMatricula'])) {
+
+
+
+
+    $dataInicioMatricula      = $_POST['dataInicioMatricula'];
+    $dataFimMatricula = $_POST['dataFimMatricula'];
+    $statusMatricula = $_POST['statusMatricula'];
+    $idAluno         = $_POST['idAluno'];
+    $idPlano        = $_POST['idPlano'];
+    $valorPago         = $_POST['valorPago'];
+
+
+    require_once('class/matriculas.php');
+
+    $matriculas = new MatriculasClass();
+
+    $matriculas->dataInicioMatricula = $dataInicioMatricula;
+    $matriculas->dataFimMatricula = $dataFimMatricula;
+    $matriculas->statusMatricula = $statusMatricula;
+    $matriculas->idAluno = $idAluno;
+    $matriculas->idPlano = $idPlano;
+    $matriculas->valorPago = $valorPago;
+
+    $matriculas->Cadastrar();
+}
+
+
+
+?>
+<style>
+    
+</style>
+
+
+
 <h1 class="h1Geral">Cadastrar Novas Matrículas</h1>
 
-<div class="col-md-12">
+<div class="formContainer">
+
+
+    <form class="formMatri" action="index.php?p=matriculas&m=cadastrar" method="POST" enctype="multipart/form-data">
 
 
 
+        <div>
+            <label class="labelMatri" for="dataInicioMatricula">Data de Início</label>
+            <input class="inputMatriDate" type="date" name="dataInicioMatricula" id="dataInicioMatricula" required placeholder="data de Inicio">
+        </div>
 
-    <form class="form-horizontal" action="index.php?p=matrículas&m=cadastrar" method="POST" enctype="multipart/form-data">
-        <div class="card-body">
+        <div>
+            <label class="labelMatri" for="dataFimMatricula">Data do Fim</label>
+            <input class="inputMatriDate" type="date" name="dataFimMatricula" id="dataFimMatricula" required placeholder="data de final">
+        </div>
 
+        <div>
+            <select class="selectMatriStatus" aria-label="Default select example" name="statusMatricula" required>
+                <option selected="">Seleciona o Status da Matrícula</option>
+                <option value="ATIVO">ATIVO</option>
+                <option value="DESATIVADO">DESATIVADO</option>
+                <option value="INATIVO">INATIVO</option>
 
+            </select>
+        </div>
 
-            <div class="col-md-8 form-dash">
+        <div>
 
-                <div class="mb-3">
-                    <label class="labelfunc" for="dataInicioMatricula" class="form-label">Data de Início</label>
-                    <input class="inputdatafuncAdmis" type="date" class="form-control" name="dataInicioMatricula" id="dataInicioMatricula" required placeholder="data de Inicio">
-                </div>
+            <select class="selectMatri"  aria-label="Default select example" name="idAluno" id="idAluno" required>
+                <option selected disabled>Seleciona o Aluno</option>
 
-                <div class="mb-3">
-                    <label class="labelfunc" for="dataFimMatricula" class="form-label">Data do Fim</label>
-                    <input class="inputdatafuncAdmis" type="date" class="form-control" name="dataFimMatricula" id="dataFimMatricula" required placeholder="data de final">
-                </div>
+                <?php
+                require_once('class/aluno.php');
+                $alunoClass = new AlunoClass();
+                $alunos = $alunoClass->listar();
 
-                <div class="row">
+                foreach ($alunos as $aluno) {
+                    echo "<option value='{$aluno['idAluno']}'>{$aluno['nomeAluno']}</option>";
+                }
+                ?>
+            </select>
 
-                    <div class="form-group col-sm-6 offset-md-2">
-                        <select class="form-select col-sm-2" aria-label="Default select example" name="statusMatricula" required>
-                            <option selected="">Seleciona o Status da Matrícula</option>
-                            <option value="ATIVO">ATIVO</option>
-                            <option value="DESATIVADO">DESATIVADO</option>
-                            <option value="INATIVO">INATIVO</option>
+            <select  class="selectMatri" aria-label="Default select example" name="idPlano" id="idPlano" required>
+                <option selected disabled>Selecionar o Plano</option>
 
-                        </select>
-                    </div>
-                </div>
+                <?php
+                require_once('class/plano.php');
+                $planoClass = new PlanoClass();
+                $planos = $planoClass->listarPlanos();
 
+                foreach ($planos as $plano) {
+                    echo "<option value='{$plano['idPlano']}'>{$plano['nomePlano']}</option>";
+                }
+                ?>
+            </select>
 
-                
-
-
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button type="submit" class="btn btn-primary">Cadastrar Matrícula</button>
-                </div>
-
-
-
+            <div>
+                <label class="labelMatri" for="valorPago">Valor Pago:</label>
+                <input class="inputMatriDate" type="number" step="0.01" pattern="\d+(\.\d{2})?" name="valorPago" id="valorPago" required>
             </div>
 
 
 
+
+            <div>
+                <button class="botMatri" type="submit">Cadastrar Matrícula</button>
+            </div>
+
         </div>
+
+
+
     </form>
 
 

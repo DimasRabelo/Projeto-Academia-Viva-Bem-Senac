@@ -48,7 +48,24 @@ tblfuncionarios f ON t.idFuncionario = f.idFuncionario";
         }
     }
 
+    public function Cadastrar()
+    {
+        // Define the query inside the method
+        $query = "INSERT INTO tbltreinos (dataInicioTreino, dataFimTreino, statusTreino, idAluno, idFuncionario)  
+        VALUES (
+            '" . $this->dataInicioTreino . "', 
+            '" . $this->dataFimTreino . "', 
+            '" . $this->statusTreino . "', 
+            '" . $this->idAluno . "', 
+            '" . $this->idFuncionario . "'
+           
+        )";
 
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+
+        echo "<script>document.location='index.php?p=treino'</script>";
+    }
 
 
 

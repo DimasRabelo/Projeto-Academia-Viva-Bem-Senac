@@ -66,7 +66,7 @@ $lista = $exercicios->Listar();
         <?php foreach ($lista as $linha) : ?>
             <tbody>
                 <tr class="table-secondary">
-                    <td class="bg-info"><?php echo $linha['idExercicio'] ?></td>
+                    <td class="table-info"><?php echo $linha['idExercicio'] ?></td>
                     <td class="table-info"><?php echo $linha['nomeExercicio'] ?></td>
                     <td class="table-info"><?php echo $linha['descricaoExercicio'] ?></td>
                     <td class="table-info"><?php echo $linha['grupoMuscularExercicio'] ?></td>

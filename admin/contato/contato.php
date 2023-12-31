@@ -33,7 +33,7 @@ $lista = $contato->ListarContato();
 
             foreach ($lista as $linha) : ?>
                 <tr>
-                    <td class="bg-info"><?php echo $linha['idContato']; ?></td>
+                    <td class="table-info"><?php echo $linha['idContato']; ?></td>
                     <td class="table-info"><?php echo $linha['nomeContato']; ?></td>
                     <td class="table-info"><?php echo $linha['emailContato']; ?></td>
                     <td class="table-info"><?php echo $linha['telefoneContato']; ?></td>
