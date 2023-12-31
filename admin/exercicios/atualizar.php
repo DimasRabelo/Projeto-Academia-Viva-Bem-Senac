@@ -20,9 +20,9 @@ if (isset($_POST['nomeExercicio'])) {
     $grupoMuscularExercicio = $_POST['grupoMuscularExercicio'];
     $statusExercicio       = $_POST['statusExercicio'];
     $linkExercicio         = $_POST['linkExercicio'];
-    
 
-   
+
+
 
     if (!empty($_FILES['fotoExercicio']['name'])) {
 
@@ -40,12 +40,11 @@ if (isset($_POST['nomeExercicio'])) {
         }
     } else {
         $fotoExercicio = $exercicio->fotoExercicio;
-       
     }
 
     // Fim da Empty
 
-    
+
 
     $exercicio->nomeExercicio = $nomeExercicio;
     $exercicio->descricaoExercicio = $descricaoExercicio;
@@ -54,10 +53,9 @@ if (isset($_POST['nomeExercicio'])) {
     $exercicio->fotoExercicio = $fotoExercicio;
     $exercicio->linkExercicio = $linkExercicio;
 
-    
+
 
     $exercicio->Atualizar();
-    
 }
 
 
@@ -65,96 +63,97 @@ if (isset($_POST['nomeExercicio'])) {
 
 ?>
 
+
+
+<h1 class="h1Geral"> Atualização de Exercícios</h1>
 <div class="col-md-12">
 
-    <div class="card card-info">
-        <div class="card-header">
-            <h3 class="card-title"> Atualizar Exercícios</h3>
-        </div>
 
-        <form class="form-horizontal" action="index.php?p=exercicios&e=atualizar&id=<?php echo $exercicio->idExercicio ?> " method="POST" enctype="multipart/form-data">
-            <div class="card-body">
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group row">
-                            <div class="img-dashboard">
-                                <img src="img/sem-foto.jpg" class="img-thumbnail" alt="..." id="imgfoto">
-                            </div>
-                            <input type="file" class="form-control" id="fotoExercicio" name="fotoExercicio" style="display: none;">
+
+    <form class="form-horizontal" action="index.php?p=exercicios&e=atualizar&id=<?php echo $exercicio->idExercicio ?> " method="POST" enctype="multipart/form-data">
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group row">
+                        <div class="img-dashboard">
+                            <img src="img/sem-foto.jpg" class="img-thumbnail" alt="..." id="imgfoto">
+                        </div>
+                        <input type="file" class="form-control" id="fotoExercicio" name="fotoExercicio" style="display: none;">
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="col-md-8 form-dash">
+
+                    <div class="form-group row">
+                        <label for="nomeExercicio" class="col-sm-2 col-form-label">Nome:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="nomeExercicio" name="nomeExercicio" placeholder="Informe o nome do exercício:" value="<?php echo $exercicio->nomeExercicio; ?>">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="descricaoExercicio" class="col-sm-2 col-form-label">Descrição:</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" name="descricaoExercicio" id="descricaoExercicio" cols="30" rows="10" placeholder="Informe a descrição do exercício:"><?php echo $exercicio->descricaoExercicio; ?></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="form-group col-sm-6 offset-md-2">
+                            <select class="form-select col-sm-2" aria-label="Default select example" id="grupoMuscularExercicio" name="grupoMuscularExercicio">
+                                <option value="<?php echo $exercicio->nomeExercicio; ?>"><?php echo $exercicio->grupoMuscularExercicio; ?></option>
+                                <option value="Peito">Peito</option>
+                                <option value="Pernas">Pernas</option>
+                                <option value="Bracos">Braços</option>
+                                <option value="Abdômen">Abdômen</option>
+                                <option value="Cardio">Cardio</option>
+                            </select>
+
                         </div>
 
+                        <div class="form-group col-sm-6 offset-md-2">
+                            <select class="form-select col-sm-2" aria-label="Default select example" name="statusExercicio" required>
+                                <option selected="">Seleciona o Status do exercício</option>
+                                <option value="ATIVO">ATIVO</option>
+                                <option value="DESATIVADO">DESATIVADO</option>
+                                <option value="INATIVO">INATIVO</option>
+
+                            </select>
 
 
-
+                        </div>
 
                     </div>
 
-                    <div class="col-md-8 form-dash">
-
-                        <div class="form-group row">
-                            <label for="nomeExercicio" class="col-sm-2 col-form-label">Nome:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nomeExercicio" name="nomeExercicio" placeholder="Informe o nome do exercício:" value="<?php echo $exercicio->nomeExercicio; ?>">
-
-                            </div>
+                    <div class="form-group row">
+                        <label for="linkExercicio" class="col-sm-2 col-form-label">Exercício:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="linkExercicio" name="linkExercicio" placeholder="Informe o Link Exercício:" value="<?php echo $exercicio->linkExercicio; ?>">
                         </div>
-
-                        <div class="form-group row">
-                            <label for="descricaoExercicio" class="col-sm-2 col-form-label">Descrição:</label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" name="descricaoExercicio" id="descricaoExercicio" cols="30" rows="10" placeholder="Informe a descrição do exercício:"><?php echo $exercicio->descricaoExercicio; ?></textarea>
-                            </div>
-                        </div>
-
-                        <div class="row">
-
-                            <div class="form-group col-sm-6 offset-md-2">
-                                <select class="form-select col-sm-2" aria-label="Default select example" id="grupoMuscularExercicio" name="grupoMuscularExercicio" >
-                                    <option value="<?php echo $exercicio->nomeExercicio; ?>"><?php echo $exercicio->grupoMuscularExercicio; ?></option>
-                                    <option value="Peito">Peito</option>
-                                    <option value="Pernas">Pernas</option>
-                                    <option value="Bracos">Braços</option>
-                                    <option value="Abdômen">Abdômen</option>
-                                    <option value="Cardio">Cardio</option>
-                                </select>
-
-                            </div>
-
-                            <div class="form-group col-sm-6 offset-md-2">
-                                <select class="form-select col-sm-2" aria-label="Default select example" name="statusExercicio" required>
-                                    <option selected="">Seleciona o Status do exercício</option>
-                                    <option value="ATIVO">ATIVO</option>
-                                    <option value="DESATIVADO">DESATIVADO</option>
-                                    <option value="INATIVO">INATIVO</option>
-
-                                </select>
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="linkExercicio" class="col-sm-2 col-form-label">Exercício:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="linkExercicio" name="linkExercicio" placeholder="Informe o Link Exercício:" value="<?php echo $exercicio->linkExercicio; ?>">
-                            </div>
-                        </div>
-
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                            <button type="submit" class="btn btn-primary">Atualizar Exercício</button>
-                        </div>
-
-
-
                     </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button type="submit" class="btn btn-primary">Atualizar Exercício</button>
+                    </div>
+
+
 
                 </div>
 
             </div>
-        </form>
-    </div>
+
+        </div>
+    </form>
+
 
 </div>
 <script>

@@ -64,7 +64,7 @@ if (isset($_POST['nomeAluno'])) {
 ?>
 
 
-
+<h1 class="h1Geral"> Atualização de Alunos</h1>
 
 <form action="index.php?p=aluno&aluno=atualizar&id=<?php echo $aluno->idAluno ?>" method="POST" enctype="multipart/form-data">
 

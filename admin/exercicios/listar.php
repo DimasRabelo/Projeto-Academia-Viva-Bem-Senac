@@ -14,8 +14,10 @@ $lista = $exercicios->Listar();
 
 
 ?>
+<style>
 
 
+</style>
 
 
 
@@ -69,7 +71,7 @@ $lista = $exercicios->Listar();
                     <td class="table-info"><?php echo $linha['descricaoExercicio'] ?></td>
                     <td class="table-info"><?php echo $linha['grupoMuscularExercicio'] ?></td>
                     <td class="table-info"><?php echo $linha['statusExercicio'] ?></td>
-                    <td class="fotoexer">
+                    <td class="tamanhoFoto">
                         <a href="../img/<?php echo $linha['fotoExercicio'] ?>" data-lightbox="<?php echo $linha['nomeExercicio'] ?>" data-title="<?php echo $linha['nomeExercicio'] ?>">
                             <img src="../img/<?php echo $linha['fotoExercicio'] ?>" alt="<?php echo $linha['nomeExercicio'] ?> ">
                         </a>

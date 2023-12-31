@@ -23,21 +23,6 @@ $lista = $matriculas->listar();
 
 
 </div>
-<style>
-    th {
-        font: 1.6em Arial;
-        font-weight: bold;
-    }
-
-    td {
-        font: 1.3em Helvetica;
-        font-weight: bold;
-    }
-</style>
-
-
-
-
 
 
 <div class=" table-responsive">
@@ -70,7 +55,7 @@ $lista = $matriculas->listar();
                 
                 
                    
-                    <td class="bg-info"><?php echo $linha['idMatricula'] ?></td>
+                    <td class="table-info"><?php echo $linha['idMatricula'] ?></td>
                     <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataInicioMatricula'])) ?></td>
                     <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataFimMatricula'])) ?></td>
                     <td class="table-info"><?php echo $linha['statusMatricula'] ?></td>

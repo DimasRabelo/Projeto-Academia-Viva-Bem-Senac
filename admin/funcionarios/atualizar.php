@@ -72,12 +72,12 @@ if (isset($_POST['nomeFuncionario'])) {
 
 
 
-<h1 class="h1func">Atualizar Funcionário</h1>
+<h1 class="h1Geral">Atualizar Funcionário</h1>
 
 <form class="formfunc" action="index.php?p=funcionarios&i=atualizar&id=<?php echo $funcionario->idFuncionario ?>" method="POST" enctype="multipart/form-data">
 
     <div class="input-group mb-3">
-        <div class="img-func">
+        <div class="tamanhoFotoCad">
             <img src="img/sem-foto.jpg" alt="..." id="imgfoto">
         </div>
         <input type="file" class="form-control" id="fotoFuncionario" name="fotoFuncionario" style="display:none;">
@@ -137,7 +137,7 @@ if (isset($_POST['nomeFuncionario'])) {
             </select>
         </div>
 
-        <div class="mb-3">
+        <div class="botaocad">
             <button type="submit" class="btn btn-primary">Atualizar Funcionário</button>
         </div>
     </div>

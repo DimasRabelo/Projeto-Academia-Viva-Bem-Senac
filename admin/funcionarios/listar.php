@@ -53,7 +53,7 @@ $lista = $funcionarios->listarFuncionario();
         <?php foreach ($lista as $linha) : ?>
             <tbody>
                 <tr>
-                    <td class="bg-info"><?php echo $linha['idFuncionario'] ?></td>
+                    <td class="table-info"><?php echo $linha['idFuncionario'] ?></td>
                     <td class="table-info"><?php echo $linha['nomeFuncionario'] ?></td>
                     <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataNascFuncionario'])) ?></td>
                     <td class="table-info"><?php echo $linha['cargoFuncionario'] ?></td>
@@ -61,7 +61,7 @@ $lista = $funcionarios->listarFuncionario();
                     <td class="table-info"><?php echo $linha['emailFuncionario'] ?></td>
                     <td class="table-info"><?php echo $linha['nivelFuncionario'] ?></td>
                     <td class="table-info"><?php echo $linha['telefoneFuncionario'] ?></td>
-                    <td class="fotofunc table-info">
+                    <td class="tamanhoFoto">
                         <a href="../img/<?php echo $linha['fotoFuncionario'] ?>" data-lightbox="<?php echo $linha['nomeFuncionario'] ?>" data-title="<?php echo $linha['nomeFuncionario'] ?>">
                             <img src="../img/<?php echo $linha['fotoFuncionario'] ?>" data-alt="<?php echo $linha['nomeFuncionario'] ?>">
                         </a>

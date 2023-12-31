@@ -44,7 +44,7 @@ if (isset($_POST['nomeAluno'])) {
 
 
 
-<h1 class="h1aluno">Cadastrar Alunos</h1>
+<h1 class="h1Geral">Cadastrar Alunos</h1>
 
 <form action="index.php?p=aluno&aluno=cadastrar" method="POST" enctype="multipart/form-data">
 

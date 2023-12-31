@@ -140,54 +140,46 @@ main {
 
 
 
-/* ##### Formulario Exercicio Lista ###### */
-.fotoexer{
+/* ##### tamanho padrão das fotos da lista de Funcionarios/Exercicios/Alunos ###### */
+.tamanhoFoto{
     width: 100%;
 }
-.fotoexer img {
+.tamanhoFoto img {
     max-width: 300px;
     max-height: 320px;
     object-fit: cover;
 }
-td, th {
+
+
+/* ##### O th de todas as Listas ###### */
+.table-info,
+.text-dark{
+    font-size: 1.5em;
     text-align: center;
-    
-}
-
-th {
-    font-size: 1.0em;
-    font-weight: bold;
-}
-
-
-
-/* ##### Formulario Contato Lista ###### */
-
-
-.thcontato{
-    font: 1.0em Arial;
     font-weight: bold;
     
+
 }
 
-.tdcontato {
-    font: 1.3em Helvetica;
-    font-weight: bold;
-    
+/*##### Formulario Exercicio Cadastro #######*/
+.form-control {
+    padding: 3px;
+}
+.col-sm-10{
+    padding: 10px;
+}
+.form-group{
+    padding: 3px;
+}
+.col-sm-6{
+    padding: 5px;
+    margin: 0px 105px;
+}
+.form-group .row{
+    padding: 5px;
 }
 
-/* ##### Formulario Aluno Lista ###### */
-.fotoalunos{
-    width: 100%;
-    
-}
-.fotoalunos img {
-    max-width: 300px;
-    max-height: 320px;
-    object-fit: cover;
-}
-
-/*##### Formulario Aluno Cadastro #######*/
+/*##### Formulario Aluno Cadastro e de Atualização #######*/
 
 form {
     display: flex;
@@ -229,6 +221,7 @@ form {
 .img-aluno {
     max-width: 300px;
     max-height: 320px;
+    object-fit: cover;
 
 }
 
@@ -239,16 +232,17 @@ form {
 .inputsenha {
     width: 24%;
     border-radius: 5px 5px;
+    margin-left: -8px;
 }
 
 .selecaoaluno {
-    padding: 0 auto;
-    margin-top: -30px;
+    padding-bottom: 15px ;
+   
 
 
 }
 
-.h1aluno {
+.h1Geral {
     text-align: center;
     color: #23475f;
     font-size: 1.5em;
@@ -259,69 +253,59 @@ form {
 }
 
 
-/* Formulario lista de Funcionários */
-
-
-
-.fotofunc {
-    width: 100%;
-    height: 100%;
-}
-
-.fotofunc img {
-    width: 300px;
-    height: 320px;
-    object-fit: cover;
-}
-
-
-
-
-
 /* Formulario de Cadastro e de Atualização Funcionários */
-.h1func{
-    text-align: center;
-    background: #ffc500;
-    margin-bottom: 0;
-    
-}
-
-.img-func {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.img-func img {
-    max-width: 300px;
-    max-height: 320px;
-}
-
 .formfunc {
-    width: 100%;
-    height: 100%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.inputfunc {
+.tamanhoFotoCad{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.tamanhoFotoCad img {
+    max-width: 300px;
+    max-height: 320px;
+    object-fit: cover;
+    
+}
+    
+
+
+
+.setecamposesquerda,
+.direita {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.mb-3 {
+    margin-bottom: 15px;
+}
+
+.labelfunc {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inputfunc,
+.inputdatafunc,
+.inputsenha,
+.inputdatafuncAdmis,
+.selecaofunc,
+.botaocad {
     width: 100%;
 }
-
-.inputdatafunc {
-    width: 18%;
-}
-.inputdatafuncAdmis{
-    width: 50%;
-}
-
-.direita {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.botaocad{
+    margin-top: 10px;
 }

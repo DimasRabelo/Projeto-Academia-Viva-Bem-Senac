@@ -53,13 +53,13 @@ $lista = $aluno->listar();
 
 
 
-                    <td class="bg-info"><?php echo $linha['idAluno'] ?></td>
+                    <td class="table-info"><?php echo $linha['idAluno'] ?></td>
                     <td class="table-info"><?php echo $linha['nomeAluno'] ?></td>
                     <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataNascAluno'])) ?></td>
                     <td class="table-info"><?php echo $linha['emailAluno'] ?></td>
                     <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataCadAluno'])) ?></td>
                     <td class="table-info"><?php echo $linha['statusAluno'] ?></td>
-                    <td class="fotoalunos">
+                    <td class="tamanhoFoto">
                         <a href="../img/<?php echo $linha['fotoAluno'] ?>" data-lightbox="<?php echo $linha['nomeAluno'] ?>" data-title="<?php echo $linha['nomeAluno'] ?>">
                             <img src="../img/<?php echo $linha['fotoAluno'] ?>" data-alt="<?php echo $linha['nomeAluno'] ?>">
                         </a>
