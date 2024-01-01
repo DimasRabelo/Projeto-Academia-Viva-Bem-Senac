@@ -119,9 +119,12 @@ class FuncionarioClass
         $conn->exec($query);
         echo "<script>document.location='index.php?p=funcionarios'</script>";
     }
-    public function Desativar()
+    public function desativar()
+   
     {
         $query = "UPDATE tblfuncionarios SET statusFuncionario ='DESATIVADO' WHERE idFuncionario = " . $this->idFuncionario;
         
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
     }
 }

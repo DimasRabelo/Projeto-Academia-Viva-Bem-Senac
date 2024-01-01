@@ -29,10 +29,6 @@ if (isset($_POST['dataInicioMatricula'])) {
 
 
 ?>
-<style>
-    
-</style>
-
 
 
 <h1 class="h1Geral">Cadastrar Novas Matrículas</h1>

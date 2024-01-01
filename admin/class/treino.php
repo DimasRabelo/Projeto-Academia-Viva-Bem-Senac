@@ -66,9 +66,47 @@ tblfuncionarios f ON t.idFuncionario = f.idFuncionario";
 
         echo "<script>document.location='index.php?p=treino'</script>";
     }
+    public function __construct($id = false)
+    {
+        // Define the query inside the method
+        if ($id) {
+            $this->idTreino = $id;
+            $this->Carregar();
+        }
+    }
 
+    public function Carregar()
+    {
+        $query = "SELECT * FROM  tbltreinos WHERE idTreino = " . $this->idTreino;
+        $conn = Conexao::LigarConexao();
+        $resultado = $conn->query($query);
+        $lista = $resultado->fetchAll();
 
+        foreach ($lista as $linha) {
+            $this->dataInicioTreino = $linha['dataInicioTreino'];
+            $this->dataFimTreino = $linha['dataFimTreino'];
+            $this->statusTreino = $linha['statusTreino'];
+            $this->idAluno = $linha['idAluno'];
+            $this->idFuncionario = $linha['idFuncionario'];
+           
+        }
+    }
 
+    public function Atualizar()
+    {
+       
+        $query = "UPDATE tbltreinos  
+              SET dataInicioTreino =  '" . $this->dataInicioTreino . "',
+                  dataFimTreino =  '" . $this->dataFimTreino . "', 
+                  statusTreino = '" . $this->statusTreino . "', 
+                  idAluno =  '" . $this->idAluno . "',
+                  idFuncionario =  '" . $this->idFuncionario . "'   
+                  WHERE tbltreinos.idTreino = " . $this->idTreino;
+
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+        echo "<script>document.location='index.php?p=treino'</script>";
+    }
 
 
 
