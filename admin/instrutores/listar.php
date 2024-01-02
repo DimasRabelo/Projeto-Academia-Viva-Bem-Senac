@@ -5,3 +5,84 @@
         </svg>
         Novo Instrutor
     </a>
+</div>
+
+<style>
+    .instrutores {
+        display: flex;
+        justify-content: space-around;
+    }
+    .instrutores .card{
+        margin: 1%;
+    }
+    .instrutores img{
+   padding: 2%;
+}
+
+
+
+
+</style>
+
+
+<div class=" instrutores">
+    <div class="card" style="width: 22rem;">
+        <img src="../img/funcionario/marinaoliveira1.png" class="card-img-top" alt="...">
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">WhatsApp</a></li>
+        </ul>
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 22rem;">
+        <img src="../img/funcionario/rodrigosantos2.png" class="card-img-top" alt="...">
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">WhatsApp</a></li>
+        </ul>
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 22rem;">
+        <img src="../img/funcionario/anatorres3.png" class="card-img-top" alt="...">
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">WhatsApp</a></li>
+        </ul>
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+
+    <div class="card" style="width: 22rem;">
+        <img src="../img/funcionario/carlosmendes4.png" class="card-img-top" alt="...">
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">WhatsApp</a></li>
+        </ul>
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</div>

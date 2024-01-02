@@ -2,7 +2,7 @@
             <h2>Equipe</h2>
             <div class="site">
                 <div>
-                    <img src="img/equipe1.png" alt="Img Equipe na cor azul clara">
+                    <img src=" img/funcionario/marinaoliveira1.png" alt="Img Equipe na cor azul clara">
                     <ul>
                         <li><a href="#">Facebook</a></li>
                         <li><a href="#">Instagram</a></li>
@@ -14,7 +14,7 @@
                 </div>
 
                 <div>
-                    <img src="img/equipe2.png" alt="Img Equipe na cor azul clara">
+                    <img src="img/funcionario/rodrigosantos2.png" alt="Img Equipe na cor azul clara">
                     <ul>
                         <li><a href="#">Facebook</a></li>
                         <li><a href="#">Instagram</a></li>
@@ -26,7 +26,7 @@
                 </div>
 
                 <div>
-                    <img src="img/equipe3.png" alt="Img Equipe na cor azul clara">
+                    <img src="img/funcionario/anatorres3.png" alt="Img Equipe na cor azul clara">
                     <ul>
                         <li><a href="#">Facebook</a></li>
                         <li><a href="#">Instagram</a></li>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div>
-                    <img src="img/equipe4.png" alt="Img Equipe na cor azul clara">
+                    <img src="img/funcionario/carlosmendes4.png" alt="Img Equipe na cor azul clara">
                     <ul>
                         <li><a href="#">Facebook</a></li>
                         <li><a href="#">Instagram</a></li>
