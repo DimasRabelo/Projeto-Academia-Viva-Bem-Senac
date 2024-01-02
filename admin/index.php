@@ -88,7 +88,7 @@ $pagina = @$_GET['p'];
                     require_once('funcionarios/funcionarios.php');
                     break;
                 case 'instrutores':
-
+                    require_once('instrutores/instrutores.php');
                     break;
 
                 case 'aluno':

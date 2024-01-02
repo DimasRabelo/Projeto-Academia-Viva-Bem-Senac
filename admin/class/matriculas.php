@@ -17,26 +17,30 @@ class MatriculasClass
     public $valorPago;
 
 
-   
-       
+
+
     public function listar()
     {
+        // $sql =  "SELECT * FROM tblmatriculas ORDER BY idMatricula ASC" //;
         $sql = "SELECT
-            m.idMatricula,
-            m.dataInicioMatricula,
-            m.dataFimMatricula,
-            m.statusMatricula,
-            m.valorPago,
-            a.nomeAluno,
-            p.nomePlano
-        FROM
-            tblmatriculas m
-        INNER JOIN
-            tblalunos a ON m.idAluno = a.idAluno
-        INNER JOIN
-            tblplanos p ON m.idPlano = p.idPlano
-        ORDER BY
-            m.dataInicioMatricula ASC";
+        m.idMatricula,
+        m.dataInicioMatricula,
+        m.dataFimMatricula,
+        m.statusMatricula,
+        m.valorPago,
+        a.nomeAluno,
+        p.nomePlano
+    FROM
+        tblmatriculas m
+    INNER JOIN
+        tblalunos a ON m.idAluno = a.idAluno
+    INNER JOIN
+        tblplanos p ON m.idPlano = p.idPlano
+    WHERE
+        m.statusMatricula = 'ATIVO'
+    ORDER BY
+        m.dataInicioMatricula ASC";
+
         try {
             $conn = Conexao::LigarConexao();
             $resultado = $conn->query($sql);
@@ -47,7 +51,7 @@ class MatriculasClass
             return false;
         }
     }
-    
+
     public function Cadastrar()
     {
         // Define the query inside the method
@@ -89,13 +93,12 @@ class MatriculasClass
             $this->idAluno = $linha['idAluno'];
             $this->idPlano = $linha['idPlano'];
             $this->valorPago = $linha['valorPago'];
-           
         }
     }
 
     public function Atualizar()
     {
-       
+
         $query = "UPDATE tblmatriculas  
               SET dataInicioMatricula =  '" . $this->dataInicioMatricula . "',
                   dataFimMatricula =  '" . $this->dataFimMatricula . "', 
@@ -103,25 +106,24 @@ class MatriculasClass
                   idAluno =  '" . $this->idAluno . "',
                   idPlano =  '" . $this->idPlano . "',  
                   valorPago = '" . $this->valorPago . "'   
-                  WHERE tblmatriculas.idMatricula = " . $this->idMatricula;
+                  WHERE tblmatriculas.idMatricula = " . $this->idMatricula . "'";
 
         $conn = Conexao::LigarConexao();
         $conn->exec($query);
         echo "<script>document.location='index.php?p=matriculas'</script>";
     }
-                
-       
-    
-    
+
+
+
+
     public function desativar()
     {
         $query = "UPDATE tblmatriculas SET statusMatricula = 'DESATIVADO' WHERE idMatricula = " . $this->idMatricula;
-        
+
         $conn = Conexao::LigarConexao();
         $conn->exec($query);
 
-        
-        
+        echo "ID Matrícula: " . $this->idMatricula . "<br>";
+        echo "Status Matrícula antes da desativação: " . $this->statusMatricula . "<br>";
     }
-
 }

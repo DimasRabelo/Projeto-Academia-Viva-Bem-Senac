@@ -17,6 +17,7 @@ class AlunoClass{
       // dataCadAluno,
 
     public function listar(){
+       // $sql =  "SELECT * FROM tblalunos ORDER BY idAluno ASC" //;
         $sql = "SELECT * FROM tblalunos WHERE statusAluno = 'ATIVO' ORDER BY idAluno ASC";
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($sql);

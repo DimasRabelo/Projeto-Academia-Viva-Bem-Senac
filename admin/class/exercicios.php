@@ -14,7 +14,8 @@ class ExerciciosClass
     // Listar
     public function listar()
     {
-        $sql = "SELECT * FROM tblexercicios WHERE statusExercicio = 'Ativo' ORDER by idExercicio  ASC ";
+        // $sql =  "SELECT * FROM tblexercicios ORDER BY idExercicio ASC" //;
+        $sql = "SELECT * FROM tblexercicios WHERE statusExercicio = 'ATIVO' ORDER by idExercicio  ASC ";
         $conn = Conexao::LigarConexao();
         $resultado = $conn->query($sql);
         $lista = $resultado->fetchAll();

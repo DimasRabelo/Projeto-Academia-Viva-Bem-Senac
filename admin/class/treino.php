@@ -21,22 +21,24 @@ class TreinoClass{
      public $idFuncionario;
 
      public function listar(){
-        $sql =  "SELECT * FROM tbltreinos ORDER BY idTreino ASC";
+        // $sql =  "SELECT * FROM tbltreinos ORDER BY idTreino ASC" //;
         
-$sql = "SELECT
-t.idTreino,
-t.dataInicioTreino,
-t.dataFimTreino,
-t.statusTreino,
-a.nomeAluno,
-f.nomeFuncionario
+        $sql = "SELECT
+        t.idTreino,
+        t.dataInicioTreino,
+        t.dataFimTreino,
+        t.statusTreino,
+        a.nomeAluno,
+        f.nomeFuncionario
+    FROM
+        tbltreinos t
+    INNER JOIN
+        tblalunos a ON t.idAluno = a.idAluno
+    INNER JOIN
+        tblfuncionarios f ON t.idFuncionario = f.idFuncionario
+    WHERE
+        t.statusTreino = 'ATIVO'";
 
-FROM
-tbltreinos t
-INNER JOIN
-tblalunos a ON t.idAluno = a.idAluno
-INNER JOIN
-tblfuncionarios f ON t.idFuncionario = f.idFuncionario";
          try {
             $conn = Conexao::LigarConexao();
             $resultado = $conn->query($sql);
@@ -107,15 +109,13 @@ tblfuncionarios f ON t.idFuncionario = f.idFuncionario";
         $conn->exec($query);
         echo "<script>document.location='index.php?p=treino'</script>";
     }
-
-
-
-
-
-
-
-
-
+    public function desativar()
+    {
+        $query = "UPDATE tbltreinos SET statusTreino ='DESATIVADO' WHERE idTreino = " . $this->idTreino;
+        
+        $conn = Conexao::LigarConexao();
+        $conn->exec($query);
+    }
 
 }
 

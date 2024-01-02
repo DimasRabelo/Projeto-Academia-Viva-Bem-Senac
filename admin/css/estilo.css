@@ -111,11 +111,15 @@ main {
 
 
 .rodape {
-    text-align: center;
-    width: 1920px;
-
-
-
+    
+        width: 100%;
+        color: #fff; /* Cor do texto do rodapé, ajuste conforme necessário */
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0; /* Garante que o rodapé comece da borda esquerda */
+        right: 0; /* Garante que o rodapé vá até a borda direita */
+    
 }
 
 .rodape h2 {
