@@ -10,7 +10,8 @@
 <style>
     .instrutores {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
     .instrutores .card{
         margin: 1%;
