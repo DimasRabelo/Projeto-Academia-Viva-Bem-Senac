@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/11/2023 às 00:01
+-- Tempo de geração: 05/01/2024 às 15:37
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -43,13 +43,13 @@ CREATE TABLE `tblalunos` (
 --
 
 INSERT INTO `tblalunos` (`idAluno`, `nomeAluno`, `dataNascAluno`, `emailAluno`, `senhaAluno`, `dataCadAluno`, `statusAluno`, `fotoAluno`) VALUES
-(1, 'JOÃO DA SILVA', '1990-01-15', 'joao@email.com', 'senha123', '2023-10-06', 'ATIVO', 'aluno/joao-guilherme.png'),
+(1, 'JOÃO DA SILVA', '1990-01-15', 'joao@email.com', 'senha123', '2023-10-06', 'ATIVO', 'aluno/alan1.png'),
 (2, 'MARIA SANTOS', '1970-08-21', 'maria@email.com', 'senha456', '2023-10-06', 'ATIVO', 'aluno/mariasantos2.png'),
-(3, 'CARLOS FERREIRA', '1968-08-21', 'carlos@email.com', 'senha789', '2023-10-06', 'INATIVO', 'aluno/carlosferreira3.png'),
+(3, 'CARLOS FERREIRA', '1968-08-21', 'carlos@email.com', 'senha789', '2023-10-06', 'ATIVO', 'aluno/carlosferreira3.png'),
 (4, 'ANA OLIVEIRA', '1992-04-30', 'ana@email.com', 'senhaabc', '2023-10-06', 'ATIVO', 'aluno/anaoliveira4.png'),
 (5, 'PEDRO RIBEIRO', '1985-11-27', 'pedro@email.com', 'senhaxyz', '2023-10-06', 'ATIVO', 'aluno/pedroribeiro5.png'),
-(6, '\".$this->nomeAluno.\"', '0000-00-00', '\".$this->emailAluno.\"', '', '0000-00-00', '\".$this->s', '\".$this->fotoAluno.\"'),
-(10, 'Tifani', '1995-06-15', 'tifani@gmail.com', '', '0000-00-00', 'ATIVO', 'aluno/tifany.jfif');
+(6, '\".$this->nomeAluno.\"', '0000-00-00', '\".$this->emailAluno.\"', '', '0000-00-00', 'ATIVO', '\".$this->fotoAluno.\"'),
+(10, 'TIFANI', '1995-06-15', 'tifani@gmail.com', '', '2023-11-15', 'ATIVO', 'aluno/tifany.png');
 
 -- --------------------------------------------------------
 
@@ -144,19 +144,19 @@ CREATE TABLE `tblexercicios` (
 --
 
 INSERT INTO `tblexercicios` (`idExercicio`, `nomeExercicio`, `altExercicio`, `descricaoExercicio`, `grupoMuscularExercicio`, `statusExercicio`, `fotoExercicio`, `linkExercicio`) VALUES
-(1, 'Supino ', 'Supino ', 'Peitoral', 'Supino ', 'ATIVO', 'exercicio/supino.png', 'supino.com'),
-(2, 'Agachamento ', 'foto exercicio agachamento', 'Agachamento Pernas', 'Pernas', 'DESATIVADO', 'exercicio/agachamento.png', 'agachamento.com'),
+(1, 'Supino ', 'Supino ', 'Peitoral', 'Supino ', 'DESATIVADO', 'exercicio/supino.png', 'supino.com'),
+(2, 'Agachamento ', 'foto exercicio agachamento', 'Agachamento Pernas', 'Pernas', 'ATIVO', 'exercicio/agachamento.png', 'agachamento.com'),
 (3, 'RoscaDireta ', 'foto exercicio roscadireta', 'Rosca', 'Biceps', 'ATIVO', 'exercicio/roscadireta.png', 'roscadireta.com'),
-(4, 'Prancha Abdominal ', 'foto exercicio pranchaabdominal', 'Abdominal', 'Abdômen', 'INATIVO', 'exercicio/pranchaabdominal.png', 'pranchaabdominal.com'),
+(4, 'Prancha Abdominal ', 'foto exercicio pranchaabdominal', 'Abdominal', 'Abdômen', 'ATIVO', 'exercicio/pranchaabdominal.png', 'pranchaabdominal.com'),
 (5, 'Corrida', 'foto exercicio Corrida', 'Corrida', 'Cardio', 'ATIVO', 'exercicio/corrida.png', 'corrida.com'),
-(6, '\".$this->nomeExercicio.\"', '\".$this->altExercicio.\"', '\".$this->descricaoExercicio.\"', '\".$this->grupoMuscularExercici', '\".$this->s', '\".$this->fotoExercicio.\"', '\".$this->linkExercicio.\"'),
+(6, '\".$this->nomeExercicio.\"', '\".$this->altExercicio.\"', '\".$this->descricaoExercicio.\"', '\".$this->grupoMuscularExercici', 'ATIVO', '\".$this->fotoExercicio.\"', '\".$this->linkExercicio.\"'),
 (11, 'Costas', 'Costas', 'Costas', 'Costas', 'ATIVO', 'exercicio/pulley.jpg', 'costas.com'),
-(12, 'Bíceps', 'Bíceps', 'Bíceps', 'Peito', 'ATIVO', 'exercicio/biceps.jpg', ''),
+(12, 'Bíceps', 'Bíceps', 'Bíceps', 'Bracos', 'ATIVO', 'exercicio/biceps.jpg', 'biceps.com'),
 (13, 'Stiff', 'Stiff', 'Pernas', 'Pernas', 'ATIVO', 'exercicio/stiff.png', 'pernas.com'),
 (14, 'Ombro', 'Ombro', 'Ombro Livre', 'Bracos', 'ATIVO', 'exercicio/ombro.png', 'ombro.com'),
-(15, 'Cardio', 'Cardio', 'Cardio', 'Cardio', 'ATIVO', 'exercicio/cardio.png', 'cardio.com'),
-(16, 'Leg Press', '', 'Leg press', 'Pernas', 'ATIVO', 'exercicio/legpress.png', 'legpress.com'),
-(17, 'Elevação Pélvica', '', 'A elevação pélvica é um exercí', 'Pernas', 'ATIVO', 'exercicio/elevacao-pelvica.png', 'elevacaopelvica.com');
+(15, 'Cardio', 'Cardio', 'Cardio 2023', 'Cardio', 'ATIVO', 'exercicio/cardio.png', 'cardio.com'),
+(16, 'Leg Press', '', 'Leg press', 'Leg Press', 'ATIVO', 'exercicio/legpress.png', 'legpress.com'),
+(17, 'Elevação Pélvica', '', 'A elevação pélvica é um exercí', 'Elevação Pélvica', 'DESATIVADO', 'exercicio/elevacao-pelvica.png', 'elevacaopelvica.com');
 
 -- --------------------------------------------------------
 
@@ -190,10 +190,10 @@ CREATE TABLE `tblfuncionarios` (
 
 INSERT INTO `tblfuncionarios` (`idFuncionario`, `nomeFuncionario`, `altFuncionario`, `dataNascFuncionario`, `cargoFuncionario`, `especialidadeFuncionario`, `emailFuncionario`, `senhaFuncionario`, `nivelFuncionario`, `telefoneFuncionario`, `dataAdmissaoFuncionario`, `statusFuncionario`, `fotoFuncionario`, `linkFaceFuncionario`, `linkInstaFuncionario`, `linklinkedinFuncionario`, `linkWhatsFuncionario`) VALUES
 (1, 'Fernanda Souza', '', '1995-10-10', 'Instrutor', 'Musculação', 'fernanda@gmail.com', '', 'administrador', '11132456789', '2023-10-01', 'ATIVO', 'funcionario/fernanda.png', 'facebook.com/eufernandasouza', '@fernadasouza', 'linkedin.com/in/fernandasouzam/', 'wa.me/5511132456789'),
-(2, 'Ricardo Santos', 'Foto funcionario Nutricionista', '1990-05-05', 'Nutricionista', 'Nutrição Esportiva', 'ricardo@gmail.com', 'senha456', 'outros', '22987654313', '2023-09-15', 'Ativo', 'funcionario/ricardosantos2.png', 'facebook.com/euricardosantos', '@ricardosantos', 'linkedin.com/in/ricardosantos/', 'wa.me/5522987654313'),
-(3, 'Mariana Silva', 'Foto funcionario Recepcionista', '1970-07-07', 'Recepcionista', 'Atendimento', 'mariana@gmail.com', 'senha789', 'administrador', '33555554555', '2023-08-03', 'Ativo', 'funcionario/mariana3.png', 'facebook.com/mariana', '@marina', 'linkedin.com/mariana/', 'wa.me/33555554555'),
-(4, 'Paulo Oliveira', 'Foto funcionario instrutor', '1996-04-10', 'instrutor', 'Cardio', 'paulo@gmail.com', 'senhaabc', 'outros', '4498999999', '2023-07-20', 'Ativo', 'funcionario/paulooliveira4.png', 'facebook.com/paulooliveira', '@paulooliveira', 'linkedin.com/paulooliveira/', 'wa.me/5544989999999'),
-(5, 'Luisa Mendes', 'Foto funcionario fisioterapeuta Esportiva', '1999-09-09', 'fisioterapeuta', 'fisioterapeuta Espor', 'luisa@gmail.com', 'senhaxyz', 'outros', '55887888888', '2023-06-10', 'Ativo', 'funcionario/luisamendes5.png', 'facebook.com/luisa', '@luisamendes', 'linkedin.com/luisamendes/', 'wa.me/5555887888888'),
+(2, 'Ricardo Santos', 'Foto funcionario Nutricionista', '1990-05-05', 'Nutricionista', 'Nutrição Esportiva', 'ricardo@gmail.com', 'senha456', 'outros', '22987654313', '2023-09-15', 'ATIVO', 'funcionario/ricardosantos2.png', 'facebook.com/euricardosantos', '@ricardosantos', 'linkedin.com/in/ricardosantos/', 'wa.me/5522987654313'),
+(3, 'Mariana Silva', 'Foto funcionario Recepcionista', '1970-07-07', 'Recepcionista', 'Atendimento', 'mariana@gmail.com', 'senha789', 'administrador', '33555554555', '2023-08-03', 'ATIVO', 'funcionario/mariana3.png', 'facebook.com/mariana', '@marina', 'linkedin.com/mariana/', 'wa.me/33555554555'),
+(4, 'Paulo Oliveira', 'Foto funcionario instrutor', '1996-04-10', 'instrutor', 'Cardio', 'paulo@gmail.com', 'senhaabc', 'outros', '4498999999', '2023-07-20', 'ATIVO', 'funcionario/paulooliveira4.png', 'facebook.com/paulooliveira', '@paulooliveira', 'linkedin.com/paulooliveira/', 'wa.me/5544989999999'),
+(5, 'Luisa Mendes', 'Foto funcionario fisioterapeuta Esportiva', '1999-09-09', 'fisioterapeuta', 'fisioterapeuta Espor', 'luisa@gmail.com', 'senhaxyz', 'outros', '55887888888', '2023-06-10', 'ATIVO', 'funcionario/luisamendes5.png', 'facebook.com/luisa', '@luisamendes', 'linkedin.com/luisamendes/', 'wa.me/5555887888888'),
 (6, 'Adamastor Pitaco', 'foto funcionario estagiario', '2005-09-12', 'Estagiário', 'Estudante', 'adamastor@gmail.com', 'senha@12', 'Usuario', '11978763456', '2023-11-01', 'ATIVO', 'funcionario/adamastor.png', '[value-14]', '[value-15]', '[value-16]', '[value-17]'),
 (7, 'Augusto Brasileiro', 'Augusto Brasileiro', '1987-05-25', 'Auxiliar de instruto', 'Serviços Gerais', 'augusto@gmail', '', 'Usuario', '1178659-0000', '2023-10-31', 'ATIVO', 'funcionario/jose.png', '', '', '', '');
 
@@ -249,7 +249,7 @@ INSERT INTO `tblmatriculas` (`idMatricula`, `dataInicioMatricula`, `dataFimMatri
 (2, '2023-09-15', '2023-09-30', 'ATIVO', 2, 2, 10.00),
 (3, '2023-08-03', '2023-08-31', 'ATIVO', 3, 3, 10.00),
 (4, '2023-07-20', '2023-07-31', 'ATIVO', 4, 4, 10.00),
-(5, '2023-06-10', '2023-06-30', 'ATIVO', 5, 5, 10.00),
+(5, '2023-06-10', '2023-06-30', 'DESATIVADO', 5, 5, 10.00),
 (6, '2023-10-26', '2024-10-25', 'ATIVO', 4, 5, 250.00);
 
 -- --------------------------------------------------------
