@@ -121,7 +121,7 @@ if (isset($_POST['nomeExercicio'])) {
                         </div>
 
                         <div class="form-group col-sm-6 offset-md-2">
-                            <select class="form-select col-sm-2" aria-label="Default select example" name="statusExercicio" required>
+                            <select class="form-select col-sm-2" aria-label="Default select example" name="statusExercicio" >
                                 <option selected="">Seleciona o Status do exercício</option>
                                 <option value="ATIVO">ATIVO</option>
                                 <option value="DESATIVADO">DESATIVADO</option>

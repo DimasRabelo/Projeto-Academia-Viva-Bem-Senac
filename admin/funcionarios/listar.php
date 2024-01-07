@@ -28,7 +28,7 @@ $lista = $funcionarios->listarFuncionario();
 
 
 
-<div class=" table-responsive">
+<div class="table-responsive">
     <table class="table table-bordered border-primary">
         <caption> Lista de funcionarios</caption>
 
@@ -68,18 +68,8 @@ $lista = $funcionarios->listarFuncionario();
                             <img src="../img/<?php echo $linha['fotoFuncionario'] ?>" data-alt="<?php echo $linha['nomeFuncionario'] ?>">
                         </a>
                     </td>
-
                     <td class="table-info"><?php echo $linha['statusFuncionario'] ?></td>
                     <td class="table-info"><?php echo date('d/m/Y', strtotime($linha['dataAdmissaoFuncionario'])) ?></td>
-
-
-
-
-
-
-
-
-
                     <td class="table-info">
                         <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);" href="index.php?p=funcionarios&i=atualizar&id=<?php echo $linha['idFuncionario'] ?>">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-repeat" viewBox="0 0 16 16">
