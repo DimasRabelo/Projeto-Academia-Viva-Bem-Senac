@@ -12,7 +12,7 @@ $funcionario = new FuncionarioClass($id);
 
 if (isset($_POST['nomeFuncionario'])) {
 
-    $idFuncionario = $_POST['$idFuncionario'];
+    $idFuncionario = $_POST['idFuncionario'];
     $nomeFuncionario  = $_POST['nomeFuncionario'];
     $altFuncionario = $_POST['altFuncionario'];
     $dataNascFuncionario = $_POST['dataNascFuncionario'];
@@ -51,7 +51,7 @@ if (isset($_POST['nomeFuncionario'])) {
 
 
     $funcionario->nomeFuncionario = $nomeFuncionario;
-    $funcionario->altFuncionario = $altFuncionario;
+   // $funcionario->altFuncionario = $altFuncionario;
     $funcionario->dataNascFuncionario = $dataNascFuncionario;
     $funcionario->cargoFuncionario = $cargoFuncionario;
     $funcionario->especialidadeFuncionario = $especialidadeFuncionario;
