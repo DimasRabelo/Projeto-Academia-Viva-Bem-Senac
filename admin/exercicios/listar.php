@@ -5,22 +5,7 @@ $exercicios = new ExerciciosClass();
 $lista = $exercicios->Listar();
 
 //var_dump($lista)
-
-
-
-
-
-
-
-
 ?>
-<style>
-
-
-</style>
-
-
-
 
 
 <div>
@@ -30,13 +15,9 @@ $lista = $exercicios->Listar();
         </svg>
         Novo Exercício
     </a>
-
-
 </div>
 
-<style>
 
-</style>
 
 
 
