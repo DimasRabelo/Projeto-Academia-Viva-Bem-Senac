@@ -20,9 +20,9 @@ class MatriculasClass
 
 
     public function listar()
-    {
-        // $sql =  "SELECT * FROM tblmatriculas ORDER BY idMatricula ASC" //;
-        $sql = "SELECT
+{
+    // $sql =  "SELECT * FROM tblmatriculas ORDER BY idMatricula ASC" //;
+    $sql = "SELECT
         m.idMatricula,
         m.dataInicioMatricula,
         m.dataFimMatricula,
@@ -39,18 +39,18 @@ class MatriculasClass
     WHERE
         m.statusMatricula = 'ATIVO'
     ORDER BY
-        m.dataInicioMatricula ASC";
+        m.idMatricula ASC";  // Alteração aqui
 
-        try {
-            $conn = Conexao::LigarConexao();
-            $resultado = $conn->query($sql);
-            $lista = $resultado->fetchAll();
-            return $lista;
-        } catch (PDOException $e) {
-            echo "Erro na consulta: " . $e->getMessage();
-            return false;
-        }
+    try {
+        $conn = Conexao::LigarConexao();
+        $resultado = $conn->query($sql);
+        $lista = $resultado->fetchAll();
+        return $lista;
+    } catch (PDOException $e) {
+        echo "Erro na consulta: " . $e->getMessage();
+        return false;
     }
+}
 
     public function Cadastrar()
     {

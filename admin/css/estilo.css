@@ -12,7 +12,7 @@ h2,
 h3,
 h4 {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 body {
@@ -152,7 +152,7 @@ main {
 /* ##### O th de todas as Listas ###### */
 .table-info,
 .text-dark{
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
