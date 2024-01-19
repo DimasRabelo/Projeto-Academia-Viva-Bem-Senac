@@ -4,7 +4,7 @@ require_once('class/exercicios.php');
 $exercicios = new ExerciciosClass();
 $lista = $exercicios->Listar();
 
-//var_dump($lista)
+var_dump($lista)
 ?>
 
 
