@@ -32,7 +32,7 @@
                 </li>
                 <li><a href="contato.php">Contato</a></li>
             </ul>
-            <button>Login</button>
+            <a href="login.php"><button>Login</button></a>
         </nav>
     </div>
 </header>
