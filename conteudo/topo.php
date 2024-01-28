@@ -1,3 +1,5 @@
+
+
 <header id="menufixo">
     <div class="topoContato">
         <div class="site">
@@ -12,7 +14,7 @@
     </div>
 
     <div class="site"><!-- COMEÇO DO TOPO 02-->
-        <h1 class="animate__animated animate__bounce">Projeto TI21</h1>
+        <h1 class="animate__animated animate__bounce"></h1>
 
         <button class="abrir-menu"></button>
         <nav class="menu">
@@ -32,7 +34,43 @@
                 </li>
                 <li><a href="contato.php">Contato</a></li>
             </ul>
-            <a href="login.php"><button>Login</button></a>
+
+            <div class="container text-center">
+                <button type="button" class="btnlogin"   class="btn-outline-primary" data-toggle="modal" data-target="#loginModal" id="btnLogin">
+                    Login 
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title fs-5" id="loginModalLabel">Área Restrita</h2>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="login-usuario-form">
+                                    <span id="msgAlertErroLogin"></span>
+                                    <div class="mb-3">
+                                        <label for="email" class="col-form-label">Usuário</label>
+                                        <input type="text" name="email" class="form-control" id="email" placeholder="Digite o Usuario">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="labelsen" for="senha" class="col-form-label">Senha</label>
+                                        <input  type="password" name="senha" class="form-control" id="senha" placeholder="Digite a senha">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="submit" class="btn btn-warning bt-sm" id="login-usuario-btn" value="Acessar">
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
         </nav>
     </div>
 </header>

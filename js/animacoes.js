@@ -95,7 +95,24 @@ function EnviarWhats(){
 
 /* formulario login Modal */
 
+  $(document).ready(function() {
+    // Manipulador de evento para o botão de login
+    $("#btnLogin").click(function() {
+      // Exibe o modal
+      $("#loginModal").modal("show");
+    });
 
+    // Evento submit do formulário de login
+    $(".login-usuario-form").submit(function(event) {
+      // Impede o envio do formulário (você pode adicionar lógica de autenticação aqui)
+      event.preventDefault();
 
+      // Adicione a lógica de autenticação aqui, se necessário
 
+      // Fecha o modal após a lógica de autenticação (ou faça ajustes conforme necessário)
+      $("#loginModal").modal("hide");
+    });
+  });
 
+  
+ 
