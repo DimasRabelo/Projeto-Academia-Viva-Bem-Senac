@@ -881,6 +881,12 @@ padding: 50px 0;
    
 }
 
+.fs-5 {
+    color: #f1c40f;
+    font-size: 2.15rem!important;
+    -webkit-text-stroke: 1px black; /* Adiciona uma borda preta ao texto para navegadores baseados em Webkit (como Chrome e Safari) */
+    text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black; /* Adiciona uma borda preta ao texto para outros navegadores */
+}
 .modal-content{ 
    background:#34495e;
 }
@@ -889,8 +895,12 @@ padding: 50px 0;
     width: 100%;   
     display: flex;  
     flex-direction: column;    
+    border: 0;
+    margin-bottom: 30px;
 }
-
+.col-form-label{
+    color:#f1c40f;
+}
 
 
   .login-usuario-form{
@@ -900,5 +910,6 @@ padding: 50px 0;
   }
   .labelsen{
     margin-right: 10px;
+    color:#f1c40f;
   }
   
