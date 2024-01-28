@@ -91,17 +91,19 @@ if (isset($_POST['email'])) {
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>.::Projeto TI21::.</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/lity.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="path/to/lightbox.css" rel="stylesheet" />
 
     <!-- Nosso estilo é sempre o último-->
     <link rel="stylesheet" href="css/estilo.css">
@@ -112,44 +114,7 @@ if (isset($_POST['email'])) {
 
 <body>
     <!-- CABEÇALHO -->
-    <header id="menufixo">
-    <div class="topoContato">
-        <div class="site">
-            <a href="mailto:contato@projetoti21.com.br">contato@projetoti21.com.br</a>
-            <a href="tel:+5511988626604">(11) 988 626 604</a>
-            <ul class="topoRedeSocial">
-                <li><a href="#" target="_blank">FACEBOOK</a></li>
-                <li><a href="#" target="_blank">INSTAGRAM</a></li>
-                <li><a href="#" target="_blank">WHATSAPP</a></li>
-            </ul>
-        </div><!-- FIM DO TOPO 01-->
-    </div>
-
-    <div class="site"><!-- COMEÇO DO TOPO 02-->
-        <h1 class="animate__animated animate__bounce">Projeto TI21</h1>
-
-        <button class="abrir-menu"></button>
-        <nav class="menu">
-            <button class="fechar-menu"></button>
-            <ul>
-                <li><a href="index.php" class="ativo">Home</a></li>
-                <li><a href="sobre.php">Sobre</a></li>
-                <li class="subMenu">
-                    <a href="servico.php">Treino</a>
-                    <ul>
-                        <li><a href="#">Treino 01</a></li>
-                        <li><a href="#">Treino 02</a></li>
-                        <li><a href="#">Treino 03</a></li>
-                        <li><a href="#">Treino 04</a></li>
-                        <li><a href="#">Treino 05</a></li>
-                    </ul>
-                </li>
-                <li><a href="contato.php">Contato</a></li>
-            </ul>
-            <button>Login</button>
-        </nav>
-    </div>
-</header>
+    <?php require_once('conteudo/topo.php'); ?>
     <!-- CORPO -->
     <main>
        
@@ -316,7 +281,8 @@ if (isset($_POST['email'])) {
     <script src="js/slick.min.js"></script>
     <script src="js/lity.min.js"></script>
     <script src="js/wow.min.js"></script>
-
+    <script src="path/to/lightbox.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="js/animacoes.js"></script>
 
 </body>

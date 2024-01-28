@@ -23,7 +23,7 @@
                 <li><a href="index.php" class="ativo">Home</a></li>
                 <li><a href="sobre.php">Sobre</a></li>
                 <li class="subMenu">
-                    <a href="servico.php">Treino</a>
+                    <a href="treino.php">Treino</a>
                     <ul>
                         <li><a href="#">Treino 01</a></li>
                         <li><a href="#">Treino 02</a></li>
