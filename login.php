@@ -1,34 +1,3 @@
-<style>
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-    }
-
-    .loginEmail {
-        display: flex;
-        flex-direction: column;
-        max-width: 400px;
-        width: 100%;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-    }
-
-    
-    .loginEmail button {
-        background-color: #4caf50;
-        color: white;
-        padding: 10px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-</style>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -38,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>.::Projeto TI21::.</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
@@ -54,34 +24,46 @@
 </head>
 
 
-
-
 <body>
+    <div class="container text-center">
 
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+            ACESSAR
+        </button>
 
-    <main>
+        <!-- Modal -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="loginModalLabel">Área Restrita</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="login-usuario-form">
+                            <span id="msgAlertErroLogin"></span>
+                            <div class="mb-3">
+                                <label for="email" class="col-form-label">Usuário</label>
+                                <input type="text" name="email" class="form-control" id="email" placeholder="Digite o Usuario">
+                            </div>
+                            <div class="mb-3">
+                                <label for="senha" class="col-form-label">Senha</label>
+                                <input type="password" name="senha" class="form-control" id="senha" placeholder="Digite a senha">
+                            </div>
+                            <div class="mb-3">
+                                <input type="submit" class="btn btn-outline-primary bt-sm" id="login-usuario-btn" value="Acessar">
+                            </div>
+                        </form>
+                    </div>
 
-        <form class="loginEmail">
-            <div>
-                <label for="emailLogin">Digite o Email</label>
-                <input type="email" id="emailLogin" aria-describedby="emailHelp">
-                <div id="emailHelp">Nunca compartilharemos seu e-mail com mais ninguém.</div>
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="senhaEmail">Digite a Senha</label>
-                <input type="password" id="senhaEmail">
-            </div>
-            <div>
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit">Enviar</button>
-        </form>
-
-
-    </main>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/lity.min.js"></script>
     <script src="js/wow.min.js"></script>
@@ -91,3 +73,24 @@
 </body>
 
 </html>
+
+<script>
+    const loginForm = document.querySelector(".login-usuario-form");
+    const msgAlertErroLogin = document.getElementById("msgAlertErroLogin");
+
+    loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        console.log("Formulário enviado!");
+
+        if (document.getElementById("email").value === "") {
+            msgAlertErroLogin.innerHTML = "<div class='alert alert-danger' role='alert'>Erro: Necessário Preencher o campo de usuario!</div>";
+        }
+
+
+
+
+
+    });
+</script>
+
