@@ -14,7 +14,7 @@
     </div>
 
     <div class="site"><!-- COMEÇO DO TOPO 02-->
-        <h1 class="animate__animated animate__bounce"></h1>
+        <h1 class="animate__animated animate__bounce">Projeto ti21</h1>
 
         <button class="abrir-menu"></button>
         <nav class="menu">

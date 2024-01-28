@@ -77,7 +77,7 @@ header div:nth-child(2) {
 
 header div h1 {
     background: url(../img/icones/logoVivaBem.svg) no-repeat;
-    padding: 30px 100px;
+    padding: 10px 90px;
     display: block;
     text-indent: -9999px;
 }
@@ -138,7 +138,7 @@ header div h1 {
     text-indent: -9999px;
     border: 0;
     padding: 21px 28px;
-    width: 36%;
+    width: 37%;
 }
 
 /* MENU FIXO */
