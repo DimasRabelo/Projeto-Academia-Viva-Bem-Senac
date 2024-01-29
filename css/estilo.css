@@ -577,6 +577,7 @@ header div h1 {
 
 .rodape section:nth-child(2) {
     background: #48c9b0;
+   
 }
 
 .rodape section:nth-child(3) {
@@ -586,6 +587,7 @@ header div h1 {
 .rodape section:nth-child(2) h2 {
     color: #000000;
     padding: 15px 0;
+    margin: 0;
 }
 
 .rodape section:nth-child(3) h2 {
@@ -916,6 +918,9 @@ padding: 50px 0;
   .modal {
     background-color: rgba(44, 86, 89, 0.8); /* Cor mais clara com opacidade */
     /* Adicione outras propriedades de estilo conforme necessário */
+}
+.btn:hover{
+    background:#48c9b0;
 }
 .link-dark:hover {
     color: #f1c40f!important; /* Muda a cor para amarelo ao passar o mouse */
