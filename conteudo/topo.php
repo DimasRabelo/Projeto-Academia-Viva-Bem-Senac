@@ -1,4 +1,20 @@
 
+<style>
+        .link-dark:hover {
+            color: #f1c40f!important; /* Muda a cor para amarelo ao passar o mouse */
+        }
+        .link-dark{
+            font-size: 1.0em!important;
+        }
+        .py-3{
+            color: #f1c40f!important;
+        }
+        .bt-sm{
+            width: 220px 
+        }
+
+        
+    </style>
 
 <header id="menufixo">
     <div class="topoContato">
@@ -36,8 +52,8 @@
             </ul>
 
             <div class="container text-center">
-                <button type="button" class="btnlogin"   class="btn-outline-primary" data-toggle="modal" data-target="#loginModal" id="btnLogin">
-                    Login 
+                <button type="button" class="btnlogin" class="btn-outline-primary" data-toggle="modal" data-target="#loginModal" id="btnLogin">
+                    Login
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -56,11 +72,15 @@
                                     </div>
                                     <div class="mb-3">
                                         <label class="labelsen" for="senha" class="col-form-label">Senha</label>
-                                        <input  type="password" name="senha" class="form-control" id="senha" placeholder="Digite a senha">
+                                        <input type="password" name="senha" class="form-control" id="senha" placeholder="Digite a senha">
                                     </div>
+                                    <p><a href="#" class="link-dark">Esqueceu a Senha</a></p>
                                     <div class="mb-3">
                                         <input type="submit" class="btn btn-warning bt-sm" id="login-usuario-btn" value="Acessar">
                                     </div>
+                                    <div class="text-darker-gray py-3">Não tem cadastro?</div>
+                                    <a href="#" class="link-dark">Cadastre-se</a>
+
                                 </form>
                             </div>
 

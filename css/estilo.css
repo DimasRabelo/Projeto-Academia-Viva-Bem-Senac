@@ -900,6 +900,7 @@ padding: 50px 0;
 }
 .col-form-label{
     color:#f1c40f;
+    margin-right: 2px;
 }
 
 
@@ -912,4 +913,19 @@ padding: 50px 0;
     margin-right: 10px;
     color:#f1c40f;
   }
-  
+  .modal {
+    background-color: rgba(44, 86, 89, 0.8); /* Cor mais clara com opacidade */
+    /* Adicione outras propriedades de estilo conforme necessário */
+}
+.link-dark:hover {
+    color: #f1c40f!important; /* Muda a cor para amarelo ao passar o mouse */
+}
+.link-dark{
+    font-size: 1.0em!important;
+}
+.py-3{
+    color: #f1c40f!important;
+}
+.bt-sm{
+    width: 220px 
+}
