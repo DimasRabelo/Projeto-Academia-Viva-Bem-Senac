@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 29/01/2024 às 03:24
+-- Tempo de geração: 29/01/2024 às 16:01
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -384,15 +384,6 @@ CREATE TABLE `vnumalunosativos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura stand-in para view `vnumfuncespecativo`
--- (Veja abaixo para a visão atual)
---
-CREATE TABLE `vnumfuncespecativo` (
-);
-
--- --------------------------------------------------------
-
---
 -- Estrutura stand-in para view `vnumgrupoexercativo`
 -- (Veja abaixo para a visão atual)
 --
@@ -434,23 +425,23 @@ CREATE TABLE `vnumtreinoativo` (
 -- --------------------------------------------------------
 
 --
--- Estrutura stand-in para view `vsomavalores`
--- (Veja abaixo para a visão atual)
+-- Estrutura para tabela `vsomavalores`
 --
+
 CREATE TABLE `vsomavalores` (
-`somaMatriculas` double(19,2)
-);
+  `somaMatriculas` double(19,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura stand-in para view `vsomavaloresporplanos`
--- (Veja abaixo para a visão atual)
+-- Estrutura para tabela `vsomavaloresporplanos`
 --
+
 CREATE TABLE `vsomavaloresporplanos` (
-`nomePlano` varchar(20)
-,`somaMatriculas` double(19,2)
-);
+  `nomePlano` varchar(20) DEFAULT NULL,
+  `somaMatriculas` double(19,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -460,15 +451,6 @@ CREATE TABLE `vsomavaloresporplanos` (
 DROP TABLE IF EXISTS `vnumalunosativos`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vnumalunosativos`  AS SELECT count(`tblalunos`.`idAluno`) AS `qtdeAlunos` FROM `tblalunos` WHERE `tblalunos`.`statusAluno` = 'ATIVO' ;
-
--- --------------------------------------------------------
-
---
--- Estrutura para view `vnumfuncespecativo`
---
-DROP TABLE IF EXISTS `vnumfuncespecativo`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vnumfuncespecativo`  AS SELECT `tblfuncionarios`.`especialidadeFuncionario` AS `especialidadeFuncionario`, count(`tblfuncionarios`.`idFuncionarios`) AS `qtdeFuncionario` FROM `tblfuncionarios` WHERE `tblfuncionarios`.`cargoFuncionario` <> 'RECEPCIONISTA' AND `tblfuncionarios`.`statusFuncionario` = 'ATIVO' GROUP BY `tblfuncionarios`.`especialidadeFuncionario` ;
 
 -- --------------------------------------------------------
 
@@ -505,226 +487,6 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `vnumtreinoativo`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vnumtreinoativo`  AS SELECT count(`tbltreinos`.`idTreino`) AS `COUNT(idTreino)` FROM `tbltreinos` WHERE `tbltreinos`.`statusTreino` = 'ATIVO' ;
-
--- --------------------------------------------------------
-
---
--- Estrutura para view `vsomavalores`
---
-DROP TABLE IF EXISTS `vsomavalores`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vsomavalores`  AS SELECT sum(`tblplanos`.`valorPlano`) AS `somaMatriculas` FROM (`tblplanos` join `tblmatriculas` on(`tblplanos`.`idPlano` = `tblmatriculas`.`idPlano`)) ;
-
--- --------------------------------------------------------
-
---
--- Estrutura para view `vsomavaloresporplanos`
---
-DROP TABLE IF EXISTS `vsomavaloresporplanos`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vsomavaloresporplanos`  AS SELECT `tblplanos`.`nomePlano` AS `nomePlano`, sum(`tblplanos`.`valorPlano`) AS `somaMatriculas` FROM (`tblplanos` join `tblmatriculas` on(`tblplanos`.`idPlano` = `tblmatriculas`.`idPlano`)) GROUP BY `tblplanos`.`nomePlano` ;
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices de tabela `tblalunos`
---
-ALTER TABLE `tblalunos`
-  ADD PRIMARY KEY (`idAluno`);
-
---
--- Índices de tabela `tblbanner`
---
-ALTER TABLE `tblbanner`
-  ADD PRIMARY KEY (`idBanner`);
-
---
--- Índices de tabela `tblcontato`
---
-ALTER TABLE `tblcontato`
-  ADD PRIMARY KEY (`idContato`);
-
---
--- Índices de tabela `tbldestaque`
---
-ALTER TABLE `tbldestaque`
-  ADD PRIMARY KEY (`idDestaque`);
-
---
--- Índices de tabela `tblexercicios`
---
-ALTER TABLE `tblexercicios`
-  ADD PRIMARY KEY (`idExercicio`);
-
---
--- Índices de tabela `tblfuncionarios`
---
-ALTER TABLE `tblfuncionarios`
-  ADD PRIMARY KEY (`idFuncionario`);
-
---
--- Índices de tabela `tblgaleria`
---
-ALTER TABLE `tblgaleria`
-  ADD PRIMARY KEY (`idGaleria`);
-
---
--- Índices de tabela `tblmatriculas`
---
-ALTER TABLE `tblmatriculas`
-  ADD PRIMARY KEY (`idMatricula`),
-  ADD KEY `matriculaAluno` (`idAluno`),
-  ADD KEY `matriculaPlano` (`idPlano`);
-
---
--- Índices de tabela `tblplanos`
---
-ALTER TABLE `tblplanos`
-  ADD PRIMARY KEY (`idPlano`);
-
---
--- Índices de tabela `tblregistrotreinos`
---
-ALTER TABLE `tblregistrotreinos`
-  ADD PRIMARY KEY (`idRegistroTreino`),
-  ADD KEY `registroTreino` (`idTreino`),
-  ADD KEY `resgistroExercicio` (`idExercicio`);
-
---
--- Índices de tabela `tblsobre`
---
-ALTER TABLE `tblsobre`
-  ADD PRIMARY KEY (`idsobre`);
-
---
--- Índices de tabela `tbltelefonealunos`
---
-ALTER TABLE `tbltelefonealunos`
-  ADD PRIMARY KEY (`idTelefoneAluno`),
-  ADD KEY `telefoneAluno` (`idAluno`);
-
---
--- Índices de tabela `tbltreinos`
---
-ALTER TABLE `tbltreinos`
-  ADD PRIMARY KEY (`idTreino`),
-  ADD KEY `treinoAluno` (`idAluno`),
-  ADD KEY `treinoFuncionario` (`idFuncionario`);
-
---
--- AUTO_INCREMENT para tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `tblalunos`
---
-ALTER TABLE `tblalunos`
-  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT de tabela `tblbanner`
---
-ALTER TABLE `tblbanner`
-  MODIFY `idBanner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de tabela `tblcontato`
---
-ALTER TABLE `tblcontato`
-  MODIFY `idContato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT de tabela `tbldestaque`
---
-ALTER TABLE `tbldestaque`
-  MODIFY `idDestaque` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `tblexercicios`
---
-ALTER TABLE `tblexercicios`
-  MODIFY `idExercicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT de tabela `tblfuncionarios`
---
-ALTER TABLE `tblfuncionarios`
-  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de tabela `tblgaleria`
---
-ALTER TABLE `tblgaleria`
-  MODIFY `idGaleria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de tabela `tblmatriculas`
---
-ALTER TABLE `tblmatriculas`
-  MODIFY `idMatricula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de tabela `tblplanos`
---
-ALTER TABLE `tblplanos`
-  MODIFY `idPlano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de tabela `tblregistrotreinos`
---
-ALTER TABLE `tblregistrotreinos`
-  MODIFY `idRegistroTreino` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de tabela `tblsobre`
---
-ALTER TABLE `tblsobre`
-  MODIFY `idsobre` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `tbltelefonealunos`
---
-ALTER TABLE `tbltelefonealunos`
-  MODIFY `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT de tabela `tbltreinos`
---
-ALTER TABLE `tbltreinos`
-  MODIFY `idTreino` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- Restrições para tabelas despejadas
---
-
---
--- Restrições para tabelas `tblmatriculas`
---
-ALTER TABLE `tblmatriculas`
-  ADD CONSTRAINT `matriculaAluno` FOREIGN KEY (`idAluno`) REFERENCES `tblalunos` (`idAluno`),
-  ADD CONSTRAINT `matriculaPlano` FOREIGN KEY (`idPlano`) REFERENCES `tblplanos` (`idPlano`);
-
---
--- Restrições para tabelas `tblregistrotreinos`
---
-ALTER TABLE `tblregistrotreinos`
-  ADD CONSTRAINT `registroTreino` FOREIGN KEY (`idTreino`) REFERENCES `tbltreinos` (`idTreino`),
-  ADD CONSTRAINT `resgistroExercicio` FOREIGN KEY (`idExercicio`) REFERENCES `tblexercicios` (`idExercicio`);
-
---
--- Restrições para tabelas `tbltelefonealunos`
---
-ALTER TABLE `tbltelefonealunos`
-  ADD CONSTRAINT `telefoneAluno` FOREIGN KEY (`idAluno`) REFERENCES `tblalunos` (`idAluno`);
-
---
--- Restrições para tabelas `tbltreinos`
---
-ALTER TABLE `tbltreinos`
-  ADD CONSTRAINT `treinoAluno` FOREIGN KEY (`idAluno`) REFERENCES `tblalunos` (`idAluno`),
-  ADD CONSTRAINT `treinoFuncionario` FOREIGN KEY (`idFuncionario`) REFERENCES `tblfuncionarios` (`idFuncionario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
