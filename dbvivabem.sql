@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31/01/2024 às 15:36
+-- Tempo de geração: 04/02/2024 às 03:19
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -436,23 +436,23 @@ CREATE TABLE `vnumtreinoativo` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `vsomavalores`
+-- Estrutura stand-in para view `vsomavalores`
+-- (Veja abaixo para a visão atual)
 --
-
 CREATE TABLE `vsomavalores` (
-  `somaMatriculas` double(19,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+`somaGeral` double(19,2)
+);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `vsomavaloresporplanos`
+-- Estrutura stand-in para view `vsomavaloresporplanos`
+-- (Veja abaixo para a visão atual)
 --
-
 CREATE TABLE `vsomavaloresporplanos` (
-  `nomePlano` varchar(20) DEFAULT NULL,
-  `somaMatriculas` double(19,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+`nomePlano` varchar(20)
+,`somaPlano` double(19,2)
+);
 
 -- --------------------------------------------------------
 
@@ -507,6 +507,24 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `vnumtreinoativo`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vnumtreinoativo`  AS SELECT count(`tbltreinos`.`idTreino`) AS `COUNT(idTreino)` FROM `tbltreinos` WHERE `tbltreinos`.`statusTreino` = 'ATIVO' ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para view `vsomavalores`
+--
+DROP TABLE IF EXISTS `vsomavalores`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vsomavalores`  AS SELECT sum(`tblplanos`.`valorPlano`) AS `somaGeral` FROM `tblplanos` ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para view `vsomavaloresporplanos`
+--
+DROP TABLE IF EXISTS `vsomavaloresporplanos`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vsomavaloresporplanos`  AS SELECT `tblplanos`.`nomePlano` AS `nomePlano`, sum(`tblplanos`.`valorPlano`) AS `somaPlano` FROM `tblplanos` GROUP BY `tblplanos`.`nomePlano` ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
