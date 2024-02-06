@@ -61,7 +61,7 @@
 <div  id="loginModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <h2><img src="" alt=""></h2>
+        <h2><img src="img/logoVivaBem .png" alt=""></h2>
         <form id="login-usuario-form">
             <div class="mb-3">
                 <label for="email" class="col-form-label">Usuário</label>
@@ -86,21 +86,6 @@
 </div>
 
 <script>
- var modal = document.getElementById('loginModal');
- var loginButton = document.getElementById('loginButton');
-
- loginButton.onclick = function() {
-    modal.style.display = 'block';
- };
-function closeModal(){
-    modal.style.display = 'none';
-}
-
-function carregarlogin() {
-    closeModal();
-    alert('login bem sucedido! Redirecionando');
-}
-
 
 
 
