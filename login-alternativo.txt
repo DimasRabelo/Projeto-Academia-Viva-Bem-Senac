@@ -1,0 +1,42 @@
+
+            <div class="container text-center">
+                <button type="button" class="btnlogin" class="btn-outline-primary" data-toggle="modal" data-target="#loginModal" id="btnLogin">
+                    Login
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true"   >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="loginModalLabel">Área Restrita</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="login-usuario-form">
+                                    <span id="msgAlertErroLogin"></span>
+                                    <div class="mb-3">
+                                        <label for="email" class="col-form-label">Usuário</label>
+                                        <input type="text" name="email" class="form-control" id="email" placeholder="Digite o Usuario">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="labelsen" for="senha" class="col-form-label">Senha</label>
+                                        <input type="password" name="senha" class="form-control" id="senha" placeholder="Digite a senha">
+                                    </div>
+                                    <p><a href="#" class="link-dark">Esqueceu a Senha</a></p>
+                                    <div class="mb-3">
+                                    <button type="button" onclick="carregarlogin()">Entrar</button>
+                                       <!-- <input type="submit" class="btn btn-warning bt-sm" id="login-usuario-btn" value="Acessar"> -->
+                                    </div>
+                                    <div class="text-darker-gray py-3">Não tem cadastro?</div>
+                                    <a href="#" class="link-dark">Cadastre-se</a>
+                                    
+                                </form>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
