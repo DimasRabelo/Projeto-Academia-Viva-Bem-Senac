@@ -95,7 +95,7 @@ function EnviarWhats(){
 
 /* formulario login Modal */
 
-  $(document).ready(function() {
+  /* $(document).ready(function() {
     // Manipulador de evento para o botão de login
     $("#btnLogin").click(function() {
       // Exibe o modal
@@ -113,6 +113,6 @@ function EnviarWhats(){
       $("#loginModal").modal("hide");
     });
   });
-
+*/
   
  

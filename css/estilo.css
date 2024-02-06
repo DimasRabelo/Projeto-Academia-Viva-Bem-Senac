@@ -132,13 +132,13 @@ header div h1 {
     font-size: 1.2em;
 }
 
-.menu .btnlogin {
+#loginButton {
     background: url(../img/btnLogin.png) no-repeat;
     background-size: cover;
     text-indent: -9999px;
     border: 0;
-    padding: 21px 28px;
-    width: 37%;
+    padding: 5px 5px;
+    width: 72px;
 }
 
 /* MENU FIXO */
@@ -577,6 +577,7 @@ header div h1 {
 
 .rodape section:nth-child(2) {
     background: #48c9b0;
+    
    
 }
 
@@ -588,11 +589,13 @@ header div h1 {
     color: #000000;
     padding: 15px 0;
     margin: 0;
+    font-size: 1.0em;
 }
 
 .rodape section:nth-child(3) h2 {
     color: #ffffff;
     padding: 15px 0;
+    font-size: 1.0em;
 }
 
 /* ########################### Sobre ##################### */
@@ -876,12 +879,14 @@ padding: 50px 0;
 }
 
 
-.btn-close {
+.close {
     position: absolute;
     top: 20px;
     right: 20px;
-   
+    cursor: pointer;
+    font-size: 1.5em;
 }
+
 
 .fs-5 {
     color: #f1c40f;
@@ -906,7 +911,7 @@ padding: 50px 0;
 }
 
 
-  .login-usuario-form{
+#login-usuario-form{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -915,10 +920,7 @@ padding: 50px 0;
     margin-right: 10px;
     color:#f1c40f;
   }
-  .modal {
-    background-color: rgba(44, 86, 89, 0.8); /* Cor mais clara com opacidade */
-    /* Adicione outras propriedades de estilo conforme necessário */
-}
+  
 .btn:hover{
     background:#48c9b0;
 }

@@ -1,3 +1,16 @@
+
+<?php
+  require_once('admin/class/exercicios.php');
+
+    $exercicios = new ExerciciosClass();
+    $lista      = $exercicios->listar();
+
+
+    //var_dump($lista);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -29,10 +42,8 @@
     <!-- CORPO -->
     <main>
 
-        <!-- GALERIA -->
-        <?php require_once('conteudo/galeria.php'); ?>
         <!-- EQUIPE -->
-        <?php require_once('conteudo/equipe.php'); ?>
+        <?php require_once('conteudo/servico.php'); ?>
         <!-- DESTAQUE -->
         <?php require_once('conteudo/destaque.php'); ?>
  </main>
