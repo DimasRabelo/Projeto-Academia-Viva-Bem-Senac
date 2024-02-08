@@ -105,18 +105,70 @@ function closeModal(){
 }
 
 function carregarlogin() {
-   closeModal();
+   //closeModal();
    //alert('login bem sucedido! Redirecionando');
 
-// prgar dados do form
+// pegar dados do form
 
-  var email = document.getElementById('email').value;
-  var senha = document.getElementById('password').value;
+// outra forma pelo jaquery percorre todos inputs do formulário 
+var formData = $('#login-usuario-form').serialize();
+console.log("Dados do Form: " + formData);
 
-  console.log("E-mail:" + email);
-  console.log("Senha:" + senha);
+
+$('#login-usuario-form').submit(function(event) {
+  event.preventDefault(); // Impede o envio do formulário padrão
+  
+  var formData = $(this).serialize(); // Serializa os dados do formulário
+  
+  // Enviar a solicitação - classe de Aluno
+  $.ajax({
+    url: './admin/class/class-aluno.php',
+    method: 'POST',
+    data: formData,
+    dataType: 'json',
+    success: function(data) {
+      if (data.success) {
+        // Bem Sucedido
+        $('#msgLogin').html('<div class="msgSuccess">' + data.message + '</div>');
+        var idAluno = data.idAluno;
+        window.location.href = 'http://localhost/Projeto-Academia-Viva-Bem-Senac/admin/index.php?p=dashboard';
+      } else {
+        // login inválido
+        $('#msgLogin').html('<div class="msgInvalido">' + data.message + '</div>');
+      }
+    },
+    error: function(xhr, status, error) {
+      console.log(error);
+    }
+  });
+});
+
 
 }
+  
+
+
+
+
+
+  /* var email = document.getElementById('email').value;
+  var senha = document.getElementById('password').value; */
+ 
+ // Essa é uma outra forma de buscar os dados do Formulário através da biblioteca Jquery //
+  /* var email = $('#email').val();
+  var senha = $('#password').val(); */
+
+
+// Testando para ver se está buscando as informações //
+  //console.log("E-mail:" + email);
+  //console.log("Senha:" + senha);
+
+
+
+
+
+
+
 
 
 

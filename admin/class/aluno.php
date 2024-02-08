@@ -3,7 +3,8 @@
 
 require_once ('conexao.php');
 
-class AlunoClass{
+
+class AlunoClass extends AlunoClass{
 
     public $idAluno;
     public $nomeAluno;
@@ -12,6 +13,8 @@ class AlunoClass{
    //  public $dataCadAluno; //
     public $statusAluno;
     public $fotoAluno;
+    public $senhaAluno;
+
 
    // '".$this->dataCadAluno."', 
       // dataCadAluno,
@@ -105,6 +108,45 @@ public function Carregar()
  }
 
 
+ // 
+public function verificarLogin()
+{
 
+
+      
+    if(isset($_POST['email'])){
+
+        print_r($_POST['email']);
+
+
+    }
+}
 
 }
+
+if(isset($_POST['email'])){
+
+    $aluno = new AlunoClass();
+
+    $emailLogin = $_POST['email'];
+    $senhaLogin = $_POST['password'];
+
+    $aluno->emailAluno = $emailLogin;
+    $aluno->senhaAluno = $senhaLogin;
+
+    if($idAluno = $aluno->verificarLogin()){
+        // Login Bem sucedido 
+        print_r($idAluno);
+
+    }else{
+        // login invalido
+
+        print_r('Erro de Login');
+    }
+
+    
+}
+
+
+
+

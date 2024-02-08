@@ -80,6 +80,7 @@
             <a href="#" class="link-dark">Cadastre-se</a>
 
         </form>
+        <div id="msgLogin"></div>
     </div>
 
 </div>
