@@ -109,18 +109,22 @@ public function Carregar()
 
 
  // 
-public function verificarLogin()
-{
-
-
-      
-    if(isset($_POST['email'])){
-
-        print_r($_POST['email']);
-
-
-    }
-}
+ public function verificarLogin()
+ {
+     $sql = "SELECT * FROM tblalunos 
+        WHERE emailAluno = '". $this->emailAluno ."' AND    
+        senhaAluno = '". $this->senhaAluno ."'";
+     $conn = Conexao::LigarConexao();
+     $resultado = $conn->query($sql);
+     $aluno = $resultado->fetch();
+ 
+     if ($aluno) {
+         return $aluno['idAluno'];
+     } else {
+         return false;
+     }
+ }
+ 
 
 }
 
@@ -136,12 +140,13 @@ if(isset($_POST['email'])){
 
     if($idAluno = $aluno->verificarLogin()){
         // Login Bem sucedido 
-        print_r($idAluno);
-
+        session_start();
+        $_SESSION['idAluno'] = $idAluno;
+        echo json_encode(['success' => true, 'message' => 'Login foi Realizado com Sucesso' , 'idAluno' => $idAluno]);
     }else{
         // login invalido
 
-        print_r('Erro de Login');
+        echo json_encode(['success' => true, 'message' => 'Email ou Senha Inválido' ]);
     }
 
     

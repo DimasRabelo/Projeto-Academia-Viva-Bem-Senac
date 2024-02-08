@@ -106,7 +106,7 @@ function closeModal(){
 
 function carregarlogin() {
    //closeModal();
-   //alert('login bem sucedido! Redirecionando');
+  // alert('login bem sucedido! Redirecionando');
 
 // pegar dados do form
 
@@ -122,7 +122,7 @@ $('#login-usuario-form').submit(function(event) {
   
   // Enviar a solicitação - classe de Aluno
   $.ajax({
-    url: './admin/class/class-aluno.php',
+    url: '../admin/class/aluno.php',
     method: 'POST',
     data: formData,
     dataType: 'json',
@@ -138,7 +138,7 @@ $('#login-usuario-form').submit(function(event) {
       }
     },
     error: function(xhr, status, error) {
-      console.log(error);
+     // console.log(error);
     }
   });
 });

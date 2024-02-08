@@ -65,7 +65,7 @@
         <form id="login-usuario-form">
             <div class="mb-3">
                 <label for="email" class="col-form-label">Usuário</label>
-                <input type="text" name="email" class="form-control" id="email" placeholder="Digite o Usuario">
+                <input type="email" name="email" class="form-control" id="email" placeholder="Digite o Usuario">
             </div>
             <div class="mb-3">
                 <label class="labelsen" for="senha" class="col-form-label">Senha</label>
@@ -84,5 +84,9 @@
     </div>
 
 </div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+<script src="js/script.js"></script>
 
 
