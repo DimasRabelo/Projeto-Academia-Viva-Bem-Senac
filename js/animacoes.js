@@ -106,33 +106,22 @@ function closeModal(){
 
 function carregarlogin() {
    closeModal();
-   alert('login bem sucedido! Redirecionando');
+   //alert('login bem sucedido! Redirecionando');
+
+// prgar dados do form
+
+  var email = document.getElementById('email').value;
+  var senha = document.getElementById('password').value;
+
+  console.log("E-mail:" + email);
+  console.log("Senha:" + senha);
+
 }
 
 
 
 
 
-/* formulario login Modal */
 
-  /* $(document).ready(function() {
-    // Manipulador de evento para o botão de login
-    $("#btnLogin").click(function() {
-      // Exibe o modal
-      $("#loginModal").modal("show");
-    });
 
-    // Evento submit do formulário de login
-    $(".login-usuario-form").submit(function(event) {
-      // Impede o envio do formulário (você pode adicionar lógica de autenticação aqui)
-      event.preventDefault();
-
-      // Adicione a lógica de autenticação aqui, se necessário
-
-      // Fecha o modal após a lógica de autenticação (ou faça ajustes conforme necessário)
-      $("#loginModal").modal("hide");
-    });
-  });
-*/
-  
  
