@@ -7,18 +7,7 @@ if(isset($_SESSION['idAluno']))
 {
     echo "cheguei Aqui";
 }else{
-    header("location:http://localhost/Projeto-Viva-Bem-Academia-Senac/");
-    exit();
-}
-
-
-session_start();
-
-if(isset($_SESSION['idFuncionario']))
-{
-    echo "cheguei Aqui";
-}else{
-    header("location:http://localhost/Projeto-Viva-Bem-Academia-Senac/admin/login.php");
+    header("location:http://localhost/Projeto-Academia-Viva-Bem-Senac/");
     exit();
 }
 

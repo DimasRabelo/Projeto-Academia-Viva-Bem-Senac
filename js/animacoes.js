@@ -118,7 +118,7 @@ function carregarLogin() {
          $('#msgLogin').html('<div class="msgSuccess">'+ data.message+'</div>');
 
          var idAluno = data.idAluno; //FAZ RREFERENCIA COM O BANCO DE DADOS
-         window.location.href = 'http://localhost/Projeto-Viva-Bem-Academia-Senac/admin/index.php?p=dashboard';
+         window.location.href = 'http://localhost/Projeto-Academia-Viva-Bem-Senac/admin/index.php?p=dashboard';
        }  
      },
      error: function(xhr, status, error) {
