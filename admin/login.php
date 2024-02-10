@@ -1,13 +1,12 @@
 <style>
     /* modal do meu login */
-
     body {
-        background: url(../img/fundoDestaque.png);
-        object-fit: cover;
-
-
-
-    }
+    background: url(../img/fundoDestaque.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
 
     .modal {
         text-align: center;
@@ -125,9 +124,7 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/lity.min.js"></script>
-<script src="js/wow.min.js"></script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script src="js/animacoes.js"></script>
+<script src="js/script.js"></script>

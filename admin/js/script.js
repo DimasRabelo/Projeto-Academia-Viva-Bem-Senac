@@ -11,16 +11,17 @@ function confirmarDesativacao() {
 function fecharModal() {
    var modal = document.querySelector('.myModal'); // Seleciona o elemento pela classe
    modal.style.display = 'none';
-}
+ }
 
-function carregarLogin() {
+ function carregarLogin() {
+   // alert('login bem sucedido
    //alert('login bem sucedido! Redirecionando');
 
    $("#login-usuario-form").click(function () {
      var formData = $('#login-usuario-form').serialize();
      
      $.ajax({
-      url: '/class/funcionario.php',  
+      url: '/admin/class/funcionario.php',  
       method: 'POST',                   
       data: formData,                   
       dataType: 'json',  // Corrigido de "dataTypr" para "dataType"
@@ -34,10 +35,12 @@ function carregarLogin() {
         }
       },
       error: function(xhr, status, error) {
-        console.error(xhr.responseText); // Tratamento de erro
+         console.log(error);// Tratamento de erro
       }
      });
    });
+
+
 }
 
   

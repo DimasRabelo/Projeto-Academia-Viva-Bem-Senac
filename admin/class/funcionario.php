@@ -4,6 +4,11 @@
 require_once('conexao.php');
 
 class FuncionarioClass
+
+
+
+
+
 {
 
 
@@ -163,7 +168,7 @@ class FuncionarioClass
    
        if($idFuncionario = $funcionario->verificarLogin()){
            //Login bem-sucedido
-           //print_r($idAluno);
+           print_r($idFuncionario);
    
            session_start();
            $_SESSION['idFuncionario'] = $idFuncionario;
@@ -176,7 +181,7 @@ class FuncionarioClass
            echo json_encode(['success' => false, 'message' => 'Email ou Senha inválido']);
        }
    
-       //print_r($_POST['email']);
+       print_r($_POST['email']);
    }
    
 

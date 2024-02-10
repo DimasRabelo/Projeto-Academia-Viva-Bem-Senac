@@ -102,7 +102,7 @@ function fecharModal() {
 }
 
 function carregarLogin() {
-  alert('login bem sucedido! Redirecionando');
+ // alert('login bem sucedido! Redirecionando');
 
   $("#login-usuario-form").click(function () {
     var formData = $('#login-usuario-form').serialize();
@@ -118,11 +118,12 @@ function carregarLogin() {
          $('#msgLogin').html('<div class="msgSuccess">'+ data.message+'</div>');
 
          var idAluno = data.idAluno; //FAZ RREFERENCIA COM O BANCO DE DADOS
-         window.location.href = 'http://localhost/Projeto-Viva-Bem-Academia-Senac/admin/index.php?p=aluno';
+         window.location.href = 'http://localhost/Projeto-Viva-Bem-Academia-Senac/admin/index.php?p=dashboard';
        }  
      },
      error: function(xhr, status, error) {
-       console.error(xhr.responseText); // Tratamento de erro
+      console.log(error);
+      
      }
     });
   });

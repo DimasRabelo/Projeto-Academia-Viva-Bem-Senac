@@ -12,6 +12,16 @@ if(isset($_SESSION['idAluno']))
 }
 
 
+session_start();
+
+if(isset($_SESSION['idFuncionario']))
+{
+    echo "cheguei Aqui";
+}else{
+    header("location:http://localhost/Projeto-Viva-Bem-Academia-Senac/admin/login.php");
+    exit();
+}
+
 $pagina = @$_GET['p'];
 
 ?>

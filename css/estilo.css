@@ -132,7 +132,8 @@ header div h1 {
     font-size: 1.2em;
 }
 
-#loginButton {
+.botao
+{
     background: url(../img/btnLogin.png) no-repeat;
     background-size: cover;
     text-indent: -9999px;

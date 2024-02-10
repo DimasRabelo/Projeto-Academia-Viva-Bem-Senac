@@ -2,12 +2,12 @@
     /* modal do meu login */
 
     body {
-        background: url(./img/fundoDestaque.png);
-        object-fit: cover;
-
-
-
-    }
+    background: url(./img/fundoDestaque.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
 
     .modal {
         text-align: center;
@@ -118,9 +118,11 @@
             <div class="text-darker-gray py-3">Não tem cadastro?</div>
             <a href="#" class="link-dark">Cadastre-se</a>
         </form>
+
+        <div id="msgLogin" ></div>
     </div>
 
-    </div>
+  
 
 </body>
 
