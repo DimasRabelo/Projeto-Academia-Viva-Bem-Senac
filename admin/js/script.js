@@ -14,14 +14,14 @@ function fecharModal() {
  }
 
  function carregarLogin() {
-   // alert('login bem sucedido
-   //alert('login bem sucedido! Redirecionando');
+   // alert('login bem sucedido')
+  // alert('login bem sucedido! Redirecionando');
 
    $("#login-usuario-form").click(function () {
      var formData = $('#login-usuario-form').serialize();
      
      $.ajax({
-      url: '/admin/class/funcionario.php',  
+      url: '../admin/class/funcionario.php',  
       method: 'POST',                   
       data: formData,                   
       dataType: 'json',  // Corrigido de "dataTypr" para "dataType"
