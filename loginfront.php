@@ -2,7 +2,7 @@
     /* modal do meu login */
 
     body {
-        background: url(../img/fundoDestaque.png);
+        background: url(./img/fundoDestaque.png);
         object-fit: cover;
 
 

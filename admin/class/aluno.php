@@ -113,9 +113,7 @@ public function Carregar()
  public function verificarLogin()
  {
 
-    var_dump($this->emailAluno);
-    var_dump($this->senhaAluno);
-
+   
 
      $sql = "SELECT * FROM tblalunos 
         WHERE emailAluno = '". $this->emailAluno ."' AND    
@@ -134,7 +132,7 @@ public function Carregar()
 
 }
 
-if(isset($_POST['email'])){
+if (isset($_POST['email'])) {
 
     $aluno = new AlunoClass();
 
@@ -145,18 +143,23 @@ if(isset($_POST['email'])){
     $aluno->senhaAluno = $senhaLogin;
 
     if($idAluno = $aluno->verificarLogin()){
-        // Login Bem sucedido 
+        //Login bem-sucedido
+        //print_r($idAluno);
+
         session_start();
         $_SESSION['idAluno'] = $idAluno;
-        echo json_encode(['success' => true, 'message' => 'Login foi Realizado com Sucesso' , 'idAluno' => $idAluno]);
-    }else{
-        // login invalido
+        echo json_encode(['success' => true, 'message' => 'Login foi realizado com sucesso', 'idAluno' => $idAluno]);
 
-        echo json_encode(['success' => true, 'message' => 'Email ou Senha Inválido' ]);
+    }else{
+        //Login inaválido
+        //print_r('Erro de login');
+
+        echo json_encode(['success' => false, 'message' => 'Email ou Senha inválido']);
     }
 
-    
+    //print_r($_POST['email']);
 }
+
 
 
 

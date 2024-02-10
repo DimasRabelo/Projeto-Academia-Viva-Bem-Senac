@@ -6,17 +6,47 @@ function confirmarDesativacao() {
     return confirmacao;
 }
 
-var modal = document.getElementById('loginModal');
-var loginButton = document.getElementById('loginButton');
 
-loginButton.onclick = function() {
-   modal.style.display = 'block';
-};
-function closeModal(){
+
+function fecharModal() {
+   var modal = document.querySelector('.myModal'); // Seleciona o elemento pela classe
    modal.style.display = 'none';
 }
 
-function carregarlogin() {
-   closeModal();
-   alert('login bem sucedido! Redirecionando');
+function carregarLogin() {
+   //alert('login bem sucedido! Redirecionando');
+
+   $("#login-usuario-form").click(function () {
+     var formData = $('#login-usuario-form').serialize();
+     
+     $.ajax({
+      url: '/class/funcionario.php',  
+      method: 'POST',                   
+      data: formData,                   
+      dataType: 'json',  // Corrigido de "dataTypr" para "dataType"
+      success: function(data) {                       
+        if(data.success) {
+          //Bem Sucedido caminho onde recebera a informação
+          $('#msgLogin').html('<div class="msgSuccess">'+ data.message+'</div>');
+
+          var idFuncionario = data.idFuncionario; //FAZ RREFERENCIA COM O BANCO DE DADOS
+          window.location.href = 'http://localhost/projetoAcademia/admin/index.php?p=dashboard';
+        }
+      },
+      error: function(xhr, status, error) {
+        console.error(xhr.responseText); // Tratamento de erro
+      }
+     });
+   });
 }
+
+  
+  
+  
+
+
+
+
+
+
+

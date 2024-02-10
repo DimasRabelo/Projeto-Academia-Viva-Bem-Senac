@@ -52,7 +52,7 @@
                 <li><a href="contato.php">Contato</a></li>
             </ul>
 
-            <button id="loginButton">Login</button>
+            <button><a href="loginfront.php">Login</a></button>
         </nav>
     </div>
 </header>

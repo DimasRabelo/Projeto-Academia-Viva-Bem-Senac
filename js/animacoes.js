@@ -94,58 +94,43 @@ function EnviarWhats(){
 }
 
 
-var modal = document.getElementById('loginModal');
-var loginButton = document.getElementById('loginButton');
 
-loginButton.onclick = function() {
-   modal.style.display = 'block';
-};
-function closeModal(){
-   modal.style.display = 'none';
+
+function fecharModal() {
+  var modal = document.querySelector('.myModal'); // Seleciona o elemento pela classe
+  modal.style.display = 'none';
 }
 
-function carregarlogin() {
-   //closeModal();
+function carregarLogin() {
   alert('login bem sucedido! Redirecionando');
 
-// pegar dados do form
+  $("#login-usuario-form").click(function () {
+    var formData = $('#login-usuario-form').serialize();
+    
+    $.ajax({
+     url: './admin/class/aluno.php', 
+     method: 'POST',                   
+     data: formData,                   
+     dataType: 'json',  
+     success: function(data) {                       
+       if(data.success) {
+         //Bem Sucedido caminho onde recebera a informação
+         $('#msgLogin').html('<div class="msgSuccess">'+ data.message+'</div>');
 
-// outra forma pelo jaquery percorre todos inputs do formulário 
-var formData = $('#login-usuario-form').serialize();
-console.log("Dados do Form: " + formData);
-
-
-$('#login-usuario-form').submit(function(event) {
-  event.preventDefault(); // Impede o envio do formulário padrão
-  
-  var formData = $(this).serialize(); // Serializa os dados do formulário
-  
-  // Enviar a solicitação - classe de Aluno
-  $.ajax({
-    url: './admin/class/aluno.php',
-    method: 'POST',
-    data: formData,
-    dataType: 'json',
-    success: function(data) {
-      if (data.success) {
-        // Bem Sucedido
-        $('#msgLogin').html('<div class="msgSuccess">' + data.message + '</div>');
-        var idAluno = data.idAluno;
-        window.location.href = 'http://localhost/Projeto-Academia-Viva-Bem-Senac/admin/index.php?p=dashboard';
-      } else {
-        // login inválido
-        $('#msgLogin').html('<div class="msgInvalido">' + data.message + '</div>');
-      }
-    },
-    error: function(xhr, status, error) {
-     console.log(error);
-    }
+         var idAluno = data.idAluno; //FAZ RREFERENCIA COM O BANCO DE DADOS
+         window.location.href = 'http://localhost/Projeto-Viva-Bem-Academia-Senac/admin/index.php?p=aluno';
+       }  
+     },
+     error: function(xhr, status, error) {
+       console.error(xhr.responseText); // Tratamento de erro
+     }
+    });
   });
-});
-
-
 }
-  
+
+ 
+ 
+ 
 
 
 
