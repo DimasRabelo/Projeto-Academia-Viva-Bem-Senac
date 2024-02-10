@@ -4,13 +4,14 @@
 require_once ('conexao.php');
 
 
-class AlunoClass extends AlunoClass{
+class AlunoClass 
+{
 
     public $idAluno;
     public $nomeAluno;
     public $dataNascAluno;
     public $emailAluno;
-   //  public $dataCadAluno; //
+    public $dataCadAluno; 
     public $statusAluno;
     public $fotoAluno;
     public $senhaAluno;
@@ -111,6 +112,11 @@ public function Carregar()
  // 
  public function verificarLogin()
  {
+
+    var_dump($this->emailAluno);
+    var_dump($this->senhaAluno);
+
+
      $sql = "SELECT * FROM tblalunos 
         WHERE emailAluno = '". $this->emailAluno ."' AND    
         senhaAluno = '". $this->senhaAluno ."'";

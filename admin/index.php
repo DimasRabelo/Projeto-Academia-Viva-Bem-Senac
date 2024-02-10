@@ -12,8 +12,6 @@ if(isset($_SESSION['idAluno']))
 }
 
 
-
-
 $pagina = @$_GET['p'];
 
 ?>
