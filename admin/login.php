@@ -1,6 +1,6 @@
 <style>
     /* modal do meu login */
-    body {
+    .corpoLogin {
     background: url(../img/fundoDestaque.png) no-repeat;
     background-size: cover;
     background-position: center;
@@ -92,8 +92,27 @@
     }
 </style>
 
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD ACADEMIA VIVA BEM</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="path/to/lightbox.css" rel="stylesheet" />
+
+    <!-- estilo css sempre o último -->
+
+    <link rel="stylesheet" href="./css/estilo.css">
+
+</head>
+
+
+<body class="corpoLogin">
 
 
 
