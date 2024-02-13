@@ -102,12 +102,12 @@ function fecharModal() {
 }
 
 function carregarLogin() {
- // alert('login bem sucedido! Redirecionando');
+ alert('login bem sucedido! Redirecionando');
 
   $("#login-usuario-form").click(function () {
     var formData = $('#login-usuario-form').serialize();
-    console.log("E-mail:" + email);
-    console.log("Senha:" + senha);
+    //console.log("E-mail:" + email);
+    //console.log("Senha:" + senha);
 
     
     $.ajax({
@@ -118,10 +118,14 @@ function carregarLogin() {
      success: function(data) {                       
        if(data.success) {
          //Bem Sucedido caminho onde recebera a informação
-         $('#msgLogin').html('<div class="msgSuccess">'+ data.message+'</div>');
+         $('#msgLogin').html('<div class="msgSuccess">'+ data.message +'</div>');
 
          var idAluno = data.idAluno; //FAZ RREFERENCIA COM O BANCO DE DADOS
          window.location.href = 'http://localhost/Projeto-Academia-Viva-Bem-Senac/admin/index.php?p=dashboard';
+       }else {
+
+        $('#msgLogin').html('<div class="msgSuccess">'+ data.message +'</div>');
+
        }  
      },
      error: function(xhr, status, error) {

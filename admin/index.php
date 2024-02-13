@@ -7,10 +7,9 @@ if(isset($_SESSION['idAluno']))
 {
     echo "cheguei Aqui";
 }else{
-    header("location:http://localhost/Projeto-Academia-Viva-Bem-Senac/admin/login.php");
+    header("location:http://localhost/Projeto-Academia-Viva-Bem-Senac/");
     exit();
 }
-
 
 $pagina = @$_GET['p'];
 
