@@ -102,12 +102,12 @@ function fecharModal() {
 }
 
 function carregarLogin() {
- alert('login bem sucedido! Redirecionando');
+ //alert('login bem sucedido! Redirecionando');
 
   $("#login-usuario-form").click(function () {
     var formData = $('#login-usuario-form').serialize();
-    //console.log("E-mail:" + email);
-    //console.log("Senha:" + senha);
+   // console.log("E-mail:" + email);
+   // console.log("Senha:" + senha);
 
     
     $.ajax({
@@ -129,7 +129,7 @@ function carregarLogin() {
        }  
      },
      error: function(xhr, status, error) {
-      console.log(error);
+      //console.log(error);
       
      }
     });

@@ -1,0 +1,95 @@
+/* Login Admin */
+
+
+
+
+.corpoLogin {
+    background: url(../img/fundoDestaque.png) no-repeat center center fixed;
+    background-size: cover; /* Para cobrir toda a tela */
+    height: 100vh; /* 100% da altura da tela */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.estruturaLoginAdmin form#loginAdmin{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+
+
+.close {
+   
+    cursor: pointer;
+      margin-left: 450px;
+      font-size: 1.5em;
+      font-weight: bold;
+      padding: 10px 10px;
+      
+}
+.close img{
+    padding: 15px;
+}
+
+
+.estruturaLoginAdmin {
+    text-align: center;
+    background: #ffffff;
+    width: 30%;
+    height: 80%;
+    border-radius: 10px;
+}
+
+.estruturaLoginAdmin .CamposAdmin {
+    margin-bottom: 50px;
+}
+
+.linkEsqueceuAsenha,
+.botaoAdmin,
+.linkCadastro {
+    margin-bottom: 20px; /* Espaçamento entre os elementos */
+}
+
+.botaoAdmin button {
+    padding: 10px 20px; /* Preenchimento interno do botão */
+    font-size: 16px;
+    background-color: #34495e; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none; /* Remover borda do botão */
+    cursor: pointer;
+}
+.botaoAdmin button:hover {
+    background-color: #f1c40f; /* Cor de fundo do botão ao passar o mouse */
+}
+
+.linkEsqueceuAsenha a,
+.linkCadastro a {
+    text-decoration: none; /* Remover sublinhado dos links */
+    color: #34495e; /* Cor dos links */
+}
+
+.linkEsqueceuAsenha a:hover,
+.linkCadastro a:hover {
+    text-decoration: underline; 
+    background-color: #f1c40f;/* Adicionar sublinhado ao passar o mouse */
+}
+.lblUsuarioeSenha,
+.iptUsuarioeSenha{
+    color: #34495e;
+    width: 100%;
+   
+}
+.iptUsuarioeSenha{
+    padding: 8px;
+    border-radius:5px;
+}
+.lblUsuarioeSenha {
+   font-size: 1.5em;
+   font-weight: bold;
+}

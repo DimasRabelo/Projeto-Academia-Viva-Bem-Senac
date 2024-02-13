@@ -3,10 +3,9 @@
 
 session_start();
 
-if(isset($_SESSION['idAluno']))
-{
+if (isset($_SESSION['idAluno'])) {
     echo "cheguei Aqui";
-}else{
+} else {
     header("location:http://localhost/Projeto-Academia-Viva-Bem-Senac/");
     exit();
 }
@@ -24,8 +23,8 @@ $pagina = @$_GET['p'];
     <title>DASHBOARD ACADEMIA VIVA BEM</title>
 
     <link rel="stylesheet" href="./css/reset.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="path/to/lightbox.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <!-- estilo css sempre o último -->
 
@@ -123,7 +122,7 @@ $pagina = @$_GET['p'];
         </div>
     </main>
 
-    
+
 
     <!-- RODAPÉ -->
     <footer class="rodape">
