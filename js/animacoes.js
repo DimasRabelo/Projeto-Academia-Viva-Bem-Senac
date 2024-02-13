@@ -106,6 +106,9 @@ function carregarLogin() {
 
   $("#login-usuario-form").click(function () {
     var formData = $('#login-usuario-form').serialize();
+    console.log("E-mail:" + email);
+    console.log("Senha:" + senha);
+
     
     $.ajax({
      url: './admin/class/aluno.php', 
