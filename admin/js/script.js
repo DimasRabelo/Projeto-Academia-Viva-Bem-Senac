@@ -1,49 +1,52 @@
 function confirmarDesativacao() {
-    // Exibir uma caixa de diálogo de confirmação
-    var confirmacao = confirm("Tem certeza de que deseja desativar este item?");
+  // Exibir uma caixa de diálogo de confirmação
+  var confirmacao = confirm("Tem certeza de que deseja desativar este item?");
 
-    // Retorna true se o usuário clicou em "OK", caso contrário, retorna false
-    return confirmacao;
+  // Retorna true se o usuário clicou em "OK", caso contrário, retorna false
+  return confirmacao;
 }
 
-
-
-function fecharModal() {
-  var modal = document.querySelector('.myModal'); // Seleciona o elemento pela classe
-  modal.style.display = 'none';
+function fecharLogin() {
+  var login = document.querySelector('.estruturaLoginAdmin'); // Seleciona a estrutura pelo elemento d classe para o Fechamento
+  login.style.display = 'none';
 }
 
 function carregarLogin() {
-  // alert('login bem sucedido! Redirecionando');
+  alert('Login bem sucedido! Redirecionando');
+  $("#loginAdmin").click(function () {
+    var formData = $('#loginAdmin').serialize();
 
-  $("#login-usuario-form").click(function () {
-    var formData = $('#login-usuario-form').serialize();
-    
+    // console.log("Dados do Form: " + formData);
+
     $.ajax({
-     url: '../admin/class/funcionario.php',  
-     method: 'POST',                   
-     data: formData,                   
-     dataType: 'json', 
-     success: function(data) {                       
-       if(data.success) {
-         // Bem Sucedido caminho onde receberá a informação
-         $('#msgLogin').html('<div class="msgSuccess">'+ data.message+'</div>');
+      url: '../admin/class/funcionario.php',
+      method: 'POST',
+      data: formData,
+      dataType: 'json',
 
-         // Fechar o modal
-         fecharModal();
+     
 
-         // Redirecionar para o painel de controle do administrador
-         window.location.href = 'http://localhost/Projeto-Academia-Viva-Bem-Senac/admin/index.php?p=dashboard';
-       }
-     },
-     error: function(xhr, status, error) {
-        console.log(error);// Tratamento de erro
-     }
+      success: function (data) {
+        if (data.success) {
+
+          $('#msgLogin').html('<div class="msgSuccess">' + data.message + '</div>');
+
+          var idFuncionario = data.idFuncionario; //Banco de dados do Funcionário
+          window.location.href = 'http://localhost/Projeto-Academia-Viva-Bem-Senac/admin/index.php?p=dashboard';
+
+        } else {
+
+          $('#msgLogin').html('<div class="msgSuccess">' + data.message + '</div>');
+
+        }
+      },
+      error: function(xhr,status,error) {
+        console.log(xhr);
+      }
     });
-  });
+ });
 }
 
-  
 
 
 
@@ -51,3 +54,20 @@ function carregarLogin() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*var email = document.getElementById('email').value;
+  var senha = document.getElementById('senha').value;
+
+  console.log("E-mail: " + email);
+  console.log("Senha: " + senha); */

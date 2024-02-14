@@ -5,10 +5,6 @@ require_once('conexao.php');
 
 class FuncionarioClass
 
-
-
-
-
 {
 
 
@@ -161,27 +157,27 @@ class FuncionarioClass
        $funcionario = new FuncionarioClass();
    
        $emailLogin = $_POST['email'];
-       $senhaLogin = $_POST['password'];
+       $senhaLogin = $_POST['senha'];
    
        $funcionario->emailFuncionario = $emailLogin;
        $funcionario->senhaFuncionario = $senhaLogin;
    
        if($idFuncionario = $funcionario->verificarLogin()){
            //Login bem-sucedido
-           print_r($idFuncionario);
+         // print_r($idFuncionario);
    
            session_start();
            $_SESSION['idFuncionario'] = $idFuncionario;
            echo json_encode(['success' => true, 'message' => 'Login foi realizado com sucesso', 'idFuncionario' => $idFuncionario]);
    
        }else{
-           //Login inaválido
-           //print_r('Erro de login');
+           //Login inválido
+          //print_r('Erro de login');
    
            echo json_encode(['success' => false, 'message' => 'Email ou Senha inválido']);
        }
    
-       print_r($_POST['email']);
+     // print_r($_POST['email']);
    }
    
 

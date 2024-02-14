@@ -136,8 +136,14 @@ function carregarLogin() {
   });
 }
 
- 
- 
+function logout() {
+  // Limpar a sessão ou token de autenticação (depende da sua implementação)
+  // Por exemplo, se estiver usando token JWT armazenado no localStorage:
+  localStorage.removeItem('token');
+
+  // Redirecionar para a página de login
+  window.location.href = 'pagina_de_login.html';
+}
  
 
 
