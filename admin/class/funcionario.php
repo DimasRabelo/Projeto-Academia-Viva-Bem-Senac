@@ -101,7 +101,7 @@ class FuncionarioClass
     // Atualizar 
     public function Atualizar()
     {
-       
+
         $query = "UPDATE tblfuncionarios  
               SET nomeFuncionario =  '" . $this->nomeFuncionario . "',
                   altFuncionario =  '" . $this->altFuncionario . "', 
@@ -122,10 +122,10 @@ class FuncionarioClass
         echo "<script>document.location='index.php?p=funcionarios'</script>";
     }
     public function desativar()
-   
+
     {
         $query = "UPDATE tblfuncionarios SET statusFuncionario ='DESATIVADO' WHERE idFuncionario = " . $this->idFuncionario;
-        
+
         $conn = Conexao::LigarConexao();
         $conn->exec($query);
     }
@@ -164,7 +164,7 @@ class FuncionarioClass
    
        if($idFuncionario = $funcionario->verificarLogin()){
            //Login bem-sucedido
-         // print_r($idFuncionario);
+         //print_r($idFuncionario);
    
            session_start();
            $_SESSION['idFuncionario'] = $idFuncionario;
@@ -177,9 +177,7 @@ class FuncionarioClass
            echo json_encode(['success' => false, 'message' => 'Email ou Senha inválido']);
        }
    
-     // print_r($_POST['email']);
+     //print_r($_POST['email']);
    }
    
-
-
 

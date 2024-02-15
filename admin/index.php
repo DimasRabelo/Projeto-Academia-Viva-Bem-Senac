@@ -1,23 +1,16 @@
 <?php
 session_start();
 
-<<<<<<< Updated upstream
+
 if (isset($_SESSION['idAluno'])) {
     $id = $_SESSION['idAluno'];
-   var_dump('ID do Aluno: ' . $id);
+  // var_dump('ID do Aluno: ' . $id);
 } elseif (isset($_SESSION['idFuncionario'])) {
     $id = $_SESSION['idFuncionario'];
-    var_dump('ID do Funcionário: ' . $id);
+   var_dump('ID do Funcionário: ' . $id);
 } else {
     header("location: http://localhost/Projeto-Academia-Viva-Bem-Senac/admin/loginAdmin.php");
-=======
-if(isset($_SESSION['idAluno']))
-{
-    echo "cheguei Aqui";
-}else{
-    header("location:http://localhost/Projeto-Academia-Viva-Bem-Senac/admin/login.php");
->>>>>>> Stashed changes
-    exit();
+
 }
 
 $pagina = @$_GET['p'];

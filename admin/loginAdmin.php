@@ -19,7 +19,7 @@
 
     <div class=" estruturaLoginAdmin">
         <span class="close" onclick="fecharLogin()"><img src="img/botao-fechar.png" alt=""></span>
-        <h2><img src="img/logoVivaBem .png" alt=""></h2>
+        <h2><img src="img/logoVivaBem.png" alt=""></h2>
         <form id="loginAdmin">
             <div class=" CamposAdmin">
                 <label for="email" class="lblUsuarioeSenha"   >Usuário</label>

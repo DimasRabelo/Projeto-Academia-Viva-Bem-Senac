@@ -12,7 +12,7 @@ function fecharLogin() {
 }
 
 function carregarLogin() {
-  alert('Login bem sucedido! Redirecionando');
+  //alert('Login bem sucedido! Redirecionando');
   $("#loginAdmin").click(function () {
     var formData = $('#loginAdmin').serialize();
 
@@ -46,17 +46,6 @@ function carregarLogin() {
     });
  });
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
