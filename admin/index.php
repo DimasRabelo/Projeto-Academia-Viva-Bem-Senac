@@ -6,7 +6,7 @@ if (isset($_SESSION['idAluno'])) {
   // var_dump('ID do Aluno: ' . $id);
 } elseif (isset($_SESSION['idFuncionario'])) {
     $id = $_SESSION['idFuncionario'];
-   var_dump('ID do Funcionário: ' . $id);
+   //var_dump('ID do Funcionário: ' . $id);
 } else {
     header("location: http://localhost/Projeto-Academia-Viva-Bem-Senac/admin/loginAdmin.php");
     exit;
