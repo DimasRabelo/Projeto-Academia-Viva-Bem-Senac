@@ -17,7 +17,7 @@ $pagina = @$_GET['p'];
 require_once('class/aluno.php');
 $aluno = new AlunoClass($id);
 $alunoClass = $aluno->listar();
-// Chamar o campo fotoAluno
+
 
 
 ?>
@@ -40,6 +40,10 @@ $alunoClass = $aluno->listar();
 
 </head>
 
+
+
+
+
 <body>
 
     <header class="topo">
@@ -54,10 +58,10 @@ $alunoClass = $aluno->listar();
         }
 
         ?>
-        <div>
-       <img src= "<?php echo $aluno->fotoAluno; ?>" alt="User Instrutor"> 
-         <h2><?php echo $aluno->nomeAluno; ?></h2>
-</div>
+        <div class="identUser">
+        <img src="../img/<?php echo $aluno->fotoAluno ?>" alt="User Instrutor"> 
+        <h2><?php echo $aluno->nomeAluno; ?></h2>
+        </div>
     </header>
 
     <main>
