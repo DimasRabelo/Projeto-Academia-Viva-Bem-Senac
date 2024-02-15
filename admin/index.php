@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 if (isset($_SESSION['idAluno'])) {
     $id = $_SESSION['idAluno'];
   // var_dump('ID do Aluno: ' . $id);
@@ -10,10 +9,16 @@ if (isset($_SESSION['idAluno'])) {
    var_dump('ID do Funcionário: ' . $id);
 } else {
     header("location: http://localhost/Projeto-Academia-Viva-Bem-Senac/admin/loginAdmin.php");
-
+    exit;
 }
 
 $pagina = @$_GET['p'];
+
+require_once('class/aluno.php');
+$aluno = new AlunoClass($id);
+$alunoClass = $aluno->listar();
+// Chamar o campo fotoAluno
+
 
 ?>
 <!DOCTYPE html>
@@ -50,9 +55,9 @@ $pagina = @$_GET['p'];
 
         ?>
         <div>
-            <img src="./img/btnLogin.png" alt="User Instrutor">
-            <h2>Nome:</h2>
-        </div>
+       <img src= "<?php echo $aluno->fotoAluno; ?>" alt="User Instrutor"> 
+         <h2><?php echo $aluno->nomeAluno; ?></h2>
+</div>
     </header>
 
     <main>
@@ -71,6 +76,8 @@ $pagina = @$_GET['p'];
                     <li><a href="index.php?p=relatorio" class="<?php echo ($pagina == 'relatorio') ? 'menuAtivo' : ''; ?>"> Relatório </a></li>
                     <li><a href="index.php?p=contato" class="<?php echo ($pagina == 'contato') ? 'menuAtivo' : ''; ?>"> E-mail </a></li>
                     <li><a href="index.php?p=ajuda" class="<?php echo ($pagina == 'ajuda') ? 'menuAtivo' : ''; ?>"> Ajuda e Suporte </a></li>
+                    <li><a href="desconectar.php">Desconectar</a></li>
+                
                 </ul>
             </nav>
         </div>

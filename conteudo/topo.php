@@ -50,9 +50,11 @@
                     </ul>
                 </li>
                 <li><a href="contato.php">Contato</a></li>
+            
             </ul>
-
             <button class="botao"><a href="loginfront.php">Login</a></button>
+
+           
         </nav>
     </div>
 </header>

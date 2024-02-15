@@ -9,6 +9,8 @@ function confirmarDesativacao() {
 function fecharLogin() {
   var login = document.querySelector('.estruturaLoginAdmin'); // Seleciona a estrutura pelo elemento d classe para o Fechamento
   login.style.display = 'none';
+
+  window.location.href = 'http://localhost/Projeto-Academia-Viva-Bem-Senac/';
 }
 
 function carregarLogin() {
