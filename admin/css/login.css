@@ -19,14 +19,15 @@
 
 .close {
   cursor: pointer;
-  margin-left: 375px;
-  font-size: 1.5em;
-  font-weight: bold;
-  padding: 10px 10px;
+  margin-left: 358px;
+ 
+ 
+  
 }
-.close img {
-  padding: 15px;
+.close img{
+    padding: 5px;
 }
+
 
 .estruturaLoginAdmin {
   text-align: center;

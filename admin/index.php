@@ -3,10 +3,10 @@ session_start();
 
 if (isset($_SESSION['idAluno'])) {
     $id = $_SESSION['idAluno'];
-  // var_dump('ID do Aluno: ' . $id);
+    $tipoUsuario = 'aluno';
 } elseif (isset($_SESSION['idFuncionario'])) {
     $id = $_SESSION['idFuncionario'];
-   //var_dump('ID do Funcionário: ' . $id);
+    $tipoUsuario = 'funcionario';
 } else {
     header("location: http://localhost/Projeto-Academia-Viva-Bem-Senac/admin/loginAdmin.php");
     exit;
@@ -15,10 +15,15 @@ if (isset($_SESSION['idAluno'])) {
 $pagina = @$_GET['p'];
 
 require_once('class/aluno.php');
-$aluno = new AlunoClass($id);
-$alunoClass = $aluno->listar();
+require_once('class/funcionario.php');
 
-
+if ($tipoUsuario === 'aluno') {
+    $aluno = new AlunoClass($id);
+    $usuario = $aluno;
+} elseif ($tipoUsuario === 'funcionario') {
+    $funcionario = new FuncionarioClass($id);
+    $usuario = $funcionario;
+}
 
 ?>
 <!DOCTYPE html>
@@ -58,10 +63,12 @@ $alunoClass = $aluno->listar();
         }
 
         ?>
-        <div class="identUser">
-        <img src="../img/<?php echo $aluno->fotoAluno ?>" alt="User Instrutor"> 
-        <h2><?php echo $aluno->nomeAluno; ?></h2>
+         <div class="identUser">
+            <img src="../img/<?php echo $usuario->fotoAluno ?? $usuario->fotoFuncionario; ?>" alt="User">
+            <h2><?php echo $usuario->nomeAluno ?? $usuario->nomeFuncionario; ?></h2>
+            <a href="desconectar.php">Desconectar</a>
         </div>
+        
     </header>
 
     <main>
@@ -80,7 +87,7 @@ $alunoClass = $aluno->listar();
                     <li><a href="index.php?p=relatorio" class="<?php echo ($pagina == 'relatorio') ? 'menuAtivo' : ''; ?>"> Relatório </a></li>
                     <li><a href="index.php?p=contato" class="<?php echo ($pagina == 'contato') ? 'menuAtivo' : ''; ?>"> E-mail </a></li>
                     <li><a href="index.php?p=ajuda" class="<?php echo ($pagina == 'ajuda') ? 'menuAtivo' : ''; ?>"> Ajuda e Suporte </a></li>
-                    <li><a href="desconectar.php">Desconectar</a></li>
+                    
                 
                 </ul>
             </nav>

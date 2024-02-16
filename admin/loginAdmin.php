@@ -23,9 +23,10 @@
 <body class="corpoLogin">
 
     <div class=" estruturaLoginAdmin">
-        <span class="close" onclick="fecharLogin()"><img src="img/botao-fechar.png" alt=""></span>
+    <span class="close" onclick="fecharLogin()"><img src="img/botao-fechar.png" alt=""></span>
         <h2><img src="img/logoVivaBem.png" alt=""></h2>
         <form id="loginAdmin">
+        
             <div class=" CamposAdmin">
                 <label for="email" class="lblUsuarioeSenha"   >Usuário</label>
                 <input type="email" class="iptUsuarioeSenha" name="email" id="email" placeholder="Digite o Usuário" autocomplete="username">

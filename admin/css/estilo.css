@@ -56,8 +56,10 @@ body {
 
 .topo div {
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 15%;
+    
 }
 
 .topo div img {
