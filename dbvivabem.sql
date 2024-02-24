@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tblalunos` (
-  `idAluno` int(11) NOT NULL,
+  `idAluno` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nomeAluno` varchar(50) NOT NULL,
   `dataNascAluno` date NOT NULL,
   `emailAluno` varchar(80) NOT NULL,
@@ -58,7 +58,7 @@ INSERT INTO `tblalunos` (`idAluno`, `nomeAluno`, `dataNascAluno`, `emailAluno`, 
 --
 
 CREATE TABLE `tblbanner` (
-  `idBanner` int(11) NOT NULL,
+  `idBanner` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nomeBanner` varchar(50) NOT NULL,
   `altBanner` varchar(50) NOT NULL,
   `fotoBanner` varchar(100) NOT NULL,
@@ -81,7 +81,7 @@ INSERT INTO `tblbanner` (`idBanner`, `nomeBanner`, `altBanner`, `fotoBanner`, `s
 --
 
 CREATE TABLE `tblcontato` (
-  `idContato` int(11) NOT NULL,
+  `idContato` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nomeContato` varchar(50) NOT NULL,
   `emailContato` varchar(80) NOT NULL,
   `telefoneContato` varchar(14) NOT NULL,
@@ -114,7 +114,7 @@ INSERT INTO `tblcontato` (`idContato`, `nomeContato`, `emailContato`, `telefoneC
 --
 
 CREATE TABLE `tbldestaque` (
-  `idDestaque` int(11) NOT NULL,
+  `idDestaque` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nomeDestaque` varchar(50) NOT NULL,
   `altDestaque` varchar(50) NOT NULL,
   `fotoDestaque` varchar(100) NOT NULL,
@@ -129,7 +129,7 @@ CREATE TABLE `tbldestaque` (
 --
 
 CREATE TABLE `tblexercicios` (
-  `idExercicio` int(11) NOT NULL,
+  `idExercicio` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nomeExercicio` varchar(50) NOT NULL,
   `altExercicio` varchar(50) NOT NULL,
   `descricaoExercicio` varchar(30) NOT NULL,
@@ -165,7 +165,7 @@ INSERT INTO `tblexercicios` (`idExercicio`, `nomeExercicio`, `altExercicio`, `de
 --
 
 CREATE TABLE `tblfuncionarios` (
-  `idFuncionario` int(11) NOT NULL,
+  `idFuncionario` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nomeFuncionario` varchar(50) NOT NULL,
   `altFuncionario` varchar(50) NOT NULL,
   `dataNascFuncionario` date NOT NULL,
@@ -205,7 +205,7 @@ INSERT INTO `tblfuncionarios` (`idFuncionario`, `nomeFuncionario`, `altFuncionar
 --
 
 CREATE TABLE `tblgaleria` (
-  `idGaleria` int(11) NOT NULL,
+  `idGaleria` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nomeGaleria` varchar(50) NOT NULL,
   `altGaleria` varchar(50) NOT NULL,
   `fotoGaleria` varchar(100) NOT NULL,
@@ -232,7 +232,7 @@ INSERT INTO `tblgaleria` (`idGaleria`, `nomeGaleria`, `altGaleria`, `fotoGaleria
 --
 
 CREATE TABLE `tblmatriculas` (
-  `idMatricula` int(11) NOT NULL,
+  `idMatricula` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `dataInicioMatricula` date NOT NULL,
   `dataFimMatricula` date NOT NULL,
   `statusMatricula` varchar(10) NOT NULL,
@@ -260,7 +260,7 @@ INSERT INTO `tblmatriculas` (`idMatricula`, `dataInicioMatricula`, `dataFimMatri
 --
 
 CREATE TABLE `tblplanos` (
-  `idPlano` int(11) NOT NULL,
+  `idPlano` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nomePlano` varchar(20) NOT NULL,
   `descricaoPlano` varchar(150) NOT NULL,
   `valorPlano` double(10,2) NOT NULL,
@@ -286,7 +286,7 @@ INSERT INTO `tblplanos` (`idPlano`, `nomePlano`, `descricaoPlano`, `valorPlano`,
 --
 
 CREATE TABLE `tblregistrotreinos` (
-  `idRegistroTreino` int(11) NOT NULL,
+  `idRegistroTreino` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `cargaRegistroTreino` double(10,3) NOT NULL,
   `serieRegistroTreino` int(11) NOT NULL,
   `repeticaoRegistroTreino` int(11) NOT NULL,
@@ -313,7 +313,7 @@ INSERT INTO `tblregistrotreinos` (`idRegistroTreino`, `cargaRegistroTreino`, `se
 --
 
 CREATE TABLE `tblsobre` (
-  `idsobre` int(11) NOT NULL,
+  `idsobre` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `descricaoSobre` text NOT NULL,
   `altsobre` varchar(50) NOT NULL,
   `fotoSobre` varchar(100) NOT NULL,
@@ -328,7 +328,7 @@ CREATE TABLE `tblsobre` (
 --
 
 CREATE TABLE `tbltelefonealunos` (
-  `idTelefoneAluno` int(11) NOT NULL,
+  `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `numeroTelefone` varchar(14) NOT NULL,
   `operadorTelefone` varchar(10) NOT NULL,
   `tipoTelefone` varchar(15) NOT NULL,
