@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/02/2024 às 15:40
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.0.28
+-- Tempo de geração: 25/02/2024 às 17:23
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tblalunos` (
-  `idAluno` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idAluno` int(11) NOT NULL,
   `nomeAluno` varchar(50) NOT NULL,
   `dataNascAluno` date NOT NULL,
   `emailAluno` varchar(80) NOT NULL,
@@ -58,7 +58,7 @@ INSERT INTO `tblalunos` (`idAluno`, `nomeAluno`, `dataNascAluno`, `emailAluno`, 
 --
 
 CREATE TABLE `tblbanner` (
-  `idBanner` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idBanner` int(11) NOT NULL,
   `nomeBanner` varchar(50) NOT NULL,
   `altBanner` varchar(50) NOT NULL,
   `fotoBanner` varchar(100) NOT NULL,
@@ -81,7 +81,7 @@ INSERT INTO `tblbanner` (`idBanner`, `nomeBanner`, `altBanner`, `fotoBanner`, `s
 --
 
 CREATE TABLE `tblcontato` (
-  `idContato` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idContato` int(11) NOT NULL,
   `nomeContato` varchar(50) NOT NULL,
   `emailContato` varchar(80) NOT NULL,
   `telefoneContato` varchar(14) NOT NULL,
@@ -114,7 +114,7 @@ INSERT INTO `tblcontato` (`idContato`, `nomeContato`, `emailContato`, `telefoneC
 --
 
 CREATE TABLE `tbldestaque` (
-  `idDestaque` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idDestaque` int(11) NOT NULL,
   `nomeDestaque` varchar(50) NOT NULL,
   `altDestaque` varchar(50) NOT NULL,
   `fotoDestaque` varchar(100) NOT NULL,
@@ -129,7 +129,7 @@ CREATE TABLE `tbldestaque` (
 --
 
 CREATE TABLE `tblexercicios` (
-  `idExercicio` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idExercicio` int(11) NOT NULL,
   `nomeExercicio` varchar(50) NOT NULL,
   `altExercicio` varchar(50) NOT NULL,
   `descricaoExercicio` varchar(30) NOT NULL,
@@ -165,7 +165,7 @@ INSERT INTO `tblexercicios` (`idExercicio`, `nomeExercicio`, `altExercicio`, `de
 --
 
 CREATE TABLE `tblfuncionarios` (
-  `idFuncionario` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idFuncionario` int(11) NOT NULL,
   `nomeFuncionario` varchar(50) NOT NULL,
   `altFuncionario` varchar(50) NOT NULL,
   `dataNascFuncionario` date NOT NULL,
@@ -196,7 +196,7 @@ INSERT INTO `tblfuncionarios` (`idFuncionario`, `nomeFuncionario`, `altFuncionar
 (5, 'Luisa Mendes', 'Foto funcionario fisioterapeuta Esportiva', '1999-09-09', 'fisioterapeuta', 'fisioterapeuta Espor', 'luisa@gmail.com', 'senhaxyz', 'outros', '55887888888', '2023-06-10', 'ATIVO', 'funcionario/luisamendes5.png', 'facebook.com/luisa', '@luisamendes', 'linkedin.com/luisamendes/', 'wa.me/5555887888888'),
 (6, 'Adamastor Pitaco', 'foto funcionario estagiario', '2005-09-12', 'Estagiário', 'Estudante', 'adamastor@gmail.com', 'senha@12', 'Usuario', '11978763456', '2023-11-01', 'ATIVO', 'funcionario/adamastor.png', '[value-14]', '[value-15]', '[value-16]', '[value-17]'),
 (7, 'Augusto Brasileiro', '', '1987-05-25', 'Aux. de Instrutor', 'Serviços Gerais', 'augusto@gmail', '', 'Usuario', '1178659-0000', '2023-10-31', 'ATIVO', 'funcionario/jose.png', '', '', '', ''),
-(0, 'DIMAS APARECIDO', 'dimasaparecido', '1987-05-25', 'DESENVOLVEDOR', 'ATENDIMENTO', 'dimas_ap_souza@yahoo.com.br', '123456', 'NIVEL 1	', '(11)97249-5017', '2024-02-16', 'ATIVO', 'funcionario/dimasaparecido.png', 'facebook', 'instagram', 'linkedin', 'whatsapp');
+(9, 'PEDRO DE LARA', 'pedrodelara', '1970-11-23', 'AUXILIAR', 'NUTRIÇÃO ESPORTIVA', 'pedrodelara@gmail.com', '123456', 'NIVEL 1	', '(11)92345-9876', '2024-01-12', 'ATIVO', 'funcionario/pedrodelara.png', 'facebook.com/pedrodelara', 'instagram.com/pedrodelara.com', 'linkedin.com.br/pedrodelara', 'whatsapp/11923459876');
 
 -- --------------------------------------------------------
 
@@ -205,7 +205,7 @@ INSERT INTO `tblfuncionarios` (`idFuncionario`, `nomeFuncionario`, `altFuncionar
 --
 
 CREATE TABLE `tblgaleria` (
-  `idGaleria` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idGaleria` int(11) NOT NULL,
   `nomeGaleria` varchar(50) NOT NULL,
   `altGaleria` varchar(50) NOT NULL,
   `fotoGaleria` varchar(100) NOT NULL,
@@ -232,7 +232,7 @@ INSERT INTO `tblgaleria` (`idGaleria`, `nomeGaleria`, `altGaleria`, `fotoGaleria
 --
 
 CREATE TABLE `tblmatriculas` (
-  `idMatricula` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idMatricula` int(11) NOT NULL,
   `dataInicioMatricula` date NOT NULL,
   `dataFimMatricula` date NOT NULL,
   `statusMatricula` varchar(10) NOT NULL,
@@ -260,7 +260,7 @@ INSERT INTO `tblmatriculas` (`idMatricula`, `dataInicioMatricula`, `dataFimMatri
 --
 
 CREATE TABLE `tblplanos` (
-  `idPlano` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idPlano` int(11) NOT NULL,
   `nomePlano` varchar(20) NOT NULL,
   `descricaoPlano` varchar(150) NOT NULL,
   `valorPlano` double(10,2) NOT NULL,
@@ -286,7 +286,7 @@ INSERT INTO `tblplanos` (`idPlano`, `nomePlano`, `descricaoPlano`, `valorPlano`,
 --
 
 CREATE TABLE `tblregistrotreinos` (
-  `idRegistroTreino` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idRegistroTreino` int(11) NOT NULL,
   `cargaRegistroTreino` double(10,3) NOT NULL,
   `serieRegistroTreino` int(11) NOT NULL,
   `repeticaoRegistroTreino` int(11) NOT NULL,
@@ -313,7 +313,7 @@ INSERT INTO `tblregistrotreinos` (`idRegistroTreino`, `cargaRegistroTreino`, `se
 --
 
 CREATE TABLE `tblsobre` (
-  `idsobre` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idsobre` int(11) NOT NULL,
   `descricaoSobre` text NOT NULL,
   `altsobre` varchar(50) NOT NULL,
   `fotoSobre` varchar(100) NOT NULL,
@@ -328,7 +328,7 @@ CREATE TABLE `tblsobre` (
 --
 
 CREATE TABLE `tbltelefonealunos` (
-  `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idTelefoneAluno` int(11) NOT NULL,
   `numeroTelefone` varchar(14) NOT NULL,
   `operadorTelefone` varchar(10) NOT NULL,
   `tipoTelefone` varchar(15) NOT NULL,
@@ -526,6 +526,158 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `vsomavaloresporplanos`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vsomavaloresporplanos`  AS SELECT `tblplanos`.`nomePlano` AS `nomePlano`, sum(`tblplanos`.`valorPlano`) AS `somaPlano` FROM `tblplanos` GROUP BY `tblplanos`.`nomePlano` ;
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `tblalunos`
+--
+ALTER TABLE `tblalunos`
+  ADD PRIMARY KEY (`idAluno`);
+
+--
+-- Índices de tabela `tblbanner`
+--
+ALTER TABLE `tblbanner`
+  ADD PRIMARY KEY (`idBanner`);
+
+--
+-- Índices de tabela `tblcontato`
+--
+ALTER TABLE `tblcontato`
+  ADD PRIMARY KEY (`idContato`);
+
+--
+-- Índices de tabela `tbldestaque`
+--
+ALTER TABLE `tbldestaque`
+  ADD PRIMARY KEY (`idDestaque`);
+
+--
+-- Índices de tabela `tblexercicios`
+--
+ALTER TABLE `tblexercicios`
+  ADD PRIMARY KEY (`idExercicio`);
+
+--
+-- Índices de tabela `tblfuncionarios`
+--
+ALTER TABLE `tblfuncionarios`
+  ADD PRIMARY KEY (`idFuncionario`);
+
+--
+-- Índices de tabela `tblgaleria`
+--
+ALTER TABLE `tblgaleria`
+  ADD PRIMARY KEY (`idGaleria`);
+
+--
+-- Índices de tabela `tblmatriculas`
+--
+ALTER TABLE `tblmatriculas`
+  ADD PRIMARY KEY (`idMatricula`);
+
+--
+-- Índices de tabela `tblplanos`
+--
+ALTER TABLE `tblplanos`
+  ADD PRIMARY KEY (`idPlano`);
+
+--
+-- Índices de tabela `tblregistrotreinos`
+--
+ALTER TABLE `tblregistrotreinos`
+  ADD PRIMARY KEY (`idRegistroTreino`);
+
+--
+-- Índices de tabela `tblsobre`
+--
+ALTER TABLE `tblsobre`
+  ADD PRIMARY KEY (`idsobre`);
+
+--
+-- Índices de tabela `tbltelefonealunos`
+--
+ALTER TABLE `tbltelefonealunos`
+  ADD PRIMARY KEY (`idTelefoneAluno`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `tblalunos`
+--
+ALTER TABLE `tblalunos`
+  MODIFY `idAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de tabela `tblbanner`
+--
+ALTER TABLE `tblbanner`
+  MODIFY `idBanner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `tblcontato`
+--
+ALTER TABLE `tblcontato`
+  MODIFY `idContato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de tabela `tbldestaque`
+--
+ALTER TABLE `tbldestaque`
+  MODIFY `idDestaque` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `tblexercicios`
+--
+ALTER TABLE `tblexercicios`
+  MODIFY `idExercicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT de tabela `tblfuncionarios`
+--
+ALTER TABLE `tblfuncionarios`
+  MODIFY `idFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de tabela `tblgaleria`
+--
+ALTER TABLE `tblgaleria`
+  MODIFY `idGaleria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de tabela `tblmatriculas`
+--
+ALTER TABLE `tblmatriculas`
+  MODIFY `idMatricula` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de tabela `tblplanos`
+--
+ALTER TABLE `tblplanos`
+  MODIFY `idPlano` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de tabela `tblregistrotreinos`
+--
+ALTER TABLE `tblregistrotreinos`
+  MODIFY `idRegistroTreino` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de tabela `tblsobre`
+--
+ALTER TABLE `tblsobre`
+  MODIFY `idsobre` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `tbltelefonealunos`
+--
+ALTER TABLE `tbltelefonealunos`
+  MODIFY `idTelefoneAluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
