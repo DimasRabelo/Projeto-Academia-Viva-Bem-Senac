@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25/02/2024 às 17:23
+-- Tempo de geração: 28/02/2024 às 03:00
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -189,9 +189,9 @@ CREATE TABLE `tblfuncionarios` (
 --
 
 INSERT INTO `tblfuncionarios` (`idFuncionario`, `nomeFuncionario`, `altFuncionario`, `dataNascFuncionario`, `cargoFuncionario`, `especialidadeFuncionario`, `emailFuncionario`, `senhaFuncionario`, `nivelFuncionario`, `telefoneFuncionario`, `dataAdmissaoFuncionario`, `statusFuncionario`, `fotoFuncionario`, `linkFaceFuncionario`, `linkInstaFuncionario`, `linklinkedinFuncionario`, `linkWhatsFuncionario`) VALUES
-(1, 'Fernanda Souza', '', '1995-10-10', 'Instrutor', 'Musculação', 'fernanda@gmail.com', '', 'administrador', '11132456789', '2023-10-01', 'DESATIVADO', 'funcionario/fernanda.png', 'facebook.com/eufernandasouza', '@fernadasouza', 'linkedin.com/in/fernandasouzam/', 'wa.me/5511132456789'),
-(2, 'Ricardo Santos', 'Foto funcionario Nutricionista', '1990-05-05', 'Nutricionista', 'Nutrição Esportiva', 'ricardo@gmail.com', 'senha456', 'outros', '22987654313', '2023-09-15', 'DESATIVADO', 'funcionario/ricardosantos2.png', 'facebook.com/euricardosantos', '@ricardosantos', 'linkedin.com/in/ricardosantos/', 'wa.me/5522987654313'),
-(3, 'Mariana Silva', 'Foto funcionario Recepcionista', '1970-07-07', 'Recepcionista', 'Atendimento', 'mariana@gmail.com', 'senha789', 'administrador', '33555554555', '2023-08-03', 'DESATIVADO', 'funcionario/mariana3.png', 'facebook.com/mariana', '@marina', 'linkedin.com/mariana/', 'wa.me/33555554555'),
+(1, 'Fernanda Souza', '', '1995-10-10', 'Instrutor', 'Musculação', 'fernanda@gmail.com', '', 'administrador', '11132456789', '2023-10-01', 'ATIVO', 'funcionario/fernanda.png', 'facebook.com/eufernandasouza', '@fernadasouza', 'linkedin.com/in/fernandasouzam/', 'wa.me/5511132456789'),
+(2, 'Ricardo Santos', 'Foto funcionario Nutricionista', '1990-05-05', 'Nutricionista', 'Nutrição Esportiva', 'ricardo@gmail.com', 'senha456', 'outros', '22987654313', '2023-09-15', 'ATIVO', 'funcionario/ricardosantos2.png', 'facebook.com/euricardosantos', '@ricardosantos', 'linkedin.com/in/ricardosantos/', 'wa.me/5522987654313'),
+(3, 'Mariana Silva', 'Foto funcionario Recepcionista', '1970-07-07', 'Recepcionista', 'Atendimento', 'mariana@gmail.com', 'senha789', 'administrador', '33555554555', '2023-08-03', 'ATIVO', 'funcionario/mariana3.png', 'facebook.com/mariana', '@marina', 'linkedin.com/mariana/', 'wa.me/33555554555'),
 (4, 'Paulo Oliveira', 'Foto funcionario instrutor', '1996-04-10', 'instrutor', 'Cardio', 'paulo@gmail.com', 'senhaabc', 'outros', '4498999999', '2023-07-20', 'ATIVO', 'funcionario/paulooliveira4.png', 'facebook.com/paulooliveira', '@paulooliveira', 'linkedin.com/paulooliveira/', 'wa.me/5544989999999'),
 (5, 'Luisa Mendes', 'Foto funcionario fisioterapeuta Esportiva', '1999-09-09', 'fisioterapeuta', 'fisioterapeuta Espor', 'luisa@gmail.com', 'senhaxyz', 'outros', '55887888888', '2023-06-10', 'ATIVO', 'funcionario/luisamendes5.png', 'facebook.com/luisa', '@luisamendes', 'linkedin.com/luisamendes/', 'wa.me/5555887888888'),
 (6, 'Adamastor Pitaco', 'foto funcionario estagiario', '2005-09-12', 'Estagiário', 'Estudante', 'adamastor@gmail.com', 'senha@12', 'Usuario', '11978763456', '2023-11-01', 'ATIVO', 'funcionario/adamastor.png', '[value-14]', '[value-15]', '[value-16]', '[value-17]'),
@@ -458,6 +458,59 @@ CREATE TABLE `vsomavaloresporplanos` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura stand-in para view `vw_funcionarios_ativos`
+-- (Veja abaixo para a visão atual)
+--
+CREATE TABLE `vw_funcionarios_ativos` (
+`idFuncionario` int(11)
+,`nomeFuncionario` varchar(50)
+,`altFuncionario` varchar(50)
+,`dataNascFuncionario` date
+,`cargoFuncionario` varchar(20)
+,`especialidadeFuncionario` varchar(20)
+,`emailFuncionario` varchar(80)
+,`senhaFuncionario` varchar(20)
+,`nivelFuncionario` varchar(15)
+,`telefoneFuncionario` varchar(14)
+,`dataAdmissaoFuncionario` date
+,`statusFuncionario` varchar(10)
+,`fotoFuncionario` varchar(100)
+,`linkFaceFuncionario` varchar(150)
+,`linkInstaFuncionario` varchar(150)
+,`linklinkedinFuncionario` varchar(150)
+,`linkWhatsFuncionario` varchar(150)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para view `vw_qtdfuncionario`
+-- (Veja abaixo para a visão atual)
+--
+CREATE TABLE `vw_qtdfuncionario` (
+`idFuncionario` int(11)
+,`nomeFuncionario` varchar(50)
+,`altFuncionario` varchar(50)
+,`dataNascFuncionario` date
+,`cargoFuncionario` varchar(20)
+,`especialidadeFuncionario` varchar(20)
+,`emailFuncionario` varchar(80)
+,`senhaFuncionario` varchar(20)
+,`nivelFuncionario` varchar(15)
+,`telefoneFuncionario` varchar(14)
+,`dataAdmissaoFuncionario` date
+,`statusFuncionario` varchar(10)
+,`fotoFuncionario` varchar(100)
+,`linkFaceFuncionario` varchar(150)
+,`linkInstaFuncionario` varchar(150)
+,`linklinkedinFuncionario` varchar(150)
+,`linkWhatsFuncionario` varchar(150)
+,`qtdFuncionario` bigint(21)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para view `vnumalunosativos`
 --
 DROP TABLE IF EXISTS `vnumalunosativos`;
@@ -526,6 +579,24 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `vsomavaloresporplanos`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vsomavaloresporplanos`  AS SELECT `tblplanos`.`nomePlano` AS `nomePlano`, sum(`tblplanos`.`valorPlano`) AS `somaPlano` FROM `tblplanos` GROUP BY `tblplanos`.`nomePlano` ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para view `vw_funcionarios_ativos`
+--
+DROP TABLE IF EXISTS `vw_funcionarios_ativos`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_funcionarios_ativos`  AS SELECT `tblfuncionarios`.`idFuncionario` AS `idFuncionario`, `tblfuncionarios`.`nomeFuncionario` AS `nomeFuncionario`, `tblfuncionarios`.`altFuncionario` AS `altFuncionario`, `tblfuncionarios`.`dataNascFuncionario` AS `dataNascFuncionario`, `tblfuncionarios`.`cargoFuncionario` AS `cargoFuncionario`, `tblfuncionarios`.`especialidadeFuncionario` AS `especialidadeFuncionario`, `tblfuncionarios`.`emailFuncionario` AS `emailFuncionario`, `tblfuncionarios`.`senhaFuncionario` AS `senhaFuncionario`, `tblfuncionarios`.`nivelFuncionario` AS `nivelFuncionario`, `tblfuncionarios`.`telefoneFuncionario` AS `telefoneFuncionario`, `tblfuncionarios`.`dataAdmissaoFuncionario` AS `dataAdmissaoFuncionario`, `tblfuncionarios`.`statusFuncionario` AS `statusFuncionario`, `tblfuncionarios`.`fotoFuncionario` AS `fotoFuncionario`, `tblfuncionarios`.`linkFaceFuncionario` AS `linkFaceFuncionario`, `tblfuncionarios`.`linkInstaFuncionario` AS `linkInstaFuncionario`, `tblfuncionarios`.`linklinkedinFuncionario` AS `linklinkedinFuncionario`, `tblfuncionarios`.`linkWhatsFuncionario` AS `linkWhatsFuncionario` FROM `tblfuncionarios` WHERE `tblfuncionarios`.`statusFuncionario` = 'ATIVO' ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para view `vw_qtdfuncionario`
+--
+DROP TABLE IF EXISTS `vw_qtdfuncionario`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_qtdfuncionario`  AS SELECT `tblfuncionarios`.`idFuncionario` AS `idFuncionario`, `tblfuncionarios`.`nomeFuncionario` AS `nomeFuncionario`, `tblfuncionarios`.`altFuncionario` AS `altFuncionario`, `tblfuncionarios`.`dataNascFuncionario` AS `dataNascFuncionario`, `tblfuncionarios`.`cargoFuncionario` AS `cargoFuncionario`, `tblfuncionarios`.`especialidadeFuncionario` AS `especialidadeFuncionario`, `tblfuncionarios`.`emailFuncionario` AS `emailFuncionario`, `tblfuncionarios`.`senhaFuncionario` AS `senhaFuncionario`, `tblfuncionarios`.`nivelFuncionario` AS `nivelFuncionario`, `tblfuncionarios`.`telefoneFuncionario` AS `telefoneFuncionario`, `tblfuncionarios`.`dataAdmissaoFuncionario` AS `dataAdmissaoFuncionario`, `tblfuncionarios`.`statusFuncionario` AS `statusFuncionario`, `tblfuncionarios`.`fotoFuncionario` AS `fotoFuncionario`, `tblfuncionarios`.`linkFaceFuncionario` AS `linkFaceFuncionario`, `tblfuncionarios`.`linkInstaFuncionario` AS `linkInstaFuncionario`, `tblfuncionarios`.`linklinkedinFuncionario` AS `linklinkedinFuncionario`, `tblfuncionarios`.`linkWhatsFuncionario` AS `linkWhatsFuncionario`, (select count(0) from `tblfuncionarios`) AS `qtdFuncionario` FROM `tblfuncionarios` ;
 
 --
 -- Índices para tabelas despejadas
