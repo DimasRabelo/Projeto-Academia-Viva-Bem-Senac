@@ -18,7 +18,7 @@ function carregarLogin() {
   $("#loginAdmin").click(function () {
     var formData = $('#loginAdmin').serialize();
 
-    // console.log("Dados do Form: " + formData);
+    //console.log("Dados do Form: " + formData);
 
     $.ajax({
       url: '../admin/class/funcionario.php',
